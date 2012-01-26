@@ -18,6 +18,23 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+execute "apt-get-update" do
+  command "apt-get update"
+  action :nothing
+end
+
+execute "add-sipwitch-key" do
+  command "curl http://www.gnutelephony.org/archive/squeeze/public.key | apt-key add -"
+  action :nothing
+  notifies :run, "execute[apt-get-update]", :immediately
+end
+
+template "/etc/apt/sources.list.d/sipwitch.list" do
+  source "template.list.erb"
+  mode "0644"
+  notifies :run, "execute[add-sipwitch-key]", :immediately
+end
+
 package "sipwitch"
 
 template "/etc/sipwitch.conf" do
