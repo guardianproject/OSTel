@@ -18,6 +18,8 @@
 #    along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
+package "curl"
+
 execute "apt-get-update" do
   command "apt-get update"
   action :nothing
@@ -30,13 +32,18 @@ execute "add-sipwitch-key" do
 end
 
 template "/etc/apt/sources.list.d/sipwitch.list" do
-  source "template.list.erb"
+  source "sipwitch.list.erb"
   mode "0644"
   notifies :run, "execute[add-sipwitch-key]", :immediately
 end
 
 package "sipwitch"
 
+service "sipwitch" do
+  action [:enable]
+  supports [:restart => true, :start => true]
+end
+ 
 template "/etc/sipwitch.conf" do
   source "sipwitch.conf.erb"
   mode "0600"
@@ -45,4 +52,5 @@ end
 template "/etc/default/sipwitch" do
   source "default.erb"
   mode "0644"
+  notifies :restart, "service[sipwitch]"
 end
