@@ -1,0 +1,18 @@
+{
+  "id" : "",
+  "params", {
+    "password": "",
+    "vm-password":"",
+    "email-addr":"foo@example.com"
+  }
+  "variables" : {
+    "numbering_plan":"",
+    "default_areacode": 11111,
+    "default_gateway":"",
+    "user_context": "default",
+    "effective_caller_id_name": "",
+    "effective_caller_id_number":"",
+    "sip_secure_media": false,
+    "process_cdr": false
+  }
+}
