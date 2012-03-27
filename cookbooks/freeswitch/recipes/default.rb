@@ -43,19 +43,22 @@ end
 
 # compile source
 script "compile_freeswitch" do
-  shell "/bin/bash"
-  script <<<EOF
-  cd /usr/local/src/freeswitch
+  interpreter "/bin/bash"
+  cwd "/usr/local/src/freeswitch"
+  script <<-EOF
   ./bootstrap.sh
   ./configure
+  make clean
   make
 EOF
+  not_if "test -d /usr/local/freeswitch/bin/freeswitch"
 end
 
 # install software
 execute "install_freeswitch" do
   cwd "/usr/local/src/freeswitch"
   command "make install"
+  not_if "test -d /usr/local/freeswitch/bin/freeswitch"
 end
 
 # set global variables
