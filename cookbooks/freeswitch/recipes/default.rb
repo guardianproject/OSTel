@@ -69,11 +69,18 @@ execute "install_init" do
   not_if "test -f /etc/init.d/freeswitch"
 end
 
+# install defaults
+template "/etc/default/freeswitch" do
+  source "freeswitch.default.erb"
+  mode 0644
+end
+
 # create non-root user
-user "freeswitch" do
+user node[:freeswitch][:user] do
   system true
   shell "/bin/bash"
   home "/usr/local/freeswitch"
+  gid node[:freeswitch][:group]
 end
 
 # define service
