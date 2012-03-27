@@ -82,6 +82,12 @@ user node[:freeswitch][:user] do
   gid node[:freeswitch][:group]
 end
 
+# change ownership of homedir
+execute "fs_homedir_ownership" do
+  cwd node[:freeswitch][:homedir]
+  command "chown -R #{node[:freeswitch][:user]}:#{node[:freeswitch][:group]} ."
+end
+
 # define service
 service node[:freeswitch][:service] do
   supports :restart => true
