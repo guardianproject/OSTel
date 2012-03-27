@@ -51,22 +51,21 @@ script "compile_freeswitch" do
   make clean
   make
 EOF
-  not_if "test -f /usr/local/freeswitch/bin/freeswitch"
+  not_if "test -f #{node[:freeswitch][:path]}/freeswitch"
 end
 
 # install software
 execute "install_freeswitch" do
   cwd "/usr/local/src/freeswitch"
   command "make install"
-  not_if "test -f /usr/local/freeswitch/bin/freeswitch"
+  not_if "test -f #{node[:freeswitch][:path]}/freeswitch"
 end
 
 # install init script
 
-execute "install_init" do
-  cwd "/usr/local/src/freeswitch"
-  command "cp debian/freeswitch.init /etc/init.d/freeswitch"
-  not_if "test -f /etc/init.d/freeswitch"
+template "/etc/init.d/freeswitch" do
+  source "freeswitch.init.erb"
+  mode 0755
 end
 
 # install defaults
@@ -79,25 +78,25 @@ end
 user node[:freeswitch][:user] do
   system true
   shell "/bin/bash"
-  home "/usr/local/freeswitch"
+  home node[:freeswitch][:homedir]
   gid node[:freeswitch][:group]
 end
 
 # define service
-service "freeswitch" do
+service node[:freeswitch][:service] do
   supports :restart => true
   action [:enable, :start]
 end
 
 # set global variables
-template "/usr/local/freeswitch/conf/vars.xml" do
+template "#{node[:freeswitch][:homedir]}/conf/vars.xml" do
   source "vars.xml.erb"
   mode 0644
 end
 
 # set SIP security attributes
-template "/usr/local/freeswitch/conf/sip_profiles/internal.xml" do
+template "#{node[:freeswitch][:homedir]}/conf/sip_profiles/internal.xml" do
   source "internal.xml.erb"
   mode 0644
-  notifies :restart, "service[freeswitch]"
+  notifies :restart, "service[#{node[:freeswitch][:service]}]"
 end
