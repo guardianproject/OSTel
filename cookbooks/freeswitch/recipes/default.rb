@@ -51,14 +51,35 @@ script "compile_freeswitch" do
   make clean
   make
 EOF
-  not_if "test -d /usr/local/freeswitch/bin/freeswitch"
+  not_if "test -f /usr/local/freeswitch/bin/freeswitch"
 end
 
 # install software
 execute "install_freeswitch" do
   cwd "/usr/local/src/freeswitch"
   command "make install"
-  not_if "test -d /usr/local/freeswitch/bin/freeswitch"
+  not_if "test -f /usr/local/freeswitch/bin/freeswitch"
+end
+
+# install init script
+
+execute "install_init" do
+  cwd "/usr/local/src/freeswitch"
+  command "cp debian/freeswitch.init /etc/init.d/freeswitch"
+  not_if "test -f /etc/init.d/freeswitch"
+end
+
+# create non-root user
+user "freeswitch" do
+  system true
+  shell "/bin/bash"
+  home "/usr/local/freeswitch"
+end
+
+# define service
+service "freeswitch" do
+  supports :restart => true
+  action [:enable, :start]
 end
 
 # set global variables
@@ -71,4 +92,5 @@ end
 template "/usr/local/freeswitch/conf/sip_profiles/internal.xml" do
   source "internal.xml.erb"
   mode 0644
+  notifies :restart, "service[freeswitch]"
 end
