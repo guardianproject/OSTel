@@ -98,14 +98,14 @@ execute "build_ca" do
   user "freeswitch"
   cwd "#{node[:freeswitch][:path]}"
   command "./gentls_cert setup -cn #{node[:freeswitch][:domain]} -alt DNS:#{node[:freeswitch][:domain]} -org #{node[:freeswitch][:domain]}"
-  creates "#{hode[:freeswitch][:homedir]}/conf/ssl/CA/cakey.pem"
+  creates "#{node[:freeswitch][:homedir]}/conf/ssl/CA/cakey.pem"
 end
 
 execute "gen_server_cert" do
   user "freeswitch"
   cwd "#{node[:freeswitch][:path]}"
   command "./gentls_cert create_server -quiet -cn #{node[:freeswitch][:domain]} -alt DNS:#{node[:freeswitch][:domain]} -org #{node[:freeswitch][:domain]}"
-  creates "#{hode[:freeswitch][:homedir]}/conf/ssl/agent.pem"
+  creates "#{node[:freeswitch][:homedir]}/conf/ssl/agent.pem"
 end
 
 # set global variables
