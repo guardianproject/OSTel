@@ -90,7 +90,7 @@ end
 
 cookbook_file "#{node[:freeswitch][:homedir]}/bin/gentls_cert" do
   source "gentls_cert"
-  user "freeswitch"
+  owner "freeswitch"
   group "freeswitch"
   mode 0755
 end
