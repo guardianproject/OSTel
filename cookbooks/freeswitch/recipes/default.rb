@@ -34,6 +34,10 @@ package "gawk"
 package "pkg-config"
 package "gnutls-bin"
 
+# user generation dependencies
+gem_package "xml-simple"
+package "pwgen"
+
 # get source
 execute "git_clone" do
   command "git clone #{node[:freeswitch][:git_uri]}"
@@ -142,4 +146,11 @@ template "#{node[:freeswitch][:homedir]}/conf/sip_profiles/external.xml" do
   source "external.xml.erb"
   mode 0644
   notifies :restart, "service[#{node[:freeswitch][:service]}]"
+end
+
+cookbook_file "#{node[:freeswitch][:homedir]}/scripts/gen_users" do
+  source "gen_users.rb"
+  owner node[:freeswitch][:user]
+  group node[:freeswitch][:group]
+  mode 0755
 end
