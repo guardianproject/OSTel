@@ -41,7 +41,7 @@ execute "git_clone" do
   creates "/usr/local/src/freeswitch"
 end
 
-# compile source
+# compile source and install
 script "compile_freeswitch" do
   interpreter "/bin/bash"
   cwd "/usr/local/src/freeswitch"
@@ -50,19 +50,13 @@ script "compile_freeswitch" do
   ./configure
   make clean
   make
+  make install
+  make samples
 EOF
   not_if "test -f #{node[:freeswitch][:path]}/freeswitch"
 end
 
-# install software
-execute "install_freeswitch" do
-  cwd "/usr/local/src/freeswitch"
-  command "make install"
-  not_if "test -f #{node[:freeswitch][:path]}/freeswitch"
-end
-
 # install init script
-
 template "/etc/init.d/freeswitch" do
   source "freeswitch.init.erb"
   mode 0755
@@ -90,8 +84,28 @@ end
 
 # define service
 service node[:freeswitch][:service] do
-  supports :restart => true
-  action [:enable, :start]
+  supports :restart => true, :start => true
+  action [:enable]
+end
+
+cookbook_file "#{node[:freeswitch][:homedir]}/bin/gentls_cert" do
+  source "gentls_cert"
+  user "freeswitch"
+  group "freeswitch"
+  mode 0755
+end
+execute "build_ca" do
+  user "freeswitch"
+  cwd "#{node[:freeswitch][:path]}"
+  command "./gentls_cert setup -cn #{node[:freeswitch][:domain]} -alt DNS:#{node[:freeswitch][:domain]} -org #{node[:freeswitch][:domain]}"
+  creates "#{hode[:freeswitch][:homedir]}/conf/ssl/CA/cakey.pem"
+end
+
+execute "gen_server_cert" do
+  user "freeswitch"
+  cwd "#{node[:freeswitch][:path]}"
+  command "./gentls_cert create_server -quiet -cn #{node[:freeswitch][:domain]} -alt DNS:#{node[:freeswitch][:domain]} -org #{node[:freeswitch][:domain]}"
+  creates "#{hode[:freeswitch][:homedir]}/conf/ssl/agent.pem"
 end
 
 # set global variables
@@ -100,9 +114,16 @@ template "#{node[:freeswitch][:homedir]}/conf/vars.xml" do
   mode 0644
 end
 
-# set SIP security attributes
+# set SIP security attributes for registered users
 template "#{node[:freeswitch][:homedir]}/conf/sip_profiles/internal.xml" do
   source "internal.xml.erb"
+  mode 0644
+  notifies :restart, "service[#{node[:freeswitch][:service]}]"
+end
+
+# set SIP security attributes for external users
+template "#{node[:freeswitch][:homedir]}/conf/sip_profiles/external.xml" do
+  source "external.xml.erb"
   mode 0644
   notifies :restart, "service[#{node[:freeswitch][:service]}]"
 end

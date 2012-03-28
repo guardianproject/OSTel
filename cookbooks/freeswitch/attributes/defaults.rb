@@ -8,3 +8,5 @@ default[:freeswitch][:group] = "freeswitch"
 default[:freeswitch][:enabled] = "true"
 default[:freeswitch][:path] = "/usr/local/freeswitch/bin"
 default[:freeswitch][:homedir] = "/usr/local/freeswitch"
+default[:freeswitch][:tls_only] = "true"
+default[:freeswitch][:domain] = node[:fqdn]

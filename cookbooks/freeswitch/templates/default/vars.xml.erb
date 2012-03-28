@@ -24,7 +24,7 @@
       affect the sip authentication.  Please review conf/directory/default.xml for more
       information on this topic.
   -->
-  <X-PRE-PROCESS cmd="set" data="domain=$${local_ip_v4}"/>
+  <X-PRE-PROCESS cmd="set" data="domain=<%= node[:freeswitch][:domain] %>"/>
   <X-PRE-PROCESS cmd="set" data="domain_name=$${domain}"/>
   <X-PRE-PROCESS cmd="set" data="hold_music=local_stream://moh"/>
   <X-PRE-PROCESS cmd="set" data="use_profile=internal"/>
@@ -258,9 +258,9 @@
   <X-PRE-PROCESS cmd="set" data="internal_ssl_dir=$${base_dir}/conf/ssl"/>
 
   <!-- External SIP Profile -->
-  <X-PRE-PROCESS cmd="set" data="external_auth_calls=false"/>
+  <X-PRE-PROCESS cmd="set" data="external_auth_calls=true"/>
   <X-PRE-PROCESS cmd="set" data="external_sip_port=5080"/>
   <X-PRE-PROCESS cmd="set" data="external_tls_port=5081"/>
-  <X-PRE-PROCESS cmd="set" data="external_ssl_enable=false"/>
+  <X-PRE-PROCESS cmd="set" data="external_ssl_enable=true"/>
   <X-PRE-PROCESS cmd="set" data="external_ssl_dir=$${base_dir}/conf/ssl"/>
 </include>

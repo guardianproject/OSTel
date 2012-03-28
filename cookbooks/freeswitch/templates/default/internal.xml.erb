@@ -40,7 +40,7 @@
     <param name="presence-privacy" value="$${presence_privacy}"/>
     <param name="inbound-codec-negotiation" value="generous"/>
     <param name="tls" value="$${internal_ssl_enable}"/>
-    <param name="tls-only" value="false"/>
+    <param name="tls-only" value="<%= node[:freeswitch][:tls_only] %>"/>
     <param name="tls-bind-params" value="transport=tls"/>
     <param name="tls-sip-port" value="$${internal_tls_port}"/>
     <param name="tls-cert-dir" value="$${internal_ssl_dir}"/>
