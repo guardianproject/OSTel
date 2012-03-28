@@ -3,6 +3,9 @@
 # Optionally specify number of users as an argument.
 # Depends on the pwgen system utility.
 
+# TODO: write restore function to use values from concise_list to rebuild XML
+# from a backup.
+#
 require 'rubygems'
 require 'xmlsimple'
 
