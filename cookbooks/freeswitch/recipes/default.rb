@@ -88,12 +88,14 @@ service node[:freeswitch][:service] do
   action [:enable]
 end
 
+# SSL actions
 cookbook_file "#{node[:freeswitch][:homedir]}/bin/gentls_cert" do
   source "gentls_cert"
-  owner "freeswitch"
-  group "freeswitch"
+  owner node[:freeswitch][:user]
+  group node[:freeswitch][:group]
   mode 0755
 end
+
 execute "build_ca" do
   user "freeswitch"
   cwd "#{node[:freeswitch][:path]}"
@@ -110,12 +112,16 @@ end
 
 # set global variables
 template "#{node[:freeswitch][:homedir]}/conf/vars.xml" do
+  owner node[:freeswitch][:user]
+  group node[:freeswitch][:group]
   source "vars.xml.erb"
   mode 0644
 end
 
 # set SIP security attributes for registered users
 template "#{node[:freeswitch][:homedir]}/conf/sip_profiles/internal.xml" do
+  owner node[:freeswitch][:user]
+  group node[:freeswitch][:group]
   source "internal.xml.erb"
   mode 0644
   notifies :restart, "service[#{node[:freeswitch][:service]}]"
@@ -123,6 +129,8 @@ end
 
 # set SIP security attributes for external users
 template "#{node[:freeswitch][:homedir]}/conf/sip_profiles/external.xml" do
+  owner node[:freeswitch][:user]
+  group node[:freeswitch][:group]
   source "external.xml.erb"
   mode 0644
   notifies :restart, "service[#{node[:freeswitch][:service]}]"
