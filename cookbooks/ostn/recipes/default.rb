@@ -9,3 +9,10 @@
 
 gem_package "unicorn"
 gem_package "sinatra"
+#
+# get source
+execute "git_clone" do
+  command "git clone #{node[:ostn][:git_uri]}"
+  cwd "/usr/local/freeswitch"
+  creates "/usr/local/src/OSTel"
+end
