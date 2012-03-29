@@ -17,7 +17,6 @@ end
 
 template "#{node[:nginx][:ssldir]}/#{node[:nginx][:cert_config_file]}" do
   source "config.tpl.erb"
-
 end
 
 execute "gen_self_signed" do 
@@ -27,4 +26,5 @@ end
 
 template "/etc/nginx/sites-available/default" do
   source "nginx-default.erb"
+  notifies, :restart, "service[nginx]"
 end
