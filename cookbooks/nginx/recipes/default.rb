@@ -15,6 +15,11 @@ execute "gen_key" do
   creates "#{node[:nginx][:ssldir]}/genrsa.key"
 end
 
+template node[:nginx][:ssldir] do
+  source "config.tpl.erb"
+
+end
+
 execute "gen_self_signed" do 
   command "openssl req -new -x509 -batch -config #{node[:nginx][:ssldir]}/#{node[:nginx][:cert_config_file]} -key #{node[:nginx][:ssldir]}/genrsa.key -out #{node[:nginx][:ssldir]}/cert.pem -days 1095"
   creates "#{node[:nginx][:ssldir]}/cert.pem"
