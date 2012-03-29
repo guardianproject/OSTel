@@ -26,5 +26,5 @@ end
 
 template "/etc/nginx/sites-available/default" do
   source "nginx-default.erb"
-  notifies, :restart, "service[nginx]"
+  notifies :restart, "service[nginx]"
 end
