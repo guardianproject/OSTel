@@ -15,7 +15,7 @@ execute "gen_key" do
   creates "#{node[:nginx][:ssldir]}/genrsa.key"
 end
 
-template node[:nginx][:ssldir] do
+template "#{node[:nginx][:ssldir]}/#{node[:nginx][:cert_config_file]}" do
   source "config.tpl.erb"
 
 end
