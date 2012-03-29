@@ -5,6 +5,11 @@ service "nginx" do
   action [:enable]
 end
 
+directory "/etc/nginx/ssl" do
+  action :create
+  owner "www-data"
+end
+
 execute "gen_key" do
   command "openssl genrsa -out #{node[:nginx][:ssldir]}/genrsa.key 2048"
   creates "#{node[:nginx][:ssldir]}/genrsa.key"
