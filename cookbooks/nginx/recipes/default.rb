@@ -16,7 +16,7 @@ execute "gen_key" do
 end
 
 execute "gen_self_signed" do 
-  command "openssl req -new -x509 -batch -config #{default[:nginx][:ssldir]}/#{node[:nginx][:cert_config_file]} -key #{node[:nginx][:ssldir]}/genrsa.key -out #{node[:nginx][:ssldir]}/cert.pem -days 1095"
+  command "openssl req -new -x509 -batch -config #{node[:nginx][:ssldir]}/#{node[:nginx][:cert_config_file]} -key #{node[:nginx][:ssldir]}/genrsa.key -out #{node[:nginx][:ssldir]}/cert.pem -days 1095"
   creates "#{node[:nginx][:ssldir]}/cert.pem"
 end
 
