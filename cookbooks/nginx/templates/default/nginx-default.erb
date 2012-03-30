@@ -7,18 +7,18 @@ server {
 	listen   80; ## listen for ipv4
 	listen   [::]:80 default ipv6only=on; ## listen for ipv6
 
-	server_name  www.<%= node[:nginx][:domain] %> <%= node[:nginx][:domain] %>;
+	server_name  <%= node[:nginx][:domain] %> www.<%= node[:nginx][:domain] %>;
 
 	access_log  /var/log/nginx/<%= node[:nginx][:domain] %>.access.log;
 
 	location / {
-		rewrite ^(.*)$ https://www.<%= node[:nginx][:domain] %>/ permanent;
+		rewrite ^(.*)$ https://<%= node[:nginx][:domain] %>/ permanent;
 	}
 }
 
 server {
 	listen   443;
-  server_name  www.<%= node[:nginx][:domain] %> <%= node[:nginx][:domain] %>;
+  server_name  <%= node[:nginx][:domain] %> www.<%= node[:nginx][:domain] %>;
 
 	ssl  on;
 	ssl_certificate  <%= node[:nginx][:ssldir] %>/cert.pem;
@@ -29,8 +29,14 @@ server {
 	ssl_protocols  SSLv2 SSLv3 TLSv1;
 	ssl_ciphers  ALL:!ADH:!EXPORT56:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv3:+EXP;
 	ssl_prefer_server_ciphers   on;
-  root <%= node[:nginx][:webapp_root] %>;
+
+  location /munin/stats {
+    alias /var/cache/munin/www;
+    index index.html;
+  }
+
   location / {
+    root <%= node[:nginx][:webapp_root] %>;
     proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
     proxy_set_header Host $http_host;
     proxy_set_header X_FORWARDED_PROTO https;
