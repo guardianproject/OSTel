@@ -28,7 +28,6 @@ p.main {
 color: #000000;
 font-size: 13px;
 text-align: center;
-
 }
 
 IMG.displayed {
@@ -42,7 +41,7 @@ IMG.displayed {
 	
 label
 {
-width: 4em;
+width: 6em;
 float: left;
 text-align: right;
 margin-right: 0.5em;
