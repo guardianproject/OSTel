@@ -24,7 +24,7 @@ EOF
   smtp = Net::SMTP.new 'smtp.gmail.com', 587
   smtp.enable_starttls
   smtp.start("gmail.com", GMAIL_USERNAME, GMAIL_PASSWORD, :login) do
-      smtp.send_message("Subject: #{subject}\n\n#{body}", DESTINATION_EMAIL, CONTACT_EMAIL)
+      smtp.send_message("Subject: #{subject}\n\n#{body}", FROM_ADDRESS, TO_ADDRESS)
   end
   redirect to('/thanks'), 303
 end

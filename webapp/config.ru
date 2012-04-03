@@ -1,7 +1,7 @@
 $: << './'
 require "signup"
-CONTACT_EMAIL = ''
-DESTINATION_EMAIL = ''
+FROM_ADDRESS = ''
+TO_ADDRESS = ''
 GMAIL_USERNAME = ''
 GMAIL_PASSWORD = ''
 
