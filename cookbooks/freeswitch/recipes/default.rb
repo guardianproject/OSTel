@@ -33,6 +33,8 @@ package "python-dev"
 package "gawk"
 package "pkg-config"
 package "gnutls-bin"
+package "libsqlite3-dev"
+## install packages for mod_shout for mp3 playback
 
 # user generation dependencies
 gem_package "xml-simple"
@@ -43,6 +45,10 @@ execute "git_clone" do
   command "git clone #{node[:freeswitch][:git_uri]}"
   cwd "/usr/local/src"
   creates "/usr/local/src/freeswitch"
+end
+
+template "/usr/local/src/freeswitch/modules.conf" do
+  source "modules.conf.erb"
 end
 
 # compile source and install
@@ -153,4 +159,12 @@ cookbook_file "#{node[:freeswitch][:homedir]}/scripts/gen_users" do
   owner node[:freeswitch][:user]
   group node[:freeswitch][:group]
   mode 0755
+end
+
+template "" do
+  source "modules.conf.xml.erb"
+  owner node[:freeswitch][:user]
+  group node[:freeswitch][:group]
+  mode 0644
+  notifies :restart, "service[#{node[:freeswitch][:service]}]"
 end
