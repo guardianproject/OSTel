@@ -9,14 +9,20 @@
 require 'rubygems'
 require 'xmlsimple'
 
+domain = ""
 first = 1000
 last = first + 10
 if (ARGV[0])
   last = first + ARGV[0].to_i
 end
 pwgen = `which pwgen`.chop!
+openssl = `which openssl`.chop!
+
 if (pwgen.nil?) 
   puts "This program depends on the pwgen utility. Please install it."
+  exit 1
+elsif ( openssl.nil? )
+  puts "This program depends on the openssl utility. Please install it."
   exit 1
 end
 user_list = ""
@@ -26,6 +32,7 @@ user_list = ""
 #
 (first...last).each do |i|
   pw = `#{pwgen} -nc`.chop!
+  hash = `echo -n #{i.to_s}:#{domain}:#{pw} | #{openssl} dgst -md5`.chop!
   config = {
     "user"=> {
       i.to_s => {
@@ -49,12 +56,12 @@ user_list = ""
       }]}],
       "params" => [{
         "param" => [{
-          "name" => "password",
-          "value" => pw
+          "name" => "a1-hash",
+          "value" => hash 
         },
         {
           "name" => "vm-password",
-          "value" => pw
+          "value" => hash
         }]}]
       }
     }
