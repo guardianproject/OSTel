@@ -32,7 +32,7 @@ user_list = ""
 #
 (first...last).each do |i|
   pw = `#{pwgen} -nc`.chop!
-  hash = `echo -n #{i.to_s}:#{domain}:#{pw} | #{openssl} dgst -md5`.chop!
+  hash = `echo -n #{i.to_s}:#{domain}:#{pw} | #{openssl} dgst -md5 | cut -d " " -f 2`.chop!
   config = {
     "user"=> {
       i.to_s => {
