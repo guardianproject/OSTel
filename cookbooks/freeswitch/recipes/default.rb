@@ -158,8 +158,8 @@ template "#{node[:freeswitch][:homedir]}/conf/sip_profiles/external.xml" do
   notifies :restart, "service[#{node[:freeswitch][:service]}]"
 end
 
-cookbook_file "#{node[:freeswitch][:homedir]}/scripts/gen_users" do
-  source "gen_users.rb"
+template "#{node[:freeswitch][:homedir]}/scripts/gen_users" do
+  source "gen_users.rb.erb"
   owner node[:freeswitch][:user]
   group node[:freeswitch][:group]
   mode 0755

@@ -9,7 +9,7 @@
 require 'rubygems'
 require 'xmlsimple'
 
-domain = ""
+domain = "<%= node[:fqdn] %>"
 first = 1000
 last = first + 10
 if (ARGV[0])
