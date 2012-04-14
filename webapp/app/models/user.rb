@@ -10,5 +10,5 @@ end
 class User < ActiveRecord::Base
   attr_accessible :email, :login, :name, :password, :pgpkey
   validates :email, :presence => true, :email => true
-
+  validates :name, :presence => true
 end
