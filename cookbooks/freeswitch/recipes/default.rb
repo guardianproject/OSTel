@@ -165,10 +165,10 @@ cookbook_file "#{node[:freeswitch][:homedir]}/scripts/gen_users" do
   mode 0755
 end
 
-template "" do
-  source "modules.conf.xml.erb"
-  owner node[:freeswitch][:user]
-  group node[:freeswitch][:group]
-  mode 0644
-  notifies :restart, "service[#{node[:freeswitch][:service]}]"
-end
+#template "" do
+#  source "modules.conf.xml.erb"
+#  owner node[:freeswitch][:user]
+#  group node[:freeswitch][:group]
+#  mode 0644
+#  notifies :restart, "service[#{node[:freeswitch][:service]}]"
+#end
