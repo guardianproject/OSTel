@@ -78,6 +78,10 @@ template "/etc/default/freeswitch" do
   mode 0644
 end
 
+group node[:freeswitch][:group] do
+  action :create
+end
+
 # create non-root user
 user node[:freeswitch][:user] do
   system true
