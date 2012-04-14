@@ -1,10 +1,4 @@
-$: << './'
-require "signup"
-FROM_ADDRESS = ''
-TO_ADDRESS = ''
-GMAIL_USERNAME = ''
-GMAIL_PASSWORD = ''
+# This file is used by Rack-based servers to start the application.
 
-use Rack::ShowExceptions
-
-run Sinatra::Application
+require ::File.expand_path('../config/environment',  __FILE__)
+run Webapp::Application
