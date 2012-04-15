@@ -53,9 +53,7 @@ en:
       welcome: "Welcome to OSTel, %{email}!"
       hello: "Hello %{email}!"
       confirmation_instructions:
-        subject: 'OSTel confirmation instructions'
-        you_can_confirm: "You can confirm your account through the link below:"
-        confirm: "Confirm my account"
+        subject: 'Welcome to Open Secure Telephony via Guardian Project'
       reset_password_instructions:
         subject: 'Reset password instructions'
       unlock_instructions:

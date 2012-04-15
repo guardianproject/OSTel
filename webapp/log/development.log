@@ -2714,3 +2714,456 @@ Started GET "/users/sign_up" for 208.120.207.43 at 2012-04-15 14:00:07 -0400
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.9ms)
 Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (48.2ms)
 Completed 200 OK in 113ms (Views: 54.6ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started GET "/users/sign_up" for 216.165.95.72 at 2012-04-15 14:03:42 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (1.9ms)
+Rendered devise/registrations/new.html.erb within layouts/application (33.6ms)
+Completed 200 OK in 83ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.74 at 2012-04-15 14:04:21 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (2.1ms)
+Rendered devise/registrations/new.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 90ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.73 at 2012-04-15 14:04:41 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (1.9ms)
+Rendered devise/registrations/new.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 85ms (Views: 41.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.73 at 2012-04-15 14:04:44 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (2.4ms)
+Rendered devise/registrations/new.html.erb within layouts/application (34.6ms)
+Completed 200 OK in 91ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.73 at 2012-04-15 14:04:57 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (2.9ms)
+Rendered devise/registrations/new.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 101ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 14:05:30 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 33ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 14:05:42 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 36ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.72 at 2012-04-15 14:07:38 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (2.2ms)
+Rendered devise/registrations/new.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 74ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 14:07:41 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 39ms (Views: 38.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 14:07:48 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 28ms (Views: 27.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 14:07:51 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (52.3ms)
+Completed 200 OK in 56ms (Views: 55.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.73 at 2012-04-15 14:07:53 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (1.8ms)
+Rendered devise/registrations/new.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 60ms (Views: 41.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 216.165.95.73 at 2012-04-15 14:07:57 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (1.9ms)
+Rendered devise/sessions/new.html.erb within layouts/application (47.3ms)
+Completed 200 OK in 131ms (Views: 58.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.73 at 2012-04-15 14:08:14 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (1.9ms)
+Rendered devise/registrations/new.html.erb within layouts/application (32.3ms)
+Completed 200 OK in 54ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 14:09:01 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 14:09:10 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 26ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 14:09:21 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 39ms (Views: 39.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 192.76.177.124 at 2012-04-15 14:12:32 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (42.2ms)
+Completed 200 OK in 47ms (Views: 46.7ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 14:13:52 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.72 at 2012-04-15 14:13:55 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (1.8ms)
+Rendered devise/registrations/new.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 62ms (Views: 40.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 216.165.95.72 at 2012-04-15 14:14:02 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zdRpTXhSwWFM3HvI7hhH+psPc+DgkFW5urHx03cXF6w=", "user"=>{"email"=>"boxysean+test23@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'boxysean+test23@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'QjW52ZcnS1m23rzueobt' LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token", "freeswitch_id", "freeswitch_password") VALUES ('boxysean+test23@gmail.com', '$2a$10$I4qx6iZo3yHMBvpQ/o/NE.5xo2taU.47ZhrjZ7jIiNWkpg1yFPcDG', 'QjW52ZcnS1m23rzueobt', NULL, '2012-04-15 18:14:02.644161', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 18:14:02.644260', '2012-04-15 18:14:02.644260', NULL, NULL, NULL)
+Rendered devise/mailer/confirmation_instructions.html.erb (0.7ms)
+
+Sent mail to boxysean+test23@gmail.com (2071ms)
+Date: Sun, 15 Apr 2012 14:14:02 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: boxysean+test23@gmail.com
+Message-ID: <4f8b0feab7fd5_37f450c8a64277a2@boxysean.com.mail>
+Subject: Welcome to Open Secure Telephony via Guardian Project
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello Trusted Alpha Tester!</p>
+
+<p>Thank you so much for joining our efforts to make a friendlier and more secure telephone. We here at Guardian Project are calling it OSTel, as in "Open Secure Telephony."</p>
+
+<p>This installation will take you 3 minutes. Literally. Let's get you started... and finished. Your credentials can be found by logging into your account.</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=QjW52ZcnS1m23rzueobt">Confirm my account</a></p>
+
+<p>For information on how to set up your client on Android to start placing calls, please visit: https://guardianproject.info/wiki/Ostel or watch the tutorial video: http://youtu.be/BrNC8Mk26Z8. If you have any difficulties, questions, comments, etc, feel free email out to our friendly staff at support@ostel.me. If there are more people at your organization that would like accounts, please direct them to https://ostel.me/.</p>
+
+<p>Remember, without your help, this would not be possible. We appreciate you participating in this quest. If you want to get your friends to follow along, have them follow us on Twitter https://twitter.com/#!/guardianproject @guardianproject or on our Blog https://guardianproject.info/blog/ to find our when they can become a tester too! For more Guardian Project apps for Android, check us out: https://play.google.com/store/search?q=guardianproject&so=1&c=apps. Are you a coder? Find us on GitHub and contribute to coding for a better world: http://github.com/guardianproject</p>
+
+<p>Sincerely,</p>
+<p>Mark and The Guardian Project Team</p>
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "email" = 'boxysean+test23@gmail.com', "encrypted_password" = '$2a$10$I4qx6iZo3yHMBvpQ/o/NE.5xo2taU.47ZhrjZ7jIiNWkpg1yFPcDG', "confirmation_token" = 'QjW52ZcnS1m23rzueobt', "confirmation_sent_at" = '2012-04-15 18:14:02.644161', "created_at" = '2012-04-15 18:14:02.644260', "updated_at" = '2012-04-15 18:14:02.644260', "freeswitch_id" = 2934 WHERE "users"."id" = 24[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE "users" SET "freeswitch_password" = 'nai5aiWe', "updated_at" = '2012-04-15 18:14:04.910598' WHERE "users"."id" = 24
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 3052ms
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 14:14:05 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 33ms (Views: 32.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=QjW52ZcnS1m23rzueobt" for 216.165.95.72 at 2012-04-15 14:14:14 -0400
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"QjW52ZcnS1m23rzueobt"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'QjW52ZcnS1m23rzueobt' LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "users" SET "confirmation_token" = NULL, "confirmed_at" = '2012-04-15 18:14:15.036441', "updated_at" = '2012-04-15 18:14:15.036846' WHERE "users"."id" = 24
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2012-04-15 18:14:15.041375', "current_sign_in_at" = '2012-04-15 18:14:15.041375', "last_sign_in_ip" = '216.165.95.72', "current_sign_in_ip" = '216.165.95.72', "sign_in_count" = 1, "updated_at" = '2012-04-15 18:14:15.042061' WHERE "users"."id" = 24[0m
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 53ms
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 14:14:15 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (2.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 24 LIMIT 1
+Rendered home/index.html.erb within layouts/application (97.5ms)
+Completed 200 OK in 102ms (Views: 99.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 192.76.177.124 at 2012-04-15 14:14:33 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 25ms (Views: 25.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 14:15:02 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 24 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (114.3ms)
+Completed 200 OK in 120ms (Views: 117.6ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 14:15:53 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 24 LIMIT 1
+Rendered home/index.html.erb within layouts/application (89.0ms)
+Completed 200 OK in 93ms (Views: 91.1ms | ActiveRecord: 1.9ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started GET "/" for 192.76.177.124 at 2012-04-15 14:16:06 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 63.245.220.11 at 2012-04-15 14:20:19 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 25ms (Views: 24.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 63.245.220.11 at 2012-04-15 14:20:22 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 19ms (Views: 18.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 63.245.220.11 at 2012-04-15 14:20:37 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (2.3ms)
+Rendered devise/registrations/new.html.erb within layouts/application (47.7ms)
+Completed 200 OK in 73ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 63.245.220.11 at 2012-04-15 14:21:19 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OfFm2wnkCyYdF3fX24AZaKKatZWcML8pVmkoTFGxnDw=", "user"=>{"email"=>"sid@mozilla.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'sid@mozilla.com') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'g7WyAooKSygXAMqyYqsd' LIMIT 1[0m
+  [1m[35mAREL (17.6ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token", "freeswitch_id", "freeswitch_password") VALUES ('sid@mozilla.com', '$2a$10$2uCgH17FwfoRN2SnNdL11OoPdoByXbcd3KehyuFGzHhAAUKVG9EeS', 'g7WyAooKSygXAMqyYqsd', NULL, '2012-04-15 18:21:19.632457', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 18:21:19.632564', '2012-04-15 18:21:19.632564', NULL, NULL, NULL)
+Rendered devise/mailer/confirmation_instructions.html.erb (0.7ms)
+
+Sent mail to sid@mozilla.com (1270ms)
+Date: Sun, 15 Apr 2012 14:21:19 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: sid@mozilla.com
+Message-ID: <4f8b119fb3ad9_383c4efddce57341@boxysean.com.mail>
+Subject: Welcome to Open Secure Telephony via Guardian Project
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello Trusted Alpha Tester!</p>
+
+<p>Thank you so much for joining our efforts to make a friendlier and more secure telephone. We here at Guardian Project are calling it OSTel, as in "Open Secure Telephony."</p>
+
+<p>This installation will take you 3 minutes. Literally. Let's get you started... and finished. Your credentials can be found by logging into your account.</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=g7WyAooKSygXAMqyYqsd">Confirm my account</a></p>
+
+<p>For information on how to set up your client on Android to start placing calls, please visit: https://guardianproject.info/wiki/Ostel or watch the tutorial video: http://youtu.be/BrNC8Mk26Z8. If you have any difficulties, questions, comments, etc, feel free email out to our friendly staff at support@ostel.me. If there are more people at your organization that would like accounts, please direct them to https://ostel.me/.</p>
+
+<p>Remember, without your help, this would not be possible. We appreciate you participating in this quest. If you want to get your friends to follow along, have them follow us on Twitter https://twitter.com/#!/guardianproject @guardianproject or on our Blog https://guardianproject.info/blog/ to find our when they can become a tester too! For more Guardian Project apps for Android, check us out: https://play.google.com/store/search?q=guardianproject&so=1&c=apps. Are you a coder? Find us on GitHub and contribute to coding for a better world: http://github.com/guardianproject</p>
+
+<p>Sincerely,</p>
+<p>Mark and The Guardian Project Team</p>
+  [1m[36mAREL (0.6ms)[0m  [1mUPDATE "users" SET "email" = 'sid@mozilla.com', "encrypted_password" = '$2a$10$2uCgH17FwfoRN2SnNdL11OoPdoByXbcd3KehyuFGzHhAAUKVG9EeS', "confirmation_token" = 'g7WyAooKSygXAMqyYqsd', "confirmation_sent_at" = '2012-04-15 18:21:19.632457', "created_at" = '2012-04-15 18:21:19.632564', "updated_at" = '2012-04-15 18:21:19.632564', "freeswitch_id" = 1508 WHERE "users"."id" = 25[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE "users" SET "freeswitch_password" = 'Iuqu6eib', "updated_at" = '2012-04-15 18:21:21.092135' WHERE "users"."id" = 25
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 2185ms
+
+
+Started GET "/" for 63.245.220.11 at 2012-04-15 14:21:21 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 27ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=g7WyAooKSygXAMqyYqsd" for 63.245.220.11 at 2012-04-15 14:21:42 -0400
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"g7WyAooKSygXAMqyYqsd"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'g7WyAooKSygXAMqyYqsd' LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "users" SET "confirmation_token" = NULL, "confirmed_at" = '2012-04-15 18:21:42.227902', "updated_at" = '2012-04-15 18:21:42.228271' WHERE "users"."id" = 25
+  [1m[36mAREL (0.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2012-04-15 18:21:42.232096', "current_sign_in_at" = '2012-04-15 18:21:42.232096', "last_sign_in_ip" = '63.245.220.11', "current_sign_in_ip" = '63.245.220.11', "sign_in_count" = 1, "updated_at" = '2012-04-15 18:21:42.232425' WHERE "users"."id" = 25[0m
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 54ms
+
+
+Started GET "/" for 63.245.220.11 at 2012-04-15 14:21:42 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (2.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 25 LIMIT 1
+Rendered home/index.html.erb within layouts/application (88.3ms)
+Completed 200 OK in 93ms (Views: 90.8ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for 192.76.177.124 at 2012-04-15 14:22:08 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 26ms (Views: 25.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 192.76.177.124 at 2012-04-15 14:23:10 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (3.3ms)
+Rendered devise/registrations/new.html.erb within layouts/application (58.7ms)
+Completed 200 OK in 83ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 192.76.177.124 at 2012-04-15 14:23:33 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cHVu0waUaVylW2IubMHsfxigjoLp6JS3ENcRntYL3hA=", "user"=>{"email"=>"andrew.mclaughlin@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'andrew.mclaughlin@gmail.com') LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'K1bnkSoTiXLq77K8N8Gs' LIMIT 1
+  [1m[36mAREL (0.7ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token", "freeswitch_id", "freeswitch_password") VALUES ('andrew.mclaughlin@gmail.com', '$2a$10$GY/PjnQ0qDORUYujHJ8CduWk4HzuhTD4BeZaYMOJ3gKx5Av5flYSG', 'K1bnkSoTiXLq77K8N8Gs', NULL, '2012-04-15 18:23:33.508415', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 18:23:33.508507', '2012-04-15 18:23:33.508507', NULL, NULL, NULL)[0m
+Rendered devise/mailer/confirmation_instructions.html.erb (1.7ms)
+
+Sent mail to andrew.mclaughlin@gmail.com (1244ms)
+Date: Sun, 15 Apr 2012 14:23:33 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: andrew.mclaughlin@gmail.com
+Message-ID: <4f8b12258b3ae_383c4cf2372574e0@boxysean.com.mail>
+Subject: Welcome to Open Secure Telephony via Guardian Project
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello Trusted Alpha Tester!</p>
+
+<p>Thank you so much for joining our efforts to make a friendlier and more secure telephone. We here at Guardian Project are calling it OSTel, as in "Open Secure Telephony."</p>
+
+<p>This installation will take you 3 minutes. Literally. Let's get you started... and finished. Your credentials can be found by logging into your account.</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=K1bnkSoTiXLq77K8N8Gs">Confirm my account</a></p>
+
+<p>For information on how to set up your client on Android to start placing calls, please visit: https://guardianproject.info/wiki/Ostel or watch the tutorial video: http://youtu.be/BrNC8Mk26Z8. If you have any difficulties, questions, comments, etc, feel free email out to our friendly staff at support@ostel.me. If there are more people at your organization that would like accounts, please direct them to https://ostel.me/.</p>
+
+<p>Remember, without your help, this would not be possible. We appreciate you participating in this quest. If you want to get your friends to follow along, have them follow us on Twitter https://twitter.com/#!/guardianproject @guardianproject or on our Blog https://guardianproject.info/blog/ to find our when they can become a tester too! For more Guardian Project apps for Android, check us out: https://play.google.com/store/search?q=guardianproject&so=1&c=apps. Are you a coder? Find us on GitHub and contribute to coding for a better world: http://github.com/guardianproject</p>
+
+<p>Sincerely,</p>
+<p>Mark and The Guardian Project Team</p>
+  [1m[35mAREL (0.7ms)[0m  UPDATE "users" SET "email" = 'andrew.mclaughlin@gmail.com', "encrypted_password" = '$2a$10$GY/PjnQ0qDORUYujHJ8CduWk4HzuhTD4BeZaYMOJ3gKx5Av5flYSG', "confirmation_token" = 'K1bnkSoTiXLq77K8N8Gs', "confirmation_sent_at" = '2012-04-15 18:23:33.508415', "created_at" = '2012-04-15 18:23:33.508507', "updated_at" = '2012-04-15 18:23:33.508507', "freeswitch_id" = 1334 WHERE "users"."id" = 26
+  [1m[36mAREL (0.2ms)[0m  [1mUPDATE "users" SET "freeswitch_password" = 'ael7EePh', "updated_at" = '2012-04-15 18:23:34.911940' WHERE "users"."id" = 26[0m
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 2022ms
+
+
+Started GET "/" for 192.76.177.124 at 2012-04-15 14:23:35 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 26ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=K1bnkSoTiXLq77K8N8Gs" for 192.76.177.124 at 2012-04-15 14:23:42 -0400
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"K1bnkSoTiXLq77K8N8Gs"}
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'K1bnkSoTiXLq77K8N8Gs' LIMIT 1
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "confirmation_token" = NULL, "confirmed_at" = '2012-04-15 18:23:42.940005', "updated_at" = '2012-04-15 18:23:42.940354' WHERE "users"."id" = 26[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE "users" SET "last_sign_in_at" = '2012-04-15 18:23:42.944209', "current_sign_in_at" = '2012-04-15 18:23:42.944209', "last_sign_in_ip" = '192.76.177.124', "current_sign_in_ip" = '192.76.177.124', "sign_in_count" = 1, "updated_at" = '2012-04-15 18:23:42.944709' WHERE "users"."id" = 26
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 97ms
+
+
+Started GET "/" for 192.76.177.124 at 2012-04-15 14:23:42 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 26 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (87.3ms)
+Completed 200 OK in 93ms (Views: 90.6ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for 66.249.72.43 at 2012-04-15 14:27:33 -0400
+  Processing by HomeController#index as 
+Rendered home/index.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 192.76.177.124 at 2012-04-15 14:32:57 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 54ms (Views: 53.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 192.76.177.124 at 2012-04-15 14:33:04 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (2.0ms)
+Rendered devise/registrations/new.html.erb within layouts/application (56.4ms)
+Completed 200 OK in 78ms (Views: 60.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 192.76.177.124 at 2012-04-15 14:33:15 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NgQtaymt1ZrYx27FOgfsVwmOQE66aEvqQljWB9DBgeY=", "user"=>{"email"=>"lee@rockingtiger.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'lee@rockingtiger.com') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'H5w6sYJuCuhLjj9FyVG5' LIMIT 1[0m
+  [1m[35mAREL (0.8ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token", "freeswitch_id", "freeswitch_password") VALUES ('lee@rockingtiger.com', '$2a$10$7Tl7Pt2LfMTVfveHRD1J1.ytBRvKNIXHTID424HLRicqW7LEFt6Qi', 'H5w6sYJuCuhLjj9FyVG5', NULL, '2012-04-15 18:33:15.916517', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 18:33:15.916648', '2012-04-15 18:33:15.916648', NULL, NULL, NULL)
+Rendered devise/mailer/confirmation_instructions.html.erb (0.8ms)
+
+Sent mail to lee@rockingtiger.com (1574ms)
+Date: Sun, 15 Apr 2012 14:33:15 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: lee@rockingtiger.com
+Message-ID: <4f8b146bec9dd_383c24a0dda6575c9@boxysean.com.mail>
+Subject: Welcome to Open Secure Telephony via Guardian Project
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello Trusted Alpha Tester!</p>
+
+<p>Thank you so much for joining our efforts to make a friendlier and more secure telephone. We here at Guardian Project are calling it OSTel, as in "Open Secure Telephony."</p>
+
+<p>This installation will take you 3 minutes. Literally. Let's get you started... and finished. Your credentials can be found by logging into your account.</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=H5w6sYJuCuhLjj9FyVG5">Confirm my account</a></p>
+
+<p>For information on how to set up your client on Android to start placing calls, please visit: https://guardianproject.info/wiki/Ostel or watch the tutorial video: http://youtu.be/BrNC8Mk26Z8. If you have any difficulties, questions, comments, etc, feel free email out to our friendly staff at support@ostel.me. If there are more people at your organization that would like accounts, please direct them to https://ostel.me/.</p>
+
+<p>Remember, without your help, this would not be possible. We appreciate you participating in this quest. If you want to get your friends to follow along, have them follow us on Twitter https://twitter.com/#!/guardianproject @guardianproject or on our Blog https://guardianproject.info/blog/ to find our when they can become a tester too! For more Guardian Project apps for Android, check us out: https://play.google.com/store/search?q=guardianproject&so=1&c=apps. Are you a coder? Find us on GitHub and contribute to coding for a better world: http://github.com/guardianproject</p>
+
+<p>Sincerely,</p>
+<p>Mark and The Guardian Project Team</p>
+  [1m[36mAREL (0.5ms)[0m  [1mUPDATE "users" SET "email" = 'lee@rockingtiger.com', "encrypted_password" = '$2a$10$7Tl7Pt2LfMTVfveHRD1J1.ytBRvKNIXHTID424HLRicqW7LEFt6Qi', "confirmation_token" = 'H5w6sYJuCuhLjj9FyVG5', "confirmation_sent_at" = '2012-04-15 18:33:15.916517', "created_at" = '2012-04-15 18:33:15.916648', "updated_at" = '2012-04-15 18:33:15.916648', "freeswitch_id" = 3035 WHERE "users"."id" = 27[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE "users" SET "freeswitch_password" = 'Vai7ooy0', "updated_at" = '2012-04-15 18:33:17.646516' WHERE "users"."id" = 27
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 2356ms
+
+
+Started GET "/" for 192.76.177.124 at 2012-04-15 14:33:18 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 28ms (Views: 27.7ms | ActiveRecord: 0.0ms)

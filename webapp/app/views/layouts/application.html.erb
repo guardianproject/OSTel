@@ -14,29 +14,6 @@
         <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
       <%- end -%>
 
-      <div class="info">
-<h2>About</h2>
-<p class="main">
-This service is a public testbed of the Open Secure Telephony Network (OSTN) project, with the goal of promoting the use of free, open protocols, standards and software, to power end-to-end secure voice communications on mobile devices, as well as with desktop computers. Other OSTN instances include <a href="https://tanstagi.net">Tanstagi</a> and <a href="https://intimi.ca/">Intimi.ca</a>.</p>
-
-<p class="main">For more information on OSTN, please visit our <a href="https://guardianproject.info/wiki/OSTN">wiki</a>.</p>
-
-<h2>Download</h2>
-
-<table cellpadding=0 cellspacing=0>
-<tr>
-<td><%= image_tag("qrcode.png") %></td>
-<td valign="top" style="padding-left:10px"><p class="main">
-The Ostel.me Android app is based upon the open-source <a href="https://code.google.com/p/csipsimple/">CSipSimple</a> app, which utilizes the <a href="http://www.pjsip.org">pjsip</a> and <a href="http://www.zrtp.org/ZORG">libraries</a> to provide transport and media encryption and verification.</p>
-
-<p class="main">Scan this code or <a href="https://guardianproject.info/downloads/OSTel-debug.apk">download the APK directly</a></p></td>
-</tr>
-</table>
-
-</div>
-
-<h2>Account</h2>
-
       <% if user_signed_in? -%>
         <div>
         <p>Welcome! These are your OSTel creditials for this server.</p>
@@ -47,20 +24,6 @@ The Ostel.me Android app is based upon the open-source <a href="https://code.goo
         </div>
       <% end -%>
 
-      <% if user_signed_in? -%>
-        <div id="user_login_box" style="float:right">
-          <%= current_user.email %> |
-          <%= link_to 'My info', edit_user_registration_path %> |
-          <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-        </div>
-      <% end -%>
-      <% if admin_signed_in? -%>
-        <div id="admin_login_box" style="float:left">
-          <%= current_admin.email %> |
-          <%= link_to 'Admin section', admins_path %> |
-          <%= link_to 'Sign out', destroy_admin_session_path, :method => :delete %>
-        </div>
-      <% end -%>
       <div style="clear:both"></div>
 
       <%= yield %>
