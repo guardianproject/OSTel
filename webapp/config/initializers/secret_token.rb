@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Webapp::Application.config.secret_token = '840c519a514570be40ee59220380f96852d2ade5f38dac34dcf2ab2e2d401eb593028c3ece5e1be96581bf93210304a7cf3b9acd6beade60e0c353d13efbea84'
+DeviseExample::Application.config.secret_token = '4e82a8e264e746673fd95920138de80d7ad1b03c25a8b0c03fd83d58627a2ea08771703ed2ef6c07704e594dca1dbdba1d90ff161c869fba02495236ecd64e8e'

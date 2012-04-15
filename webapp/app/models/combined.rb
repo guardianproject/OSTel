@@ -1,5 +1,4 @@
-require 'rubygems'
-require 'xmlsimple'
+require "freeswitch_interface.rb"
 
 class User < ActiveRecord::Base
   devise :database_authenticatable, :confirmable, :lockable, :recoverable,
@@ -11,10 +10,12 @@ class User < ActiveRecord::Base
   after_create :freeswitch_hook
 
   def freeswitch_hook
-    id = next_id Configurator::Application.config.freeswitch_dir
-    write_xml(id, Configurator::Application.config.freeswitch_dir, Configurator::Application.config.domain)
+#    id = next_id
+#    write_xml(id, Configurator::Application.config.freeswitch_dir, Configurator::Application.config.domain)
   end
 end
+require 'rubygems'
+require 'xmlsimple'
 
 def write_xml(i, freeswitch_dir, domain)
   pwgen = `which pwgen`.chop!

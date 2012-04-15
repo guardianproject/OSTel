@@ -1,21 +1,6 @@
 require 'rubygems'
 require 'xmlsimple'
 
-class User < ActiveRecord::Base
-  devise :database_authenticatable, :confirmable, :lockable, :recoverable,
-         :rememberable, :registerable, :trackable, :timeoutable, :validatable,
-         :token_authenticatable
-
-  attr_accessible :email, :password, :password_confirmation
-
-  after_create :freeswitch_hook
-
-  def freeswitch_hook
-    id = next_id Configurator::Application.config.freeswitch_dir
-    write_xml(id, Configurator::Application.config.freeswitch_dir, Configurator::Application.config.domain)
-  end
-end
-
 def write_xml(i, freeswitch_dir, domain)
   pwgen = `which pwgen`.chop!
   openssl = `which openssl`.chop!
