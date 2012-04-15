@@ -1,44 +1,19 @@
 require 'rubygems'
 require 'xmlsimple'
 
-class User < ActiveRecord::Base
-  devise :database_authenticatable, :confirmable, :lockable, :recoverable,
-         :rememberable, :registerable, :trackable, :timeoutable, :validatable,
-         :token_authenticatable
-
-  attr_accessible :email, :password, :password_confirmation
-
-  attr_accessible :freeswitch_id, :freeswitch_password
-
-  after_create :freeswitch_hook
-
-  def freeswitch_hook
-    id = next_id DeviseExample::Application.config.freeswitch_dir
-    pw = gen_password
-    write_xml(id, DeviseExample::Application.config.freeswitch_dir, DeviseExample::Application.config.domain, pw)
-    self.update_attribute(:freeswitch_id, id)
-    self.update_attribute(:freeswitch_password, pw)
-    freeswitch_reload DeviseExample::Application.config.freeswitch_dir
-  end
-end
-
-def gen_password
+def write_xml(i, freeswitch_dir, domain)
   pwgen = `which pwgen`.chop!
+  openssl = `which openssl`.chop!
+  
   if (pwgen.nil?) 
     puts "This program depends on the pwgen utility. Please install it."
     exit 1
-  end
-  `#{pwgen} -nc`.chop!
-end
-
-def write_xml(i, freeswitch_dir, domain, pw)
-  openssl = `which openssl`.chop!
-  
-  if ( openssl.nil? )
+  elsif ( openssl.nil? )
     puts "This program depends on the openssl utility. Please install it."
     exit 1
   end
 
+  pw = `#{pwgen} -nc`.chop!
   hash = `echo -n #{i.to_s}:#{domain}:#{pw} | #{openssl} dgst -md5 | cut -d " " -f 2`.chop!
   config = {
     "user"=> {
@@ -94,13 +69,8 @@ def next_id(freeswitch_dir)
   valid_list[rand(valid_list.length)]
 end
 
-def freeswitch_reload(freeswitch_dir)
-  res = `#{freeswitch_dir}/bin/fs_cli -x reloadxml`
-  puts res
-end
-
 #tests:
 #puts next_id "/home/zach/freeswitch"
-#write_xml(1234, "/home/zach/freeswitch", "boxysean.com")
+write_xml(1234, "/home/zach/freeswitch", "boxysean.com")
 
 

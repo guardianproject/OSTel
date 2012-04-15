@@ -1043,3 +1043,1674 @@ Started GET "/" for 216.165.95.73 at 2012-04-14 21:26:19 -0400
   Processing by HomeController#index as HTML
 Rendered home/index.html.erb within layouts/application (26.3ms)
 Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 11:30:27 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.72 at 2012-04-15 11:30:30 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (89.2ms)
+Completed 200 OK in 136ms (Views: 97.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 216.165.95.72 at 2012-04-15 11:30:37 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hjXJZ2sF37xIuouSSMqKyZtX57XIvP/a3O9mD+hJxq4=", "user"=>{"email"=>"boxysean+test11@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'boxysean+test11@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'BuH2EppiDxKRJ7rfMeoJ' LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token") VALUES ('boxysean+test11@gmail.com', '$2a$10$V2gu41Ff5oOEN6egrbV35u.I6TciHdhMaNoHcuyaA571lHb8n8OFC', 'BuH2EppiDxKRJ7rfMeoJ', NULL, '2012-04-15 15:30:38.185117', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 15:30:38.185203', '2012-04-15 15:30:38.185203', NULL)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/mailer/confirmation_instructions.html.erb (0.8ms)
+
+Sent mail to boxysean+test11@gmail.com (3289ms)
+Date: Sun, 15 Apr 2012 11:30:38 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: boxysean+test11@gmail.com
+Message-ID: <4f8ae99e46a33_2e5c51a1b2a716fa@boxysean.com.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome boxysean+test11@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=BuH2EppiDxKRJ7rfMeoJ">Confirm my account</a></p>
+Completed 500 Internal Server Error in 3742ms
+
+NameError (uninitialized constant User::Configurator):
+  app/models/user.rb:14:in `freeswitch_hook'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.4ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started POST "/users" for 216.165.95.72 at 2012-04-15 11:36:47 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hjXJZ2sF37xIuouSSMqKyZtX57XIvP/a3O9mD+hJxq4=", "user"=>{"email"=>"boxysean+test11@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'boxysean+test11@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'GyRy2zzZaqdkCpDtK3CM' LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token") VALUES ('boxysean+test11@gmail.com', '$2a$10$8g.Csg1xkS6zIxD6a.HPQeHsGVi/qmfybgNU0CVph8je2MAn1L6TG', 'GyRy2zzZaqdkCpDtK3CM', NULL, '2012-04-15 15:36:48.110869', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 15:36:48.111023', '2012-04-15 15:36:48.111023', NULL)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/mailer/confirmation_instructions.html.erb (1.1ms)
+
+Sent mail to boxysean+test11@gmail.com (1416ms)
+Date: Sun, 15 Apr 2012 11:36:48 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: boxysean+test11@gmail.com
+Message-ID: <4f8aeb1036b1f_2eb35d81d32518de@boxysean.com.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome boxysean+test11@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=GyRy2zzZaqdkCpDtK3CM">Confirm my account</a></p>
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 2047ms
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 11:36:49 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (45.4ms)
+Completed 200 OK in 50ms (Views: 50.0ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started GET "/users/sign_up" for 216.165.95.72 at 2012-04-15 11:51:20 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (57.9ms)
+Completed 200 OK in 69ms (Views: 62.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 216.165.95.72 at 2012-04-15 11:51:28 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hjXJZ2sF37xIuouSSMqKyZtX57XIvP/a3O9mD+hJxq4=", "user"=>{"email"=>"boxysean+test12@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'boxysean+test12@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'UP84XkYNvQP4xKtQ21sn' LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token") VALUES ('boxysean+test12@gmail.com', '$2a$10$9S82kiHzj1dT54nxUASbgO1/yFm7r3x5sOgyz2vUmHw3a/FTJUbmS', 'UP84XkYNvQP4xKtQ21sn', NULL, '2012-04-15 15:51:28.627205', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 15:51:28.627357', '2012-04-15 15:51:28.627357', NULL)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/mailer/confirmation_instructions.html.erb (1.0ms)
+
+Sent mail to boxysean+test12@gmail.com (1712ms)
+Date: Sun, 15 Apr 2012 11:51:28 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: boxysean+test12@gmail.com
+Message-ID: <4f8aee80b26a9_2f5655f78be9863f@boxysean.com.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome boxysean+test12@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=UP84XkYNvQP4xKtQ21sn">Confirm my account</a></p>
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 2225ms
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 11:51:30 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 31ms (Views: 30.8ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20090916131255)
+Migrating to CreateAdmins (20091009223419)
+Migrating to TokenAuthentication (20100615195947)
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("admins")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20090916131255)
+Migrating to CreateAdmins (20091009223419)
+Migrating to TokenAuthentication (20100615195947)
+Migrating to AddColumnsToUsers (20120415155827)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120415155827')[0m
+  [1m[35mSQL (0.3ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("admins")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20090916131255)
+Migrating to CreateAdmins (20091009223419)
+Migrating to TokenAuthentication (20100615195947)
+Migrating to AddColumnsToUsers (20120415155827)
+Migrating to AddDetailsToUsers (20120415160058)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1mALTER TABLE "users" ADD "freeswitch_id" integer[0m
+  [1m[35mSQL (0.3ms)[0m  ALTER TABLE "users" ADD "freeswitch_password" varchar(255)
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20120415160058')[0m
+  [1m[35mSQL (0.5ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("admins")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 12:02:08 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.72 at 2012-04-15 12:02:09 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (44.1ms)
+Completed 200 OK in 75ms (Views: 48.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 216.165.95.72 at 2012-04-15 12:02:17 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hjXJZ2sF37xIuouSSMqKyZtX57XIvP/a3O9mD+hJxq4=", "user"=>{"email"=>"boxysean+test13@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'boxysean+test13@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'Ljp8JrsD7tzntKw3BS4a' LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token", "freeswitch_id", "freeswitch_password") VALUES ('boxysean+test13@gmail.com', '$2a$10$0gUzDSsQdMndLoeFBIX3kOAwrcQAhRmFtpOdjhJ6z4.7pNTayYtYC', 'Ljp8JrsD7tzntKw3BS4a', NULL, '2012-04-15 16:02:17.914923', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 16:02:17.915160', '2012-04-15 16:02:17.915160', NULL, NULL, NULL)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/mailer/confirmation_instructions.html.erb (1.0ms)
+
+Sent mail to boxysean+test13@gmail.com (1482ms)
+Date: Sun, 15 Apr 2012 12:02:18 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: boxysean+test13@gmail.com
+Message-ID: <4f8af10a70b0_2ff550f367422939@boxysean.com.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome boxysean+test13@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=Ljp8JrsD7tzntKw3BS4a">Confirm my account</a></p>
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 2044ms
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 12:02:19 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (26.0ms)
+Completed 200 OK in 30ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started POST "/users" for 216.165.95.72 at 2012-04-15 12:05:52 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hjXJZ2sF37xIuouSSMqKyZtX57XIvP/a3O9mD+hJxq4=", "user"=>{"email"=>"boxysean+test14@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'boxysean+test14@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'YpbwUKzmeTbUyFUZYJyy' LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token", "freeswitch_id", "freeswitch_password") VALUES ('boxysean+test14@gmail.com', '$2a$10$7ehgAeheoj2YAPldGjHFLeNGWjf6KwU6vqS8oV3EkLevG9jJ9hp6S', 'YpbwUKzmeTbUyFUZYJyy', NULL, '2012-04-15 16:05:52.935217', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 16:05:52.935316', '2012-04-15 16:05:52.935316', NULL, NULL, NULL)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/mailer/confirmation_instructions.html.erb (0.9ms)
+
+Sent mail to boxysean+test14@gmail.com (1293ms)
+Date: Sun, 15 Apr 2012 12:05:53 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: boxysean+test14@gmail.com
+Message-ID: <4f8af1e111d50_303d5019c267750@boxysean.com.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome boxysean+test14@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=YpbwUKzmeTbUyFUZYJyy">Confirm my account</a></p>
+  [1m[36mAREL (11.7ms)[0m  [1mUPDATE "users" SET "email" = 'boxysean+test14@gmail.com', "encrypted_password" = '$2a$10$7ehgAeheoj2YAPldGjHFLeNGWjf6KwU6vqS8oV3EkLevG9jJ9hp6S', "confirmation_token" = 'YpbwUKzmeTbUyFUZYJyy', "confirmation_sent_at" = '2012-04-15 16:05:52.935217', "created_at" = '2012-04-15 16:05:52.935316', "updated_at" = '2012-04-15 16:05:52.935316', "freeswitch_id" = 6821 WHERE "users"."id" = 15[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE "users" SET "freeswitch_password" = 'aeg0Epho', "updated_at" = '2012-04-15 16:05:54.446455' WHERE "users"."id" = 15
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 1812ms
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 12:05:54 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (58.2ms)
+Completed 200 OK in 62ms (Views: 62.0ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 12:10:16 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.72 at 2012-04-15 12:10:17 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (48.2ms)
+Completed 200 OK in 72ms (Views: 52.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 216.165.95.72 at 2012-04-15 12:10:24 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hjXJZ2sF37xIuouSSMqKyZtX57XIvP/a3O9mD+hJxq4=", "user"=>{"email"=>"boxysean+test15@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'boxysean+test15@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = '6CAC1uTB74vHAvyHUn57' LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token", "freeswitch_id", "freeswitch_password") VALUES ('boxysean+test15@gmail.com', '$2a$10$RyKb3ydH0NQDJeMUnO4SNebzWM2nzTYHxkRr0i4yvfdrQuRTne8KW', '6CAC1uTB74vHAvyHUn57', NULL, '2012-04-15 16:10:24.378138', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 16:10:24.378261', '2012-04-15 16:10:24.378261', NULL, NULL, NULL)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/mailer/confirmation_instructions.html.erb (0.7ms)
+
+Sent mail to boxysean+test15@gmail.com (1360ms)
+Date: Sun, 15 Apr 2012 12:10:24 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: boxysean+test15@gmail.com
+Message-ID: <4f8af2f0786f5_307e51e76667903d@boxysean.com.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome boxysean+test15@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=6CAC1uTB74vHAvyHUn57">Confirm my account</a></p>
+  [1m[36mAREL (0.5ms)[0m  [1mUPDATE "users" SET "email" = 'boxysean+test15@gmail.com', "encrypted_password" = '$2a$10$RyKb3ydH0NQDJeMUnO4SNebzWM2nzTYHxkRr0i4yvfdrQuRTne8KW', "confirmation_token" = '6CAC1uTB74vHAvyHUn57', "confirmation_sent_at" = '2012-04-15 16:10:24.378138', "created_at" = '2012-04-15 16:10:24.378261', "updated_at" = '2012-04-15 16:10:24.378261', "freeswitch_id" = 1440 WHERE "users"."id" = 16[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "users" SET "freeswitch_password" = 'faoRah0n', "updated_at" = '2012-04-15 16:10:25.974126' WHERE "users"."id" = 16
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 2998ms
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 12:10:27 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (26.7ms)
+Completed 200 OK in 32ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 12:17:43 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 35ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sign_in" for 216.165.95.72 at 2012-04-15 12:20:58 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (1.5ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/sessions/new.html.erb within layouts/application (42.7ms)
+Completed 200 OK in 67ms (Views: 50.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/admin/sign_in" for 216.165.95.72 at 2012-04-15 12:21:02 -0400
+  Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hjXJZ2sF37xIuouSSMqKyZtX57XIvP/a3O9mD+hJxq4=", "admin"=>{"email"=>"boxysean@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mAdmin Load (0.3ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."email" = 'boxysean@gmail.com' LIMIT 1[0m
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 197ms
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 12:21:03 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT "admins".* FROM "admins" WHERE "admins"."id" = 1 LIMIT 1
+Rendered home/index.html.erb within layouts/application (71.0ms)
+Completed 200 OK in 77ms (Views: 76.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 12:21:06 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mAdmin Load (0.3ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."id" = 1 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (40.8ms)
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admins" for 216.165.95.72 at 2012-04-15 12:21:13 -0400
+  Processing by AdminsController#index as HTML
+  [1m[35mAdmin Load (0.2ms)[0m  SELECT "admins".* FROM "admins" WHERE "admins"."id" = 1 LIMIT 1
+Rendered admins/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 40ms (Views: 23.0ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/admin/sign_out" for 216.165.95.72 at 2012-04-15 12:22:13 -0400
+  Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hjXJZ2sF37xIuouSSMqKyZtX57XIvP/a3O9mD+hJxq4="}
+  [1m[36mAdmin Load (0.2ms)[0m  [1mSELECT "admins".* FROM "admins" WHERE "admins"."id" = 1 LIMIT 1[0m
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 42ms
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 12:22:13 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 29ms (Views: 28.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/confirmation?confirmation_token=BuH2EppiDxKRJ7rfMeoJ" for 216.165.95.72 at 2012-04-15 12:22:18 -0400
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"BuH2EppiDxKRJ7rfMeoJ"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'BuH2EppiDxKRJ7rfMeoJ' LIMIT 1
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.7ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/confirmations/new.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 110ms (Views: 25.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/confirmation?confirmation_token=6CAC1uTB74vHAvyHUn57" for 216.165.95.72 at 2012-04-15 12:22:29 -0400
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"6CAC1uTB74vHAvyHUn57"}
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = '6CAC1uTB74vHAvyHUn57' LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "users" SET "confirmation_token" = NULL, "confirmed_at" = '2012-04-15 16:22:29.738789', "updated_at" = '2012-04-15 16:22:29.739172' WHERE "users"."id" = 16
+  [1m[36mAREL (0.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2012-04-15 16:22:29.743405', "current_sign_in_at" = '2012-04-15 16:22:29.743405', "last_sign_in_ip" = '216.165.95.72', "current_sign_in_ip" = '216.165.95.72', "sign_in_count" = 1, "updated_at" = '2012-04-15 16:22:29.743829' WHERE "users"."id" = 16[0m
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 92ms
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 12:22:29 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (2.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 16 LIMIT 1
+Rendered home/index.html.erb within layouts/application (109.1ms)
+Completed 200 OK in 115ms (Views: 112.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/token" for 216.165.95.72 at 2012-04-15 12:22:34 -0400
+  Processing by HomeController#token as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 16 LIMIT 1[0m
+Completed 500 Internal Server Error in 93ms
+
+ActionView::MissingTemplate (Missing template home/token with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/root/workspace/OSTel/webapp/app/views", "/usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 12:22:56 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 16 LIMIT 1
+Rendered home/index.html.erb within layouts/application (102.3ms)
+Completed 200 OK in 107ms (Views: 104.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/edit" for 216.165.95.72 at 2012-04-15 12:23:00 -0400
+  Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 16 LIMIT 1[0m
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/edit.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 87ms (Views: 30.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 12:23:08 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 16 LIMIT 1
+Rendered home/index.html.erb within layouts/application (127.4ms)
+Completed 200 OK in 133ms (Views: 130.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 12:24:38 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (26.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 16 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (86.2ms)
+Completed 200 OK in 90ms (Views: 63.8ms | ActiveRecord: 26.2ms)
+
+
+Started GET "/users/edit" for 216.165.95.73 at 2012-04-15 12:24:41 -0400
+  Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (1.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 16 LIMIT 1
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/edit.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 97ms (Views: 19.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 12:25:28 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 16 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (97.8ms)
+Completed 200 OK in 102ms (Views: 100.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/edit" for 216.165.95.73 at 2012-04-15 12:27:45 -0400
+  Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 16 LIMIT 1
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/edit.html.erb within layouts/application (47.7ms)
+Completed 200 OK in 99ms (Views: 51.9ms | ActiveRecord: 1.3ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 12:32:05 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 16 LIMIT 1
+Rendered home/index.html.erb within layouts/application (117.9ms)
+Completed 500 Internal Server Error in 122ms
+
+ActionView::Template::Error (undefined method `freeswitch_pw' for #<User:0x9623230>):
+    38:       <% if user_signed_in? -%>
+    39:         <table>
+    40:           <tr><td>OSTel ID</td><td><%= current_user.freeswitch_id %></td></tr>
+    41:           <tr><td>OSTel Password</td><td><%= current_user.freeswitch_pw %></td></tr>
+    42:         </table>
+    43:       <% end -%>
+    44: 
+  app/views/layouts/application.html.erb:41:in `_app_views_layouts_application_html_erb__823682568_83456560__115207670'
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (15.9ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 12:32:22 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 16 LIMIT 1
+Rendered home/index.html.erb within layouts/application (129.5ms)
+Completed 200 OK in 135ms (Views: 132.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 12:32:23 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 16 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (88.0ms)
+Completed 200 OK in 92ms (Views: 89.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 12:32:25 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 16 LIMIT 1
+Rendered home/index.html.erb within layouts/application (91.2ms)
+Completed 200 OK in 96ms (Views: 94.2ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users/sign_out" for 216.165.95.73 at 2012-04-15 12:32:26 -0400
+  Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Kf675AuYFCHTS6H4eXD5jG11y67ZO9ZOOqDPVXTcTLc="}
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 16 LIMIT 1[0m
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 96ms
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 12:32:27 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (24.1ms)
+Completed 200 OK in 29ms (Views: 29.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.73 at 2012-04-15 12:32:31 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 64ms (Views: 45.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 216.165.95.73 at 2012-04-15 12:32:41 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TEFGHZi2UWrvPv9RaA0HuH2mvXyO5FBLw02nLU6573o=", "user"=>{"email"=>"boxysean+test16@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'boxysean+test16@gmail.com') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = '6bRZMxSpN8fxzGfxRxSf' LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token", "freeswitch_id", "freeswitch_password") VALUES ('boxysean+test16@gmail.com', '$2a$10$gPwL2wP4Zp.SQ7rLkaOKtecvcFCy/ZztjY46YD4e6RhVByWElUJnq', '6bRZMxSpN8fxzGfxRxSf', NULL, '2012-04-15 16:32:41.797478', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 16:32:41.797598', '2012-04-15 16:32:41.797598', NULL, NULL, NULL)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/mailer/confirmation_instructions.html.erb (0.7ms)
+
+Sent mail to boxysean+test16@gmail.com (1594ms)
+Date: Sun, 15 Apr 2012 12:32:41 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: boxysean+test16@gmail.com
+Message-ID: <4f8af829d95de_31d85279016367a8@boxysean.com.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome boxysean+test16@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=6bRZMxSpN8fxzGfxRxSf">Confirm my account</a></p>
+  [1m[36mAREL (0.7ms)[0m  [1mUPDATE "users" SET "email" = 'boxysean+test16@gmail.com', "encrypted_password" = '$2a$10$gPwL2wP4Zp.SQ7rLkaOKtecvcFCy/ZztjY46YD4e6RhVByWElUJnq', "confirmation_token" = '6bRZMxSpN8fxzGfxRxSf', "confirmation_sent_at" = '2012-04-15 16:32:41.797478', "created_at" = '2012-04-15 16:32:41.797598', "updated_at" = '2012-04-15 16:32:41.797598', "freeswitch_id" = 4262 WHERE "users"."id" = 17[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE "users" SET "freeswitch_password" = 'iem5Zohp', "updated_at" = '2012-04-15 16:32:43.559961' WHERE "users"."id" = 17
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 2528ms
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 12:32:44 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=6bRZMxSpN8fxzGfxRxSf" for 216.165.95.73 at 2012-04-15 12:32:52 -0400
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"6bRZMxSpN8fxzGfxRxSf"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = '6bRZMxSpN8fxzGfxRxSf' LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "users" SET "confirmation_token" = NULL, "confirmed_at" = '2012-04-15 16:32:52.210290', "updated_at" = '2012-04-15 16:32:52.210751' WHERE "users"."id" = 17
+  [1m[36mAREL (0.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2012-04-15 16:32:52.214288', "current_sign_in_at" = '2012-04-15 16:32:52.214288', "last_sign_in_ip" = '216.165.95.73', "current_sign_in_ip" = '216.165.95.73', "sign_in_count" = 1, "updated_at" = '2012-04-15 16:32:52.214682' WHERE "users"."id" = 17[0m
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 84ms
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 12:32:52 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.6ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+Rendered home/index.html.erb within layouts/application (95.1ms)
+Completed 200 OK in 101ms (Views: 98.6ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/edit" for 216.165.95.72 at 2012-04-15 12:53:06 -0400
+  Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1[0m
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/edit.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 72ms (Views: 20.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 12:53:07 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+Rendered home/index.html.erb within layouts/application (87.1ms)
+Completed 200 OK in 92ms (Views: 89.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 12:54:13 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (90.8ms)
+Completed 200 OK in 95ms (Views: 93.2ms | ActiveRecord: 1.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 12:59:38 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 17 LIMIT 1
+Rendered home/index.html.erb within layouts/application (91.5ms)
+Completed 200 OK in 96ms (Views: 94.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:01:53 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 32ms (Views: 31.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:02:24 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 27ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:02:57 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (40.4ms)
+Completed 200 OK in 46ms (Views: 45.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:07:20 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:07:27 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (55.4ms)
+Completed 200 OK in 60ms (Views: 59.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:07:28 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (19.1ms)
+Completed 200 OK in 56ms (Views: 55.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.72 at 2012-04-15 13:07:30 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (43.5ms)
+Completed 200 OK in 78ms (Views: 48.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 216.165.95.72 at 2012-04-15 13:07:47 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TEFGHZi2UWrvPv9RaA0HuH2mvXyO5FBLw02nLU6573o=", "user"=>{"email"=>"boxysean+test17@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'boxysean+test17@gmail.com') LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'zJtqqNu4FjAXQBbt4Nwz' LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token", "freeswitch_id", "freeswitch_password") VALUES ('boxysean+test17@gmail.com', '$2a$10$2BHrQrl4KizEUoVaWFnc7OSQDwgBMy/IQNEUzW.VsRdkTLiI.c42e', 'zJtqqNu4FjAXQBbt4Nwz', NULL, '2012-04-15 17:07:47.555679', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 17:07:47.555808', '2012-04-15 17:07:47.555808', NULL, NULL, NULL)[0m
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/mailer/confirmation_instructions.html.erb (0.9ms)
+
+Sent mail to boxysean+test17@gmail.com (1969ms)
+Date: Sun, 15 Apr 2012 13:07:47 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: boxysean+test17@gmail.com
+Message-ID: <4f8b0063a77bc_33254ed791c1695f@boxysean.com.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome boxysean+test17@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=zJtqqNu4FjAXQBbt4Nwz">Confirm my account</a></p>
+  [1m[35mAREL (0.8ms)[0m  UPDATE "users" SET "email" = 'boxysean+test17@gmail.com', "encrypted_password" = '$2a$10$2BHrQrl4KizEUoVaWFnc7OSQDwgBMy/IQNEUzW.VsRdkTLiI.c42e', "confirmation_token" = 'zJtqqNu4FjAXQBbt4Nwz', "confirmation_sent_at" = '2012-04-15 17:07:47.555679', "created_at" = '2012-04-15 17:07:47.555808', "updated_at" = '2012-04-15 17:07:47.555808', "freeswitch_id" = 6507 WHERE "users"."id" = 18
+  [1m[36mAREL (0.2ms)[0m  [1mUPDATE "users" SET "freeswitch_password" = 'Xai7eeso', "updated_at" = '2012-04-15 17:07:49.726973' WHERE "users"."id" = 18[0m
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 2998ms
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:07:50 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (25.7ms)
+Completed 200 OK in 30ms (Views: 29.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:09:08 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/ostn.png" for 216.165.95.73 at 2012-04-15 13:09:08 -0400
+
+ActionController::RoutingError (No route matches "/images/ostn.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:09:09 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 30ms (Views: 29.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/ostn.png" for 216.165.95.73 at 2012-04-15 13:09:09 -0400
+
+ActionController::RoutingError (No route matches "/images/ostn.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:09:11 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (80.1ms)
+Completed 200 OK in 88ms (Views: 87.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/ostn.png" for 216.165.95.73 at 2012-04-15 13:09:11 -0400
+
+ActionController::RoutingError (No route matches "/images/ostn.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:09:19 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/ostn.png" for 216.165.95.72 at 2012-04-15 13:09:19 -0400
+
+ActionController::RoutingError (No route matches "/images/ostn.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:09:20 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 27ms (Views: 26.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/ostn.png" for 216.165.95.72 at 2012-04-15 13:09:21 -0400
+
+ActionController::RoutingError (No route matches "/images/ostn.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/images/ostn.png" for 216.165.95.72 at 2012-04-15 13:09:26 -0400
+
+ActionController::RoutingError (No route matches "/images/ostn.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:10:17 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/ostn.png" for 216.165.95.73 at 2012-04-15 13:10:17 -0400
+
+ActionController::RoutingError (No route matches "/images/ostn.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:11:21 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (28.2ms)
+Completed 200 OK in 34ms (Views: 33.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/ostn.png" for 216.165.95.72 at 2012-04-15 13:11:21 -0400
+
+ActionController::RoutingError (No route matches "/images/ostn.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:11:22 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (58.2ms)
+Completed 200 OK in 64ms (Views: 63.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/ostn.png" for 216.165.95.72 at 2012-04-15 13:11:22 -0400
+
+ActionController::RoutingError (No route matches "/images/ostn.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:11:22 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 34ms (Views: 33.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/ostn.png" for 216.165.95.72 at 2012-04-15 13:11:22 -0400
+
+ActionController::RoutingError (No route matches "/images/ostn.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:11:28 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 8ms (Views: 7.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/ostn.png" for 216.165.95.72 at 2012-04-15 13:11:28 -0400
+
+ActionController::RoutingError (No route matches "/images/ostn.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:11:29 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 34ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/ostn.png" for 216.165.95.72 at 2012-04-15 13:11:29 -0400
+
+ActionController::RoutingError (No route matches "/images/ostn.png"):
+  
+
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/actionpack-3.0.10/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:12:41 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (54.7ms)
+Completed 200 OK in 60ms (Views: 59.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:13:04 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (29.8ms)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:13:54 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (48.4ms)
+Completed 200 OK in 53ms (Views: 52.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:14:03 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 26ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:14:08 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (47.2ms)
+Completed 200 OK in 52ms (Views: 51.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:14:18 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 23ms (Views: 22.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:15:05 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (46.4ms)
+Completed 200 OK in 51ms (Views: 50.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:15:11 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:15:23 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 23ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.73 at 2012-04-15 13:15:43 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.2ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (78.5ms)
+Completed 200 OK in 159ms (Views: 84.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 216.165.95.72 at 2012-04-15 13:17:01 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TEFGHZi2UWrvPv9RaA0HuH2mvXyO5FBLw02nLU6573o=", "user"=>{"email"=>"boxysean+test18@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'boxysean+test18@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'tDFfzMGbiCrz7JqoJLq9' LIMIT 1[0m
+  [1m[35mAREL (0.6ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token", "freeswitch_id", "freeswitch_password") VALUES ('boxysean+test18@gmail.com', '$2a$10$FnfihBRTZti22R7cyRjxxu7BHfR0gcEpQPe6dfOss/ycrG3uK.A3K', 'tDFfzMGbiCrz7JqoJLq9', NULL, '2012-04-15 17:17:02.019351', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 17:17:02.019481', '2012-04-15 17:17:02.019481', NULL, NULL, NULL)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/mailer/confirmation_instructions.html.erb (0.7ms)
+
+Sent mail to boxysean+test18@gmail.com (1558ms)
+Date: Sun, 15 Apr 2012 13:17:02 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: boxysean+test18@gmail.com
+Message-ID: <4f8b028e242bb_33f653ba9701388@boxysean.com.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome boxysean+test18@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=tDFfzMGbiCrz7JqoJLq9">Confirm my account</a></p>
+  [1m[36mAREL (0.5ms)[0m  [1mUPDATE "users" SET "email" = 'boxysean+test18@gmail.com', "encrypted_password" = '$2a$10$FnfihBRTZti22R7cyRjxxu7BHfR0gcEpQPe6dfOss/ycrG3uK.A3K', "confirmation_token" = 'tDFfzMGbiCrz7JqoJLq9', "confirmation_sent_at" = '2012-04-15 17:17:02.019351', "created_at" = '2012-04-15 17:17:02.019481', "updated_at" = '2012-04-15 17:17:02.019481', "freeswitch_id" = 9232 WHERE "users"."id" = 19[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE "users" SET "freeswitch_password" = 'Thiebai5', "updated_at" = '2012-04-15 17:17:03.780223' WHERE "users"."id" = 19
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 2666ms
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:17:04 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 32ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=tDFfzMGbiCrz7JqoJLq9" for 216.165.95.72 at 2012-04-15 13:17:26 -0400
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"tDFfzMGbiCrz7JqoJLq9"}
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'tDFfzMGbiCrz7JqoJLq9' LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "users" SET "confirmation_token" = NULL, "confirmed_at" = '2012-04-15 17:17:26.830979', "updated_at" = '2012-04-15 17:17:26.831332' WHERE "users"."id" = 19
+  [1m[36mAREL (0.2ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2012-04-15 17:17:26.835160', "current_sign_in_at" = '2012-04-15 17:17:26.835160', "last_sign_in_ip" = '216.165.95.72', "current_sign_in_ip" = '216.165.95.72', "sign_in_count" = 1, "updated_at" = '2012-04-15 17:17:26.835477' WHERE "users"."id" = 19[0m
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 68ms
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:17:26 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (33.5ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 19 LIMIT 1
+Rendered home/index.html.erb within layouts/application (99.7ms)
+Completed 200 OK in 105ms (Views: 71.3ms | ActiveRecord: 35.8ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:18:16 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 19 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (89.3ms)
+Completed 200 OK in 95ms (Views: 92.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:18:29 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 19 LIMIT 1
+Rendered home/index.html.erb within layouts/application (61.3ms)
+Completed 200 OK in 65ms (Views: 63.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:19:25 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 19 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (101.7ms)
+Completed 200 OK in 106ms (Views: 103.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:19:41 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (29.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 19 LIMIT 1
+Rendered home/index.html.erb within layouts/application (99.4ms)
+Completed 200 OK in 105ms (Views: 75.4ms | ActiveRecord: 29.1ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:19:52 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 19 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (100.3ms)
+Completed 200 OK in 105ms (Views: 103.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:20:20 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 19 LIMIT 1
+Rendered home/index.html.erb within layouts/application (66.1ms)
+Completed 200 OK in 70ms (Views: 68.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:20:37 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 19 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (85.0ms)
+Completed 200 OK in 91ms (Views: 88.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:20:46 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.7ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 19 LIMIT 1
+Rendered home/index.html.erb within layouts/application (95.6ms)
+Completed 200 OK in 102ms (Views: 99.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/edit" for 216.165.95.73 at 2012-04-15 13:20:48 -0400
+  Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 19 LIMIT 1[0m
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/edit.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 93ms (Views: 17.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:20:52 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 19 LIMIT 1
+Rendered home/index.html.erb within layouts/application (92.9ms)
+Completed 200 OK in 97ms (Views: 95.6ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users/sign_out" for 216.165.95.73 at 2012-04-15 13:20:54 -0400
+  Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TEFGHZi2UWrvPv9RaA0HuH2mvXyO5FBLw02nLU6573o="}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 19 LIMIT 1[0m
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 62ms
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:20:54 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 24ms (Views: 23.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:22:22 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:22:31 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 23ms (Views: 22.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:23:35 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.72 at 2012-04-15 13:23:51 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (3.3ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (42.2ms)
+Completed 200 OK in 75ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.72 at 2012-04-15 13:24:09 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (1.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 62ms (Views: 36.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 216.165.95.72 at 2012-04-15 13:24:11 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.1ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/sessions/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 59ms (Views: 21.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.73 at 2012-04-15 13:25:03 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.5ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 62ms (Views: 40.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 216.165.95.73 at 2012-04-15 13:25:07 -0400
+  Processing by Devise::SessionsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (1.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/sessions/new.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 57ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.73 at 2012-04-15 13:25:13 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 91ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 216.165.95.72 at 2012-04-15 13:25:28 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sLzuy4CGUQN8MzuQBh5OD6LaV+JjzLqdWNOGhib19Cc=", "user"=>{"email"=>"boxysean+test19@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'boxysean+test19@gmail.com') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = '8bvczjUG8MkMXznWB6k4' LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token", "freeswitch_id", "freeswitch_password") VALUES ('boxysean+test19@gmail.com', '$2a$10$tEezJPCIqSkPWw3CdYfeLe9pdwgPhMPQpCk47c5W1ABh/da7Mkrgy', '8bvczjUG8MkMXznWB6k4', NULL, '2012-04-15 17:25:28.322219', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 17:25:28.322343', '2012-04-15 17:25:28.322343', NULL, NULL, NULL)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/mailer/confirmation_instructions.html.erb (1.0ms)
+
+Sent mail to boxysean+test19@gmail.com (1580ms)
+Date: Sun, 15 Apr 2012 13:25:28 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: boxysean+test19@gmail.com
+Message-ID: <4f8b048856640_33f64ce33b8139f1@boxysean.com.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome boxysean+test19@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=8bvczjUG8MkMXznWB6k4">Confirm my account</a></p>
+  [1m[36mAREL (0.6ms)[0m  [1mUPDATE "users" SET "email" = 'boxysean+test19@gmail.com', "encrypted_password" = '$2a$10$tEezJPCIqSkPWw3CdYfeLe9pdwgPhMPQpCk47c5W1ABh/da7Mkrgy', "confirmation_token" = '8bvczjUG8MkMXznWB6k4', "confirmation_sent_at" = '2012-04-15 17:25:28.322219', "created_at" = '2012-04-15 17:25:28.322343', "updated_at" = '2012-04-15 17:25:28.322343', "freeswitch_id" = 4496 WHERE "users"."id" = 20[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE "users" SET "freeswitch_password" = 'ooY9Sie5', "updated_at" = '2012-04-15 17:25:30.025608' WHERE "users"."id" = 20
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 2412ms
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:25:30 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 31ms (Views: 30.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=8bvczjUG8MkMXznWB6k4" for 216.165.95.72 at 2012-04-15 13:25:41 -0400
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"8bvczjUG8MkMXznWB6k4"}
+  [1m[36mUser Load (2.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = '8bvczjUG8MkMXznWB6k4' LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "users" SET "confirmation_token" = NULL, "confirmed_at" = '2012-04-15 17:25:42.026141', "updated_at" = '2012-04-15 17:25:42.026515' WHERE "users"."id" = 20
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2012-04-15 17:25:42.029909', "current_sign_in_at" = '2012-04-15 17:25:42.029909', "last_sign_in_ip" = '216.165.95.72', "current_sign_in_ip" = '216.165.95.72', "sign_in_count" = 1, "updated_at" = '2012-04-15 17:25:42.030190' WHERE "users"."id" = 20[0m
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 98ms
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:25:42 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (23.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 20 LIMIT 1
+Rendered home/index.html.erb within layouts/application (85.2ms)
+Completed 200 OK in 89ms (Views: 66.0ms | ActiveRecord: 23.1ms)
+
+
+Started GET "/users/edit" for 216.165.95.72 at 2012-04-15 13:26:31 -0400
+  Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 20 LIMIT 1[0m
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/edit.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 89ms (Views: 21.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/edit" for 216.165.95.72 at 2012-04-15 13:26:36 -0400
+  Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 20 LIMIT 1
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/edit.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 80ms (Views: 16.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:27:30 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 20 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (101.9ms)
+Completed 200 OK in 109ms (Views: 107.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/users/edit" for 216.165.95.73 at 2012-04-15 13:27:34 -0400
+  Processing by Devise::RegistrationsController#edit as HTML
+  [1m[35mUser Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 20 LIMIT 1
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/edit.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 92ms (Views: 21.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:27:39 -0400
+  Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 20 LIMIT 1[0m
+Rendered home/index.html.erb within layouts/application (95.2ms)
+Completed 200 OK in 101ms (Views: 99.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 74.115.0.31 at 2012-04-15 13:28:10 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 34ms (Views: 33.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 74.115.0.31 at 2012-04-15 13:28:20 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (3.5ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 66ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 74.115.0.31 at 2012-04-15 13:28:38 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jvHnGbDw/dr8qEMIwXtlApQD60psWHlIQKkMi92LUMI=", "user"=>{"email"=>"mark@guardianproject.info", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'mark@guardianproject.info') LIMIT 1
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 233ms (Views: 26.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/users" for 74.115.0.31 at 2012-04-15 13:29:06 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jvHnGbDw/dr8qEMIwXtlApQD60psWHlIQKkMi92LUMI=", "user"=>{"email"=>"mark@guardianproject.info", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'mark@guardianproject.info') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'DEsiZSXpRv9nenLyYGuR' LIMIT 1
+  [1m[36mAREL (0.6ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token", "freeswitch_id", "freeswitch_password") VALUES ('mark@guardianproject.info', '$2a$10$jxga7Q1V/BcAgQc2OmEOuOX44EPrjjx1ZGtJs9VTVbHI8RZ4tfYS6', 'DEsiZSXpRv9nenLyYGuR', NULL, '2012-04-15 17:29:07.228962', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 17:29:07.229073', '2012-04-15 17:29:07.229073', NULL, NULL, NULL)[0m
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/mailer/confirmation_instructions.html.erb (0.7ms)
+
+Sent mail to mark@guardianproject.info (1439ms)
+Date: Sun, 15 Apr 2012 13:29:07 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: mark@guardianproject.info
+Message-ID: <4f8b0563449a1_33f6548e4501404@boxysean.com.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome mark@guardianproject.info!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=DEsiZSXpRv9nenLyYGuR">Confirm my account</a></p>
+  [1m[35mAREL (0.6ms)[0m  UPDATE "users" SET "email" = 'mark@guardianproject.info', "encrypted_password" = '$2a$10$jxga7Q1V/BcAgQc2OmEOuOX44EPrjjx1ZGtJs9VTVbHI8RZ4tfYS6', "confirmation_token" = 'DEsiZSXpRv9nenLyYGuR', "confirmation_sent_at" = '2012-04-15 17:29:07.228962', "created_at" = '2012-04-15 17:29:07.229073', "updated_at" = '2012-04-15 17:29:07.229073', "freeswitch_id" = 9325 WHERE "users"."id" = 21
+  [1m[36mAREL (0.2ms)[0m  [1mUPDATE "users" SET "freeswitch_password" = 'tuox9Eip', "updated_at" = '2012-04-15 17:29:08.823075' WHERE "users"."id" = 21[0m
+Redirected to http://www.boxysean.com:8080/
+Completed 302 Found in 2176ms
+
+
+Started GET "/" for 74.115.0.31 at 2012-04-15 13:29:09 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (33.3ms)
+Completed 200 OK in 39ms (Views: 38.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:30:35 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 20 LIMIT 1
+Rendered home/index.html.erb within layouts/application (103.7ms)
+Completed 200 OK in 108ms (Views: 106.2ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users/sign_out" for 216.165.95.73 at 2012-04-15 13:30:42 -0400
+  Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sLzuy4CGUQN8MzuQBh5OD6LaV+JjzLqdWNOGhib19Cc="}
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 20 LIMIT 1[0m
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 61ms
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:30:42 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 27ms (Views: 26.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.73 at 2012-04-15 13:30:45 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.0ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (53.4ms)
+Completed 200 OK in 86ms (Views: 58.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 216.165.95.73 at 2012-04-15 13:30:53 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zdRpTXhSwWFM3HvI7hhH+psPc+DgkFW5urHx03cXF6w=", "user"=>{"email"=>"boxysean+test20@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35mSQL (0.1ms)[0m  SELECT 1 FROM "users" WHERE ("users"."email" = 'boxysean+test20@gmail.com') LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'sy24DdqnNigvL6Kqyznx' LIMIT 1[0m
+  [1m[35mAREL (0.3ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token", "freeswitch_id", "freeswitch_password") VALUES ('boxysean+test20@gmail.com', '$2a$10$EVEFa8agq.slpiHLkMGQge0o57ZqVjxCnhbvJqc5AJ25c/lfuVNv2', 'sy24DdqnNigvL6Kqyznx', NULL, '2012-04-15 17:30:53.830916', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 17:30:53.831137', '2012-04-15 17:30:53.831137', NULL, NULL, NULL)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/mailer/confirmation_instructions.html.erb (0.7ms)
+
+Sent mail to boxysean+test20@gmail.com (1313ms)
+Date: Sun, 15 Apr 2012 13:30:53 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: boxysean+test20@gmail.com
+Message-ID: <4f8b05cdd3175_33f64b31844141e9@boxysean.com.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome boxysean+test20@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=sy24DdqnNigvL6Kqyznx">Confirm my account</a></p>
+  [1m[36mAREL (0.8ms)[0m  [1mUPDATE "users" SET "email" = 'boxysean+test20@gmail.com', "encrypted_password" = '$2a$10$EVEFa8agq.slpiHLkMGQge0o57ZqVjxCnhbvJqc5AJ25c/lfuVNv2', "confirmation_token" = 'sy24DdqnNigvL6Kqyznx', "confirmation_sent_at" = '2012-04-15 17:30:53.830916', "created_at" = '2012-04-15 17:30:53.831137', "updated_at" = '2012-04-15 17:30:53.831137', "freeswitch_id" = 3994 WHERE "users"."id" = 22[0m
+  [1m[35mAREL (0.3ms)[0m  UPDATE "users" SET "freeswitch_password" = 'weiHe9fo', "updated_at" = '2012-04-15 17:30:55.297193' WHERE "users"."id" = 22
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 2128ms
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:30:55 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 28ms (Views: 27.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=DEsiZSXpRv9nenLyYGuR" for 74.115.0.31 at 2012-04-15 13:31:01 -0400
+  Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"DEsiZSXpRv9nenLyYGuR"}
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'DEsiZSXpRv9nenLyYGuR' LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  UPDATE "users" SET "confirmation_token" = NULL, "confirmed_at" = '2012-04-15 17:31:01.901475', "updated_at" = '2012-04-15 17:31:01.901972' WHERE "users"."id" = 21
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE "users" SET "last_sign_in_at" = '2012-04-15 17:31:01.969682', "current_sign_in_at" = '2012-04-15 17:31:01.969682', "last_sign_in_ip" = '74.115.0.31', "current_sign_in_ip" = '74.115.0.31', "sign_in_count" = 1, "updated_at" = '2012-04-15 17:31:01.970280' WHERE "users"."id" = 21[0m
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 125ms
+
+
+Started GET "/" for 74.115.0.31 at 2012-04-15 13:31:02 -0400
+  Processing by HomeController#index as HTML
+  [1m[35mUser Load (1.9ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = 21 LIMIT 1
+Rendered home/index.html.erb within layouts/application (69.6ms)
+Completed 200 OK in 74ms (Views: 72.0ms | ActiveRecord: 4.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:36:39 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.73 at 2012-04-15 13:36:41 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (3.8ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (53.2ms)
+Completed 200 OK in 75ms (Views: 57.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 216.165.95.73 at 2012-04-15 13:36:50 -0400
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zdRpTXhSwWFM3HvI7hhH+psPc+DgkFW5urHx03cXF6w=", "user"=>{"email"=>"boxysean+test21@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT 1 FROM "users" WHERE ("users"."email" = 'boxysean+test21@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."confirmation_token" = 'ayKr31uqyzu8EjppidF7' LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "users" ("email", "encrypted_password", "confirmation_token", "confirmed_at", "confirmation_sent_at", "reset_password_token", "reset_password_sent_at", "remember_created_at", "sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "failed_attempts", "unlock_token", "locked_at", "created_at", "updated_at", "authentication_token", "freeswitch_id", "freeswitch_password") VALUES ('boxysean+test21@gmail.com', '$2a$10$I4GAd796aryWItPWPczqFep/ybRPTtl5i2TKgOcI9SPahWjmZbB2K', 'ayKr31uqyzu8EjppidF7', NULL, '2012-04-15 17:36:50.704397', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, 0, NULL, NULL, '2012-04-15 17:36:50.704483', '2012-04-15 17:36:50.704483', NULL, NULL, NULL)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/mailer/confirmation_instructions.html.erb (0.9ms)
+
+Sent mail to boxysean+test21@gmail.com (1265ms)
+Date: Sun, 15 Apr 2012 13:36:50 -0400
+From: boxysean.OSTel@gmail.com
+Reply-To: boxysean.OSTel@gmail.com
+To: boxysean+test21@gmail.com
+Message-ID: <4f8b0732caf88_359b5266fa6223d2@boxysean.com.mail>
+Subject: OSTel confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome boxysean+test21@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://boxysean.com:8080/users/confirmation?confirmation_token=ayKr31uqyzu8EjppidF7">Confirm my account</a></p>
+  [1m[36mAREL (0.7ms)[0m  [1mUPDATE "users" SET "email" = 'boxysean+test21@gmail.com', "encrypted_password" = '$2a$10$I4GAd796aryWItPWPczqFep/ybRPTtl5i2TKgOcI9SPahWjmZbB2K', "confirmation_token" = 'ayKr31uqyzu8EjppidF7', "confirmation_sent_at" = '2012-04-15 17:36:50.704397', "created_at" = '2012-04-15 17:36:50.704483', "updated_at" = '2012-04-15 17:36:50.704483', "freeswitch_id" = 7782 WHERE "users"."id" = 23[0m
+  [1m[35mAREL (0.2ms)[0m  UPDATE "users" SET "freeswitch_password" = 'ieke4Cah', "updated_at" = '2012-04-15 17:36:52.183335' WHERE "users"."id" = 23
+Redirected to http://boxysean.com:8080/
+Completed 302 Found in 2285ms
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:36:52 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 41ms (Views: 39.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:40:19 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 32ms (Views: 31.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:40:57 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 29ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:41:07 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 27ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:42:10 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (50.7ms)
+Completed 200 OK in 56ms (Views: 55.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:42:19 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:42:39 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (54.6ms)
+Completed 200 OK in 59ms (Views: 59.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:43:09 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 29ms (Views: 28.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:43:34 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 30ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:43:46 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 29ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:44:03 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:44:34 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 27ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:44:35 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 36ms (Views: 35.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:45:19 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 28ms (Views: 27.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:45:38 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 30ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.72 at 2012-04-15 13:45:56 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (1.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 76ms (Views: 35.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:49:01 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 34ms (Views: 33.8ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /root/workspace/OSTel/webapp/config/environment.rb:5)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:49:40 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:50:17 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 27ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:50:26 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 37ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:50:36 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (28.7ms)
+Completed 200 OK in 34ms (Views: 33.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:50:55 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (40.6ms)
+Completed 200 OK in 44ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:50:59 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:51:38 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (42.4ms)
+Completed 200 OK in 46ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:51:45 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 29ms (Views: 28.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:51:54 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (50.3ms)
+Completed 200 OK in 56ms (Views: 55.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.73 at 2012-04-15 13:52:04 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 28ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.73 at 2012-04-15 13:52:35 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (49.6ms)
+Completed 200 OK in 86ms (Views: 54.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.73 at 2012-04-15 13:53:43 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (1.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (31.6ms)
+Completed 200 OK in 52ms (Views: 35.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:56:34 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 38ms (Views: 37.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 216.165.95.72 at 2012-04-15 13:57:59 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (48.4ms)
+Completed 200 OK in 55ms (Views: 54.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 216.165.95.73 at 2012-04-15 13:58:18 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (1.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (56.5ms)
+Completed 200 OK in 90ms (Views: 63.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 208.120.207.43 at 2012-04-15 14:00:02 -0400
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (52.2ms)
+Completed 200 OK in 80ms (Views: 79.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 208.120.207.43 at 2012-04-15 14:00:07 -0400
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/shared/_links.erb (2.9ms)
+Rendered /usr/local/lib/ruby/gems/1.9.1/gems/devise-1.4.7/app/views/devise/registrations/new.html.erb within layouts/application (48.2ms)
+Completed 200 OK in 113ms (Views: 54.6ms | ActiveRecord: 0.0ms)

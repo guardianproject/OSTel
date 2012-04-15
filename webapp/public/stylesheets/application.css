@@ -1,5 +1,5 @@
 body {
-  background-color: #4B7399;
+  background-color: #3dcf3d;
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
@@ -19,12 +19,29 @@ a {
 }
 
 #container {
-  width: 75%;
-  margin: 0 auto;
-  background-color: #FFF;
+  width: 640px;
+  margin: 20px auto;
+  background-color: #CCCCCC;
   padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
+}
+
+div#logo {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+div.info {
+  margin-bottom: 1em;
+}
+
+table {
+  margin-bottom: 1em;
+}
+
+table.info th {
+  text-align: right;
+  padding-right: 10px;
 }
 
 #flash_notice, #flash_alert {
