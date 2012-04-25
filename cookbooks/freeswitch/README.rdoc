@@ -1,8 +1,7 @@
 = DESCRIPTION:
 
-This cookbook will compile, install and configure Freeswitch to be an <a
-href="https://guardianproject.info/wiki/OSTN_Compliance_Specification">OSTN
-compliant</a> SIP registrar and ZRTP media proxy. All signalling is encrypted and if
+This cookbook will compile, install and configure Freeswitch to be an OSTN[https://guardianproject.info/wiki/OSTN_Compliance_Specification]
+compliant SIP registrar and ZRTP media proxy. All signalling is encrypted and if
 the endpoints support ZRTP, calling parties may encrypt their call with a peer
 to peer authenticated process.
 
