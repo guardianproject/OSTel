@@ -39,5 +39,11 @@ probably dependent on Debian.
 
 = USAGE:
 
+ sudo -i
+ cd ~
+ git clone git://github.com/lazzarello/chef-twelvetone.git
+ cd ~/chef-twelvetone/config
+ chef-solo -c config.solo.rb -j config-freeswitch.json
+
 Everything is bundled into the default recipe. The recipe installed a script you
 may use to create users in /usr/local/freeswitch/scripts/gen_users.
