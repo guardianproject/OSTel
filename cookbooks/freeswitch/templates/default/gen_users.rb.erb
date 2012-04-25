@@ -1,4 +1,3 @@
-#!/usr/local/bin/ruby
 # generate XML configuration for 10 FreeSwitch users.
 # Optionally specify number of users as an argument.
 # Depends on the pwgen system utility.
@@ -12,9 +11,21 @@ require 'xmlsimple'
 domain = "<%= node[:fqdn] %>"
 first = 1000
 last = first + 10
+
 if (ARGV[0])
-  last = first + ARGV[0].to_i
+  first = ARGV[0].to_i
+else
+  puts "Usage: ruby ./gen_users.rb <offset> <number of users>"
+  exit 1
 end
+
+if (ARGV[1])
+  last = first + ARGV[1].to_i
+else
+  puts "Usage: ruby ./gen_users.rb <offset> <number of users>"
+  exit 1
+end
+
 pwgen = `which pwgen`.chop!
 openssl = `which openssl`.chop!
 
