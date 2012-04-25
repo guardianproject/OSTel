@@ -1,9 +1,9 @@
 = DESCRIPTION:
 
 This cookbook will compile, install and configure Freeswitch to be an OSTN[https://guardianproject.info/wiki/OSTN_Compliance_Specification]
-compliant SIP registrar and ZRTP media proxy. All signalling is encrypted and if
+compliant SIP registrar[http://en.wikipedia.org/wiki/SIP_registrar#Network_elements] and ZRTP[http://en.wikipedia.org/wiki/ZRTP] media proxy. All signalling is encrypted and if
 the endpoints support ZRTP, calling parties may encrypt their call with a peer
-to peer authenticated process.
+to peer authentication process.
 
 To handle the SIPS socket, this cookbook will make the system where it is run an
 SSL Certificate Authority. It is the operator's responsibility to distribute the
@@ -14,7 +14,7 @@ not support commercial SSL authorities like HTTPS web servers.
 
 <b>Hostname</b>
 
-The only dependency is a Fully Qualified Domain Name (FQDN). THIS IS CRUCIAL! The
+The only dependency is a Fully Qualified Domain Name (FQDN[http://en.wikipedia.org/wiki/FQDN]). THIS IS CRUCIAL! The
 cookbook sets many parameters passed to scripts to this value, including the SIP registrar.
 If you do not set a FQDN everything will break.
 
