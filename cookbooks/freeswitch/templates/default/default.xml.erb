@@ -88,53 +88,6 @@
 	<action application="bridge" data="sofia/${use_profile}/$1"/>
       </condition>
     </extension>
-   
-    <!-- Send a 180 and let the far end generate ringback. -->
-    <extension name="ringback_180">
-      <condition field="destination_number" expression="^9180$">
-	<action application="ring_ready"/>
-	<action application="sleep" data="20000"/>
-	<action application="answer"/>
-	<action application="sleep" data="1000"/>
-	<action application="playback" data="voicemail/vm-goodbye.wav"/>
-	<action application="hangup"/>
-      </condition>
-    </extension>
-
-    <!-- Send a 183 and send uk-ring as the ringtone. (early media) -->
-    <extension name="ringback_183_uk_ring">
-      <condition field="destination_number" expression="^9181$">
-	<action application="set" data="ringback=$${uk-ring}"/>
-	<action application="bridge" data="{ignore_early_media=true}loopback/wait"/>
-      </condition>
-    </extension>
-
-    <!-- Send a 183 and use music as the ringtone. (early media) -->
-    <extension name="ringback_183_music_ring">
-      <condition field="destination_number" expression="^9182$">
-	<action application="set" data="ringback=$${hold_music}"/>
-	<action application="bridge" data="{ignore_early_media=true}loopback/wait"/>
-      </condition>
-    </extension>
-
-    <!-- Answer the call and use music as the ringtone. (post answer) -->
-    <extension name="ringback_post_answer_uk_ring">
-      <condition field="destination_number" expression="^9183$">
-	<action application="set" data="transfer_ringback=$${uk-ring}"/>
-	<action application="answer"/>
-	<action application="bridge" data="{ignore_early_media=true}loopback/wait"/>
-      </condition>
-    </extension>
-
-    <!-- Answer the call and use music as the ringtone. (post answer) -->
-    <extension name="ringback_post_answer_music">
-      <condition field="destination_number" expression="^9184$">
-	<action application="set" data="transfer_ringback=$${hold_music}"/>
-	<action application="answer"/>
-	<action application="bridge" data="{ignore_early_media=true}loopback/wait"/>
-      </condition>
-    </extension>
-
     <extension name="ClueCon">
       <condition field="destination_number" expression="^9191$">
         <action application="set" data="effective_caller_id_name=ClueCon IVR"/>
