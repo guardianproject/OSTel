@@ -88,13 +88,6 @@
 	<action application="bridge" data="sofia/${use_profile}/$1"/>
       </condition>
     </extension>
-    <extension name="delay_echo">
-      <condition field="destination_number" expression="^9195$">
-	<action application="answer"/>
-	<action application="delay_echo" data="5000"/>
-      </condition>
-    </extension>
-
     <extension name="echo">
       <condition field="destination_number" expression="^9196$">
 	<action application="answer"/>
