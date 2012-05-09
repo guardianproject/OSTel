@@ -165,6 +165,13 @@ template "#{node[:freeswitch][:homedir]}/scripts/gen_users" do
   mode 0755
 end
 
+template "#{node[:freeswitch][:homedir]}/conf/dialplan/default.xml" do
+  source "default.xml.erb"
+  owner node[:freeswitch][:user]
+  group node[:freeswitch][:group]
+  mode 0755
+end
+
 #template "" do
 #  source "modules.conf.xml.erb"
 #  owner node[:freeswitch][:user]
