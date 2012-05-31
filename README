@@ -3,3 +3,54 @@ This is a part of the Open Secure Telephony Network project: https://guardianpro
 All of the necessary technologies and communications standards exist today for voice communications that is as secure as OpenPGP email. Many proprietary and open source solutions exist for desktop and mobile devices that already implement the necessary bits to provide a solution many times more secure than Skype, without dependence upon one global service provider. Yet people who are security conscious enough to use Skype to secure their computer based conversations will still hold sensitive discussion on mobile phones. The problem is simplicity, usability and reliability.
 
 This project will provide an application for Android phones that will be only marginally more complex to use than dialing an existing phone number, while still being based entirely on open standards. The app itself is based on existing open source client code provided by the CSipSimple, pjsip and ZORG projects. We will coordinate with a network of audited, open service providers around the world who already provide free and commercial service to users, to ensure our users have an automated provisioning process to get connected.
+
+Install the webapp:
+
+# enable Backports: 
+deb http://backports.debian.org/debian-backports squeeze-backports main
+apt-get install locales-all
+apt-get -t squeeze-backports install postgresql-9.1 postgresql-server-dev-9.1 
+  # make a production database
+  su - postgres
+  createdb ostel_production
+  # create superuser for production app
+  createuser -s freeswitch
+# configure ident authentication for freeswitch user on local TCP socket
+  vim /etc/postgresql/9.1/main/pg_hba.conf
+    host  ostel_production  freeswitch  127.0.0.1/32 ident
+  /etc/init.d/postgresql restart
+
+  # install bundler via rubygems
+  gem install bundler
+  cd OSTel/webapp/
+  bundle install
+  # configure production database in config/database.yml
+    production:
+    adapter: postgresql
+    database: ostel_production
+    username: freeswitch
+    hostname: localhost
+  # set production environment variable
+  export RAILS_ENV=production
+  # build database schema
+  rake db:migrate
+  # start server
+  rails server -e production
+  # check your site in a browser!
+# it should probably not look that good because Rails 3 doesn't serve static
+  # files
+# install unicorn
+  gem install unicorn --no-rdoc --no-ri
+  # run unicorn
+  unicorn -o 127.0.0.1 -p 3000 --env production
+# install nginx to proxy requests
+  apt-get install nginx
+# configure SSL
+  http://www.openssl.org/docs/HOWTO/certificates.txt
+# configure nginx
+  http://gist.github.com/
+# configure rails
+  vim config/environments/production.rb
+    config.freeswitch_dir = ""
+    config.domain = ""
+    config.action_mailer.default_url_options = { :host => '' }
