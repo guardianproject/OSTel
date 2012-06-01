@@ -24,6 +24,6 @@ The Ostel.me Android app is based upon the open-source <a href="https://code.goo
 <% if user_signed_in? %>
   <p><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></p>
 <% else %>
-  <p>Have an account? To retrieve your OSTel credentials, <%= link_to 'sign in', new_user_session_path %>.</p>
   <p><%= link_to 'Sign up', new_user_registration_path %> for OSTel to get your own number!</p>
+  <p>Have an account? To retrieve your OSTel credentials, <%= link_to 'sign in', new_user_session_path %>.</p>
 <% end %>
