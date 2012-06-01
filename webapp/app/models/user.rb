@@ -10,14 +10,16 @@ class User < ActiveRecord::Base
 
   attr_accessible :freeswitch_id, :freeswitch_password
 
+  after_initialize :init
   after_create :freeswitch_hook
 
+  def init
+    self.freeswitch_id ||= next_id DeviseExample::Application.config.freeswitch_dir
+    self.freeswitch_password ||= gen_password
+  end
+
   def freeswitch_hook
-    id = next_id DeviseExample::Application.config.freeswitch_dir
-    pw = gen_password
-    write_xml(id, DeviseExample::Application.config.freeswitch_dir, DeviseExample::Application.config.domain, pw)
-    self.update_attribute(:freeswitch_id, id)
-    self.update_attribute(:freeswitch_password, pw)
+    write_xml(self.freeswitch_id, DeviseExample::Application.config.freeswitch_dir, DeviseExample::Application.config.domain, self.freeswitch_password)
     freeswitch_reload DeviseExample::Application.config.freeswitch_dir
   end
 end
@@ -77,9 +79,6 @@ def write_xml(i, freeswitch_dir, domain, pw)
   fh = File.new(File.join(freeswitch_dir, "conf", "directory", "default", String(i) + ".xml"), "w")
   fh.write(xml_config)
   fh.close
-#  concise_string = i.to_s + ":" + pw
-#  user_list << concise_string + "\n"
-#  puts concise_string
 end
 
 def next_id(freeswitch_dir)
@@ -89,7 +88,7 @@ def next_id(freeswitch_dir)
 
   first = 1000
   last = 9999
-  valid_list = (first..last).reject {|x| files.include?(x)}
+  valid_list = (first..last).reject {|x| remove_list.include?(x.to_s)}
 
   valid_list[rand(valid_list.length)]
 end
@@ -98,9 +97,3 @@ def freeswitch_reload(freeswitch_dir)
   res = `#{freeswitch_dir}/bin/fs_cli -x reloadxml`
   puts res
 end
-
-#tests:
-#puts next_id "/home/zach/freeswitch"
-#write_xml(1234, "/home/zach/freeswitch", "boxysean.com")
-
-

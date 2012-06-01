@@ -64,7 +64,7 @@ def next_id(freeswitch_dir)
 
   first = 1000
   last = 9999
-  valid_list = (first..last).reject {|x| files.include?(x)}
+  valid_list = (first..last).reject {|x| files.include?(x.to_s)}
 
   valid_list[rand(valid_list.length)]
 end
