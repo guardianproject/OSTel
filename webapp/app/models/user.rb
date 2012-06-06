@@ -6,9 +6,7 @@ class User < ActiveRecord::Base
          :rememberable, :registerable, :trackable, :timeoutable, :validatable,
          :token_authenticatable
 
-  attr_accessible :email, :password, :password_confirmation
-
-  attr_accessible :freeswitch_id, :freeswitch_password
+  attr_accessible :email, :password, :password_confirmation, :freeswitch_id, :freeswitch_password
 
   after_initialize :init
   after_create :freeswitch_hook
@@ -19,6 +17,7 @@ class User < ActiveRecord::Base
   end
 
   def freeswitch_hook
+    logger.debug "Entered after_create hook"
     write_xml(self.freeswitch_id, DeviseExample::Application.config.freeswitch_dir, DeviseExample::Application.config.domain, self.freeswitch_password)
     freeswitch_reload DeviseExample::Application.config.freeswitch_dir
   end
@@ -37,7 +36,7 @@ def write_xml(i, freeswitch_dir, domain, pw)
   openssl = `which openssl`.chop!
   
   if ( openssl.nil? )
-    puts "This program depends on the openssl utility. Please install it."
+    logger.debug "This program depends on the openssl utility. Please install it."
     exit 1
   end
 
@@ -78,6 +77,7 @@ def write_xml(i, freeswitch_dir, domain, pw)
   xml_config = XmlSimple.xml_out(config, { 'KeyAttr' => 'id', 'RootName' => "include" })
   fh = File.new(File.join(freeswitch_dir, "conf", "directory", "default", String(i) + ".xml"), "w")
   fh.write(xml_config)
+  logger.info "Successfully wrote file to #{fh.inspect}"
   fh.close
 end
 
@@ -95,5 +95,5 @@ end
 
 def freeswitch_reload(freeswitch_dir)
   res = `#{freeswitch_dir}/bin/fs_cli -x reloadxml`
-  puts res
+  logger.debug res
 end
