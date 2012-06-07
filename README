@@ -22,6 +22,9 @@ apt-get -t squeeze-backports install postgresql-9.1 postgresql-server-dev-9.1
 
   # install bundler via rubygems
   gem install bundler
+  git clone git://github.com/guardianproject/OSTel.git
+  cp -r OSTel/webapp /usr/local/freeswitch
+  chown -R freeswitch:freeswitch /usr/local/freeswitch/webapp
   cd OSTel/webapp/
   bundle install
   # configure production database in config/database.yml
@@ -39,8 +42,6 @@ apt-get -t squeeze-backports install postgresql-9.1 postgresql-server-dev-9.1
   # check your site in a browser!
 # it should probably not look that good because Rails 3 doesn't serve static
   # files
-# install unicorn
-  gem install unicorn --no-rdoc --no-ri
   # run unicorn
   unicorn -o 127.0.0.1 -p 3000 --env production
 # install nginx to proxy requests
