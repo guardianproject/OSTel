@@ -2,3 +2,4 @@
 log/*
 config/database.yml
 db/*.sqlite3
+config/unicorn.rb
