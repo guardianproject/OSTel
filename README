@@ -54,3 +54,6 @@ apt-get -t squeeze-backports install postgresql-9.1 postgresql-server-dev-9.1
     config.freeswitch_dir = ""
     config.domain = ""
     config.action_mailer.default_url_options = { :host => '' }
+  vim config/initializers/devise.rb
+    config.mailer_sender = "signup@example.com"
+  vim config/initializers/smtp_settings.rb

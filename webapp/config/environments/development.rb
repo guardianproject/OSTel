@@ -25,10 +25,10 @@ DeviseExample::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 
-  config.action_mailer.default_url_options = { :host => 'boxysean.com:8080' }
+  config.action_mailer.default_url_options = { :host => 'example.com:8080' }
 
   config.freeswitch_dir = "/usr/local/freeswitch"
-  config.domain = "boxysean.com"
+  config.domain = "example.com"
 
   ActionMailer::Base.delivery_method = :smtp
 end
