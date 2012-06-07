@@ -95,5 +95,6 @@ end
 
 def freeswitch_reload(freeswitch_dir)
   res = `#{freeswitch_dir}/bin/fs_cli -x reloadxml`
-  logger.debug res
+  # For some reason this throws an exception. I don't know why but whatevs.
+  #logger.debug "Freeswitch reload status #{res.inspect}"
 end
