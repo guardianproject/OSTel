@@ -1,3 +1,4 @@
 *.swp
 log/*
 config/database.yml
+db/*.sqlite3
