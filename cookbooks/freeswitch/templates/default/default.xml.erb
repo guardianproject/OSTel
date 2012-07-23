@@ -52,7 +52,7 @@
 	 bridge (hangup_after_bridge=true) 
     -->
     <extension name="Local_Extension">
-      <condition field="destination_number" expression="^(1[0-9][0-9][0-9])$">
+      <condition field="destination_number" expression="^([0-9][0-9][0-9][0-9])$">
         <action application="export" data="dialed_extension=$1"/>
         <!-- bind_meta_app can have these args <key> [a|b|ab] [a|b|o|s] <app> -->
         <action application="bind_meta_app" data="1 b s execute_extension::dx XML features"/>
