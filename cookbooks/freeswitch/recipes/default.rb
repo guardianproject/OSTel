@@ -84,7 +84,7 @@ end
 
 # create non-root user
 user node[:freeswitch][:user] do
-  system true
+  system "true"
   shell "/bin/bash"
   home node[:freeswitch][:homedir]
   gid node[:freeswitch][:group]
