@@ -7,8 +7,10 @@
 # All rights reserved - Do Not Redistribute
 #
 
+package "readline6-dev"
 gem_package "unicorn"
 gem_package "sinatra"
+
 #
 # get source
 execute "git_clone" do
