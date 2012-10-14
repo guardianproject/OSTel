@@ -46,6 +46,16 @@
         <anti-action application="bridge" data="sofia/${use_profile}/${sip_to_uri}"/>
       </condition>
     </extension>
+
+    <!-- define extension for echo test. there is a 1/9999 chance it will overlap with an existing user -->
+    <extension name="echo">
+      <condition field="destination_number" expression="^9196$">
+        <action application="answer"/>
+        <action application="echo"/>
+      </condition>
+    </extension>
+
+
     <!-- 
 	 dial the extension (1000-1999) for 30 seconds and speak an error if the 
 	 call fails (continue_on_fail=true), otherwise hang up after a successful
@@ -86,13 +96,6 @@
     <extension name="sip_uri">
       <condition field="destination_number" expression="^sip:(.*)$">
         <action application="bridge" data="sofia/${use_profile}/$1"/>
-      </condition>
-    </extension>
-
-    <extension name="echo">
-      <condition field="destination_number" expression="^9196$">
-        <action application="answer"/>
-        <action application="echo"/>
       </condition>
     </extension>
 
