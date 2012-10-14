@@ -30,7 +30,7 @@ a line in /etc/hosts to the IP address/hostname pair. Reboot. Type `hostname
 <b>Operating System</b>
 
 The cookbook was written on Debian GNU/Linux 6 "squeeze". Package names are
-probably dependent on Debian.
+probably dependent on Debian. If you do not yet have chef installed you can use their stand alone package for Debian, documented below.
 
 = ATTRIBUTES: 
 
@@ -38,7 +38,8 @@ probably dependent on Debian.
  default[:freeswitch][:git_uri] = "git://git.freeswitch.org/freeswitch.git"
 
 = USAGE:
-
+ # if you don't have chef installed, run the first line below
+ curl -L http://www.opscode.com/chef/install.sh | sudo bash
  sudo -i
  cd ~
  git clone git://github.com/lazzarello/chef-twelvetone.git
