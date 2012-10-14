@@ -56,6 +56,7 @@ script "compile_freeswitch" do
   interpreter "/bin/bash"
   cwd "/usr/local/src/freeswitch"
   code <<-EOF
+  git checkout v1.2.3
   ./bootstrap.sh
   ./configure
   make clean
