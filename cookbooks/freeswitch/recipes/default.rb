@@ -91,12 +91,6 @@ user node[:freeswitch][:user] do
   gid node[:freeswitch][:group]
 end
 
-# change ownership of homedir
-execute "fs_homedir_ownership" do
-  cwd node[:freeswitch][:homedir]
-  command "chown -R #{node[:freeswitch][:user]}:#{node[:freeswitch][:group]} ."
-end
-
 # define service
 service node[:freeswitch][:service] do
   supports :restart => true, :start => true
@@ -109,6 +103,12 @@ cookbook_file "#{node[:freeswitch][:homedir]}/bin/gentls_cert" do
   owner node[:freeswitch][:user]
   group node[:freeswitch][:group]
   mode 0755
+end
+
+# change ownership of homedir
+execute "fs_homedir_ownership" do
+  cwd node[:freeswitch][:homedir]
+  command "chown -R #{node[:freeswitch][:user]}:#{node[:freeswitch][:group]} ."
 end
 
 execute "build_ca" do
