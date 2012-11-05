@@ -25,14 +25,15 @@
       information on this topic.
   -->
   <X-PRE-PROCESS cmd="set" data="domain=<%= node[:freeswitch][:domain] %>"/>
-  <X-PRE-PROCESS cmd="set" data="external_rtp_ip=auto-nat"/>
-  <X-PRE-PROCESS cmd="set" data="external_sip_ip=auto-nat"/>
-  <!-- UNCOMMENT THIS VALUE IF YOU ARE USING AMAZON EC2
-  http://wiki.freeswitch.org/wiki/Amazon_ec2
-  <X-PRE-PROCESS cmd="set" data="bind_server_ip=<%= node[:ec2][:public_ipv4] %>"/>
-  <X-PRE-PROCESS cmd="set" data="external_rtp_ip=<%= node[:ec2][:public_ipv4] %>"/>
-  <X-PRE-PROCESS cmd="set" data="external_sip_ip=<%= node[:ec2][:public_ipv4] %>"/>
-  -->
+  <% if node[:ec2] %>
+	  <!-- http://wiki.freeswitch.org/wiki/Amazon_ec2 -->
+	  <X-PRE-PROCESS cmd="set" data="bind_server_ip=<%= node[:ec2][:public_ipv4] %>"/>
+	  <X-PRE-PROCESS cmd="set" data="external_rtp_ip=<%= node[:ec2][:public_ipv4] %>"/>
+	  <X-PRE-PROCESS cmd="set" data="external_sip_ip=<%= node[:ec2][:public_ipv4] %>"/>
+  <% else %>
+	  <X-PRE-PROCESS cmd="set" data="external_rtp_ip=auto-nat"/>
+	  <X-PRE-PROCESS cmd="set" data="external_sip_ip=auto-nat"/>
+  <% end %>
   <X-PRE-PROCESS cmd="set" data="domain_name=$${domain}"/>
   <X-PRE-PROCESS cmd="set" data="hold_music=local_stream://moh"/>
   <X-PRE-PROCESS cmd="set" data="use_profile=internal"/>
