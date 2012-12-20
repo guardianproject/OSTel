@@ -39,6 +39,7 @@ probably dependent on Debian. If you do not yet have chef installed you can use 
 
 = USAGE:
  # if you don't have chef installed, run the first line below
+ apt-get install curl git
  curl -L http://www.opscode.com/chef/install.sh | sudo bash
  sudo -i
  cd ~
