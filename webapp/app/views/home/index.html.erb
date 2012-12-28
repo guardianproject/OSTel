@@ -36,19 +36,26 @@
 
 							<% if user_signed_in? %>
 							  <p><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></p>
+							<%= render :partial => "devise/shared/links" %>
 							<% else %>
 							<p class="color1 pad_bot2"><strong>Get Account</strong></p>
-							<form accept-charset="UTF-8" action="/users" class="user_new" id="user_new" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="Fy0SuvcK80U1GU2C/5r6tKTqO1YDb0uRJ2/NEBlL/iI=" /></div>
-							    <div><label for="user_email">Email:</label>  <input id="user_email" name="user[email]" size="30" type="email" value="" /></div>
-								<div><label for="user_password">Password:</label>  <input id="user_password" name="user[password]" size="30" type="password" /></div>
-								<div><label for="user_password_confirmation">Password confirmation:</label>  <input id="user_password_confirmation" name="user[password_confirmation]" size="30" type="password" /></div>
-								<div><input id="user_submit" name="commit" type="submit" value="Sign up" /></div>
-							</form>
+							<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+							  <%= devise_error_messages! %>
+
+							  <div><%= f.label :email %><br />
+							  <%= f.email_field :email %></div>
+
+							  <div><%= f.label :password %><br />
+							  <%= f.password_field :password %></div>
+
+							  <div><%= f.label :password_confirmation %><br />
+							  <%= f.password_field :password_confirmation %></div>
+
+							  <div><%= f.submit "Sign up" %></div>
+							<% end %>
+							<%= render :partial => "devise/shared/links" %>
 							  <p><%= link_to 'Sign up', new_user_registration_path %> for OSTel to get your own number!</p>
 							  <p>Have an account? To retrieve your OSTel credentials, <%= link_to 'sign in', new_user_session_path %>.</p>
-							<a href="/users/password/new">Forgot password?</a> /
-							<a href="/users/confirmation/new">Didn't receive confirmation?</a> /
-							<a href="/users/unlock/new">Didn't receive unlock info?</a><br />
 							<% end %>
 
 
@@ -57,7 +64,7 @@
 					<figure class="left marg_right1"><img src="images/page4_img3.jpg" alt=""></figure>
 					<p class="color1 pad_bot2"><strong>Background</strong></p>
 					<p>
-					Ostel on Android is based upon the open-source <a href="https://code.google.com/p/csipsimple/">CSipSimple</a> app, which utilizes the <a href="http://www.pjsip.org">pjsip</a> and <a href="https://github.com/wernerd/ZRTP4PJ">ZRTP4PJ</a> libraries to provide transport and media encryption and verification. Instructions to configure the app are in the activation email and <a href="https://guardianproject.info/wiki/Ostel">on the wiki</a>. We encourage you to build your own OSTN server <a href="https://github.com/lazzarello/chef-twelvetone/tree/master/cookbooks/freeswitch"> with our cookbook</a>.
+					Ostel on Android is based upon the open-source <a href="https://code.google.com/p/csipsimple/">CSipSimple</a> app, which utilizes the <a href="http://www.pjsip.org">pjsip</a> and <a href="https://github.com/wernerd/ZRTP4PJ">ZRTP4PJ</a> libraries to provide transport and media encryption and verification. Instructions to configure the app are in the activation email and <a href="https://guardianproject.info/wiki/Ostel">on the wiki</a>. We encourage you to build your own OSTN server <a href="https://github.com/guardianproject/chef-twelvetone/tree/master/cookbooks/freeswitch"> with our cookbook</a>.
 					</p>
 				</div>
 				<h2>Features</h2>
