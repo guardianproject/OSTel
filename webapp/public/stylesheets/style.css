@@ -1,0 +1,105 @@
+/* Getting the new tags to behave */
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video {display:block}
+mark, rp, rt, ruby, summary, time {display:inline}
+/* Left & Right alignment */
+.left {float:left}
+.right {float:right}
+.wrapper {width:100%;overflow:hidden}
+/* Global properties ======================================================== */
+body {background:#000;border:0;font:14px Arial, Helvetica, sans-serif;color:#808080;line-height:20px;min-width:1100px;overflow:hidden}
+.ic {border:0;float:right;background:#fff;color:#f00;width:50%;line-height:10px;font-size:10px;margin:-220% 0 0 0;overflow:hidden;padding:0}
+/* Global Structure ============================================================= */
+.main {	margin:0 auto;width:1100px}
+.bg_spinner {width:100px;height:13px;position:absolute;z-index:2;background:url(../images/loader.gif) 0 0 no-repeat;top:5px;left:5px}
+.spinner {position:absolute;z-index:99;background:url(../images/loader.gif) 50% 50% no-repeat #000;width:100%;height:100%;top:0;left:0}
+.block {height:92px}
+.extra {min-height:100%;height:auto !important;height:100%;margin:0 auto -92px;position:relative}
+body, html {height:100%}
+.bg1 {background:#000;position:relative;z-index:1;height:92px}
+.box {width:100%;overflow:hidden;padding-top:20px;padding-bottom:20px;position:relative}
+.pagination {position:absolute;top:-35px;left:0}
+.pagination li {float:left;padding-right:2px;font-size:20px;line-height:34px}
+.pagination a {display:inline-block;width:35px;height:35px;color:#000;text-align:center;text-decoration:none;text-align:center;background:#fff}
+.pagination a:hover, .pagination .current a {background-position:left;color:#fff;background:#000}
+/* ============================= main layout ====================== */
+a {color:#808080;text-decoration:underline;outline:none}
+a:hover {text-decoration:none}
+h1 {padding:48px 0 0 0}
+h2 {font-size:26px;line-height:1.2em;padding:17px 0 20px 0;color:#fff;font-weight:700}
+p {padding-bottom:20px}
+/* ============================= header ====================== */
+header {width:360px;float:left}
+#logo {display:block;text-indent:-9999px;background:url(../images/logo.png) 0 0 no-repeat;width:280px;height:153px}
+#menu {padding-top:122px}
+#menu > li {width:100%;overflow:hidden;padding-bottom:4px}
+#menu > li > a {display:inline-block;font-size:26px;line-height:54px;height:56px;color:#fff;background:#000;text-decoration:none;position:relative;letter-spacing:0px;cursor:pointer}
+#menu > li > a span {display:block;background:#fff;position:absolute;width:100%;height:100%;top:0;left:0}
+#menu > li > a strong {position:relative;display:block;padding:0 95px 0 40px;height:56px}
+#menu > li > a:hover, #menu > li > a.active {color:#000}
+#menu > li > a:hover strong, #menu > li > a.active strong{}
+/* ============================= content ====================== */
+
+#content {height:868px;width:740px;float:left;position:relative}
+#content > ul > li {position:relative;height:868px;width:100%;bottom:0}
+.box1 {background:url(../images/bg_content.png) repeat;width:100%;height:100%;position:absolute;top:0;left:0}
+.inner {padding:25px 55px 25px 60px;position:relative}
+.close {position:absolute;top:20px;right:20px;width:25px;height:25px;background:url(../images/close.gif) 0 0 no-repeat;display:block}
+.close span {display:block;background:url(../images/close.gif) 0 bottom no-repeat;width:100%;height:100%}
+.pad_left1 {padding-left:60px}
+.pad_bot1 {padding-bottom:25px}
+.pad_bot2 {padding-bottom:4px}
+.pad_bot3 {padding-bottom:10px}
+.marg_right1 {margin-right:29px}
+#page_Services .pad_bot3 {padding-bottom:15px}
+#content figure {padding-top:5px}
+.button1 {display:inline-block;font-size:16px;color:#000;text-transform:uppercase;text-decoration:none;background:#fff;line-height:33px;position:relative}
+.button1 span {position:absolute;top:0;left:0;width:100%;height:100%;background:#000}
+.button1 strong {position:relative;font-weight:400;display:block;padding:0 14px;letter-spacing:-1px}
+.button1:hover {color:#fff}
+.date {float:left;width:52px;margin-right:17px;text-align:center;font-size:49px;font-weight:700;color:#fff;letter-spacing:-1px;line-height:1.2em}
+.date strong {margin-top:-9px;display:block}
+.date span {font-weight:400;font-size:25px;line-height:1.2em;margin-top:-13px;display:block}
+.color1 {color:#fff}
+.list1, .list2 {margin-top:-2px}
+.list1 li, .list2 li {line-height:24px}
+.list1 a, .list2 a {padding-left:10px;background:url(../images/marker_1.gif) 0 6px no-repeat;text-decoration:none}
+.list1 a:hover {color:#fff}
+.list2 a {color:#fff}
+.list2 a:hover {color:#808080}
+.tabs .nav {padding-top:5px}
+.tabs .nav li {line-height:28px;padding-bottom:2px}
+.tabs .nav li a {position:relative;font-size:16px;letter-spacing:-1px;text-transform:uppercase;text-decoration:none;height:28px;line-height:26px;padding:0 39px 0 9px;color:#fff;background:#000;display:inline-block}
+.tabs .nav li a span {display:block;position:absolute;top:0;left:0;width:100%;height:100%;background:#fff}
+.tabs .nav li a strong {font-weight:400}
+.tabs .nav li a:hover, .tabs .nav .selected a {color:#000}
+.tab-content figure {padding-bottom:15px}
+.tab-content figure.marg_right1 {margin-right:20px}
+/* Lightbox image */
+.lightbox-image {position:relative;overflow:hidden;display:block;background:#fff;z-index:1}
+.lightbox-image img {position:relative;z-index:1}
+.lightbox-image > span {display:block;position:absolute;left:0;top:0;width:100%;height:100%;background:url(../images/border.gif) 0 0 no-repeat;z-index:2}
+.pp_details {height:0;padding:0;margin:0;font-size:0;line-height:0;visibility:visible !important}
+.pp_description {display:none;height:0;padding:0;margin:0;font-size:0;line-height:0}
+.pp_close {position:absolute;z-index:99;top:-30px;right:0;display:none !important}
+div.light_square .pp_next {position:absolute;top:48%;right:-68px;width:35px;height:35px;background:url(../images/marker_right.gif) left top no-repeat;visibility:visible !important}
+div.light_square .pp_next:hover {background-position:bottom}
+div.light_square .pp_previous {position:absolute;top:48%;left:-68px;width:35px;height:35px;background:url(../images/marker_left.gif) left top no-repeat;visibility:visible !important}
+div.light_square .pp_previous:hover {background-position:bottom}
+.pp_arrow_previous, .pp_arrow_next {display:none !important}
+.link1 {color:#fff;text-decoration:none}
+.link1:hover {text-decoration:underline}
+/* ============================= footer ====================== */
+footer {font-size:16px;text-transform:uppercase;font-weight:400;line-height:40px;position:relative;padding:24px 0 0 0;letter-spacing:-1px}
+footer a {color:#fff;text-decoration:none}
+footer a:hover {color:#808080}
+.col_1 {width:360px;float:left}
+.col_2 {width:740px;float:left;text-align:center}
+#footer_logo {float:left;background:url(../images/footer_logo.gif) 0 0 no-repeat;width:111px;height:45px;text-indent:-9999px;margin-right:22px}
+/* ============================= forms ============================= */
+#ContactForm {margin-top:-2px}
+#ContactForm .wrapper {overflow:inherit;min-height:30px}
+#ContactForm span {float:left;width:75px;color:#fff;padding-top:2px}
+#ContactForm a {margin-right:10px;float:left;margin-top:23px;width:112px;text-align:center}
+#ContactForm a span {width:100%}
+#ContactForm .input {float:left;margin:0;width:525px;height:16px;background:#fff;padding:4px 10px;color:#808080;font:14px "Trebuchet MS", Arial, Helvetica, sans-serif}
+#ContactForm textarea {overflow:auto;margin:0;float:left;width:525px;height:289px;background:#fff;padding:4px 10px;color:#808080;font:14px "Trebuchet MS", Arial, Helvetica, sans-serif}
