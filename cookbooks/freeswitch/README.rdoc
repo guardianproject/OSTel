@@ -43,7 +43,7 @@ probably dependent on Debian. If you do not yet have chef installed you can use 
  curl -L http://www.opscode.com/chef/install.sh | sudo bash
  sudo -i
  cd ~
- git clone git://github.com/lazzarello/chef-twelvetone.git
+ git clone git://github.com/guardianproject/chef-twelvetone.git
  cd ~/chef-twelvetone/config
  chef-solo -c client.solo.rb -j config-freeswitch.json
 
