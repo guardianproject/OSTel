@@ -27,10 +27,9 @@ On my testbed system, I did this by setting /etc/hostname to the FQDN and adding
 a line in /etc/hosts to the IP address/hostname pair. Reboot. Type `hostname
 -f`. If you get the output of the FQDN. You may run this cookbook.
 
-<b>Operating System</b>
+<b>Supported Platforms</b>
 
-The cookbook was written on Debian GNU/Linux 6 "squeeze". Package names are
-probably dependent on Debian. If you do not yet have chef installed you can use their stand alone package for Debian, documented below.
+The cookbook was written on Debian GNU/Linux 6 "squeeze". Support is also confirmed on Ubuntu 12.04 LTS "Precise".
 
 = ATTRIBUTES: 
 
