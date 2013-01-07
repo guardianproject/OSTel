@@ -47,7 +47,7 @@
 								<%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
 							<%- end -%>
 
-							<% if user_signed_in? -%>
+							<% if user_signed_in? %>
 								<div>
 								<p>Welcome! These are your OSTel creditials for this server.</p>
 								<table class="info">
@@ -55,7 +55,7 @@
 									<tr><th>OSTel Password</th><td><%= current_user.freeswitch_password %></td></tr>
 								</table>
 								</div>
-							<% end -%>
+							<% end %>
 
 
 
