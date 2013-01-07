@@ -1,0 +1,21 @@
+Upgrading OSTN to Rails 3.2
+
+
+
+Installing OSTN for development in MacOS X.
+
+Install RVM Frontend for OS X:
+http://jewelrybox.unfiniti.com/
+
+Use Ruby 1.9.3p194 with global gemset
+
+Install bundler
+
+`gem install bundler`
+
+download source code
+
+`git clone git://github.com/guardianproject/OSTel.git`
+`cd OSTel/webapp`
+`rake db:migrate`
+
