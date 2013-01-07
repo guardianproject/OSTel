@@ -1,5 +1,4 @@
 <ul>
-
 	<li id="page_About">
 		<div class="box1">
 			<div class="inner">
@@ -18,7 +17,6 @@
 			</div>
 		</div>
 	</li>
-
 	<li id="page_Services">
 		<div class="box1">
 			<div class="inner">
@@ -32,31 +30,15 @@
 				</div>
 				<div class="wrapper pad_bot3">
 					<figure class="left marg_right1"><img src="images/page4_img2.jpg" alt=""></figure>
-
-
-							<% if user_signed_in? %>
-							  <p><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></p>
-							<%= render :partial => "devise/shared/links" %>
-							<% else %>
-							<p class="color1 pad_bot2"><strong>Get Account</strong></p>
-							<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-							  <%= devise_error_messages! %>
-
-							  <div><%= f.label :email %><br />
-							  <%= f.email_field :email %></div>
-
-							  <div><%= f.label :password %><br />
-							  <%= f.password_field :password %></div>
-
-							  <div><%= f.label :password_confirmation %><br />
-							  <%= f.password_field :password_confirmation %></div>
-
-							  <div><%= f.submit "Sign up" %></div>
-							<% end %>
-							<%= render :partial => "devise/shared/links" %>
-							  <p><%= link_to 'Sign up', new_user_registration_path %> for OSTel to get your own number!</p>
-							  <p>Have an account? To retrieve your OSTel credentials, <%= link_to 'sign in', new_user_session_path %>.</p>
-							<% end %>
+					<p class="color1 pad_bot2"><strong>Install</strong></p>
+						<div class="user_new" id="user_new" 
+							<p>
+								Email: <%= email_field(:user, :address) %><br>
+								Password: <%= password_field_tag(:password) %><br>
+								Confirm Password: <%= password_field_tag(:password) %><br>
+								Sign in / Forgot password / Didn't receive confirmation? / Didn't receive unlock info?
+							</p>
+						</div>
 
 
 				</div>
@@ -129,7 +111,3 @@
 		</div>
 	</li>
 </ul>
-
-
-<h2>Account</h2>
-
