@@ -43,7 +43,7 @@ apt-get -t squeeze-backports install postgresql-9.1 postgresql-server-dev-9.1
 # it should probably not look that good because Rails 3 doesn't serve static
   # files
   # run unicorn
-  unicorn -o 127.0.0.1 -p 3000 -c /usr/local/freeswitch/webapp/config/unicorn.rb --env production
+  unicorn -o 127.0.0.1 -p 3000 -c /usr/local/freeswitch/webapp/config/unicorn.rb --env production -D
 # install nginx to proxy requests
   apt-get install nginx
 # configure SSL
