@@ -10,3 +10,4 @@ group :production do
 end
 
 gem 'devise'
+gem 'rake', '>= 0.8.7'
