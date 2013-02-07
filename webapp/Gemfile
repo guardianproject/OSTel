@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.19'
+gem 'rails', '3.0.20'
 group :development do
   gem 'sqlite3', :require => 'sqlite3'
 end
