@@ -4,5 +4,5 @@ config/database.yml
 db/*.sqlite3
 config/unicorn.rb
 /*.pid
-.DS_Store
+*.DS_Store
 tmp/*
