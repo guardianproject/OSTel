@@ -21,20 +21,24 @@ $(window).load(function() {
 		$(this).data({num:num})
 	})
 	
+/*
 	if (location.hash.slice(0,3)=='#!/') {
+		alert("found the hash.");
 		page=location.hash.slice(3);
 		open_page('#'+page);
 		fl=false;
 	}
+*/
 	if ((location.hash=='#')||(location.hash=='')) {
 		open_page('');
 		fl=true;
 			$('#content').stop().animate({height:'668'})
 	}
 	$('a').click(function(){
-		if ($(this).attr('href').slice(0,3)=='#!/') {
-			page=$(this).attr('href').slice(3);	
+		if ($(this).attr('href').slice(0,4)=='/#!/') {
+			page=$(this).attr('href').slice(4);	
 			open_page('#'+page);
+			alert("open page " + page + " at location " + location.pathname);
 			return false;
 		}
 		if ($(this).attr('data-type')=='close') {
@@ -42,7 +46,9 @@ $(window).load(function() {
 		}
 	})
 	function open_page(page){
-		location.hash='#!/'+page.slice(1);
+		if (location.pathname != '/') {
+			location='/#!/'+page.slice(1);
+		}
 		$('#menu a').removeClass('active').find(' > span').stop().animate({opacity:'0'},600);
 		Cufon.replace('#menu a', { fontFamily: 'Ubuntu', hover:true });
 		num=$(page).data('num');
