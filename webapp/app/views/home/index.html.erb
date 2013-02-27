@@ -1,0 +1,114 @@
+<ul>
+	<li id="page_About">
+		<div class="box1">
+			<div class="inner">
+				<a href="#" class="close" data-type="close"><span></span></a>
+				<h2>About Ostel</h2>
+				<div class="wrapper">
+					<figure class="left marg_right1"><img src="images/page2_img1.jpg" alt=""></figure>
+					<p class="color1 pad_bot2"><strong>Encrypted Voice</strong></p>
+					<p> Ostel is an open secure telephone service. You can use it to place encrypted phone calls over the internet. Calls placed through the system are secured end to end. We're currently in public beta, continually testing and improving it to ensure the best possible security. We keep data logging to a minimum and we're working to ensure no unnecessary IP addresses are stored on disk. This service is the public testbed of the  <a href="https://www.ostel.me/" target="_blank">Open Secure Telephony Network (OSTN) </a>project. Our goal is to promote the use of free & open protocols, standards and software and to power end-to-end secure voice communications on both mobile devices and desktop computers.</p>
+				</div>
+				<h2>About Guardian Project</h2>
+				<div class="wrapper">
+					<p class="color1 pad_bot2"><strong>Open Source Mobile Security Team</strong></p>
+					<p> The Guardian Project creates easy-to-use apps, mobile OS security enhancements, and customized mobile devices for people around the world to help them communicate more freely, and protect themselves from intrusion and monitoring. Get news updates about OSTN <a href="https://guardianproject.info/tag/ostn/" target="_blank">on our blog</a>. Learn more about us and our other work <a href="https://www.guardianproject.info/" target="_blank">on our website</a>. </p>
+				</div>								
+			</div>
+		</div>
+	</li>
+	<li id="page_Services">
+		<div class="box1">
+			<div class="inner">
+				<a href="#" class="close" data-type="close"><span></span></a>
+				<div class="wrapper pad_bot3">
+				<h2>Encrypt Your Phone</h2>
+				<div class="wrapper pad_bot3">
+					<figure class="left marg_right1"><img src="images/page4_img1.jpg" alt=""></figure>
+					<p class="color1 pad_bot2"><strong>Install</strong></p>
+					<p>Ostel runs on every phone and desktop operating system. We officially support <a href="https://code.google.com/p/csipsimple/" target="_blank">CSipSimple for Android</a> as a high quality open source SIP app. For other supported client software, check out <a href="https://guardianproject.info/wiki/OSTN#Client_Software" target="_blank">our wiki</a>. You'll need to sign up for an Ostel account and log in using the Ostel username in the CSipSimple or other SIP app.</p>
+				</div>
+				<div class="wrapper pad_bot3">
+					<figure class="left marg_right1"><img src="images/page4_img2.jpg" alt=""></figure>
+					<p class="color1 pad_bot2"><strong>Install</strong></p>
+					<div class="user_new" id="user_new">
+						<% if user_signed_in? %>
+							<p><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></p>
+							<%= render :partial => "devise/shared/links" %>
+						<% else %>
+							<%= render :partial => "devise/registrations/new" %>
+							<%= render :partial => "devise/shared/links" %>
+						<% end %>
+					</div>
+				</div>
+				<div class="wrapper">
+					<figure class="left marg_right1"><img src="images/page4_img3.jpg" alt=""></figure>
+					<p class="color1 pad_bot2"><strong>Background</strong></p>
+					<p>
+					Ostel on Android is based upon the open-source <a href="https://code.google.com/p/csipsimple/">CSipSimple</a> app, which utilizes the <a href="http://www.pjsip.org">pjsip</a> and <a href="https://github.com/wernerd/ZRTP4PJ">ZRTP4PJ</a> libraries to provide transport and media encryption and verification. Instructions to configure the app are in the activation email and <a href="https://guardianproject.info/wiki/Ostel">on the wiki</a>. We encourage you to build your own OSTN server <a href="https://github.com/guardianproject/chef-twelvetone/tree/master/cookbooks/freeswitch"> with our cookbook</a>.
+					</p>
+				</div>
+				<h2>Features</h2>
+					<div class="col1">
+						<ul class="list2">
+							<li><a href="#">Mobile OS Compatibility: Android, iOS, Blackberry, Symbian</a></li>
+							<li><a href="#">Desktop OS Compatibility: Mac, PC, Linux</a></li>
+						</ul>
+					</div>
+					<div class="col1 pad_left1">
+						<ul class="list2">
+							<li><a href="#">TLS</a></li>
+							<li><a href="#">SRTP</a></li>
+							<li><a href="#">ZRTP</a></li>
+							<li><a href="#">VPN</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</li>
+	<li id="page_Contact">
+		<div class="box1">
+			<div class="inner">
+				<a href="#" class="close" data-type="close"><span></span></a>
+				<div class="wrapper">
+					<div class="col1">
+						<h2>Contact Info</h2>
+						Guardian Project<br>
+						28 W27 St, NY, NY, USA<br>
+						<a href="https://guardianproject.info" target="_blank">www.guardianproject.info</a> <br>
+						<a href="https://twitter.com/guardianproject/" target="_blank">@GuardianProject</a> <br>
+						<a href="https://github.com/guardianproject/OSTel" target="_blank">Git</a> <br>
+						<p class="cols"><a href="mailto:" class="link1">support@guardianproject.info</a></p>
+					</div>
+					<div class="col1 pad_left1">
+						<h2>Our Location</h2>
+						<figure><iframe width="280" height="210" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=28+w27th+st+ny+10001&amp;aq=&amp;sll=40.744981,-73.989658&amp;sspn=0.010892,0.022724&amp;ie=UTF8&amp;hq=&amp;hnear=28+W+27th+St,+New+York,+10001&amp;ll=40.74477,-73.989937&amp;spn=0.010827,0.022724&amp;t=m&amp;z=11&amp;iwloc=A&amp;output=embed"></iframe></figure>
+					</div>
+				</div>
+				<h2>Contact Form</h2>
+				<form id="ContactForm">
+					<div>
+						<div  class="wrapper">
+							<span>Full Name:</span>
+							<input type="text" class="input" >
+						</div>
+						<div  class="wrapper">
+							<span>E-mail:</span>
+							<input type="text" class="input" >
+						</div>
+						<div  class="textarea_box">
+							<span>Message:</span>
+							<textarea name="textarea" cols="1" rows="1"></textarea>
+						</div>
+						<div class="wrapper">
+							<span>&nbsp;</span>
+							<a href="#" class="button1" onClick="document.getElementById('ContactForm').reset()"><span></span><strong>Clear</strong></a>
+							<a href="#" class="button1" onClick="document.getElementById('ContactForm').submit()"><span></span><strong>Send</strong></a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</li>
+</ul>

@@ -1,0 +1,12 @@
+
+.col1, .col2, .col3, .cols { float:left;}
+
+.col1{ width:280px;}
+.col2{ width:209px;}
+
+.cols{ width:98px;}
+
+#page_Portfolio .col1{ width:135px;}
+#page_Portfolio .col2{ width:425px;}
+
+

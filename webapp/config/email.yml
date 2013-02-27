@@ -1,0 +1,9 @@
+production:
+  delivery_method: :smtp
+  smtp_settings:
+    address: 'mail.foo.com'
+    port: 465
+    domain: 'foo.com'
+    authentication: :login
+    user_name: 'me@foo.com'
+    password: 'my.pass'
