@@ -8,7 +8,7 @@
  * 
  * Open source under the BSD License. 
  * 
- * Copyright © 2008 George McGinley Smith
+ * Copyright Â© 2008 George McGinley Smith
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without modification, 
@@ -143,7 +143,7 @@ jQuery.extend( jQuery.easing,
 		return c*(t/=d)*t*((s+1)*t - s) + b;
 	},
 	easeOutBack: function (x, t, b, c, d, s) {
-		if (s == undefined) s = 1.40158;
+		if (s == undefined) s = 1.70158;
 		return c*((t=t/d-1)*t*((s+1)*t + s) + 1) + b;
 	},
 	easeInOutBack: function (x, t, b, c, d, s) {
@@ -177,7 +177,7 @@ jQuery.extend( jQuery.easing,
  * 
  * Open source under the BSD License. 
  * 
- * Copyright © 2001 Robert Penner
+ * Copyright Â© 2001 Robert Penner
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without modification, 
