@@ -34,13 +34,15 @@
 		    <header class="wrapper clearfix">
 		        
 		        <!-- LOGO Replace  -->
-		        <a href="index.html" class="logo"><img src="images/logo@2x.png" alt="logo" /></a>
+		        <a href="index.html" class="logo"><%= image_tag "logo@2x.png" %></a>
 		        
 		        <nav>
-		        	<a class="toggleMenu" href="#"><img src="images/icon_menu@2x.png" alt="menu" /></a>
+		        	<a class="toggleMenu" href="#"><%= image_tag "images/icon_menu@2x.png"%></a>
 		            <ul class="nav" id="nav">
 		                <li class="feat"><a class="active" href="#">Features</a></li>
-		                <li><a href="about.html">About</a></li>
+		                <li><a class="number" href="#">Get a number</a></li>
+										<li><%= link_to "Activation Code","/users/sign_in" %></li>
+										<li><a href="about.html">About</a></li>
 		                <li class="last"><a href="mailto:support@ostel.me">Support</a></li>
 		            </ul>
 		        </nav>
@@ -53,7 +55,7 @@
             <footer class="wrapper clearfix">
             
                 <!-- LOGO Replace  -->
-                <h1><img src="images/footlogo@2x.png" alt="logo" /></h1>
+                <h1><%= image_tag "footlogo@2x.png" %></h1>
                 
                 <!-- INSERT Footer Links // Insert Desired menu items  -->
                 <ul>

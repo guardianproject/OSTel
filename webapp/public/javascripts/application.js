@@ -39,6 +39,7 @@ var modal = (function(){
 
 		// bind the center method to the event with a key 'resize.modal'
 		$(window).bind('resize.modal', method.center);
+		$(window).bind('scroll.modal', method.center);
 
 		$modal.show();
 		$overlay.show();
@@ -50,6 +51,7 @@ var modal = (function(){
 		$content.empty();
 		// unbind the event key
 		$(window).unbind('resize.modal');
+		$(window).unbind('scroll.modal');
 	};
 
 	// define some strings to append to the DOM at runtime
@@ -77,7 +79,7 @@ var modal = (function(){
 }());
 
 $(document).ready(function(){
-	$('a.btn').click(function(e){
+	$('a.number').click(function(e){
 		modal.open({content: "MAKE THE CALL!"});
 		e.preventDefault();
 	});
