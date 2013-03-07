@@ -6,7 +6,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Ostel: Open Secure Telephone Network</title>
+        <title>Ostel: Encrypted Phone Calls</title>
         <meta name="description" content="">
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -29,7 +29,6 @@
 		
 		 <!-- START MAIN SLIDE CONTAINER -->
 		<div id="slides">
-		
 		<div class="header-container">
 		    <header class="wrapper clearfix">
 		        
@@ -37,12 +36,13 @@
 		        <a href="index.html" class="logo"><%= image_tag "logo@2x.png" %></a>
 		        
 		        <nav>
-		        	<a class="toggleMenu" href="#"><%= image_tag "images/icon_menu@2x.png"%></a>
+		        	<a class="toggleMenu" href="#"><%= image_tag "icon_menu@2x.png"%></a>
 		            <ul class="nav" id="nav">
 		                <li class="feat"><a class="active" href="#">Features</a></li>
 		                <li><a class="number" href="#">Get a number</a></li>
-										<li><%= link_to "Activation Code","/users/sign_in" %></li>
-										<li><a href="about.html">About</a></li>
+										<li><%= link_to "Activation Code", :new_user_session %></li>
+										<li><a href="about.html">Info</a></li>
+		                <li><a href="faq.html">FAQ</a></li>
 		                <li class="last"><a href="mailto:support@ostel.me">Support</a></li>
 		            </ul>
 		        </nav>
@@ -55,15 +55,15 @@
             <footer class="wrapper clearfix">
             
                 <!-- LOGO Replace  -->
-                <h1><%= image_tag "footlogo@2x.png" %></h1>
+                <h1><a href="https://guardianproject.info" target="_blank"><%= image_tag "footlogo@2x.png" %></a></h1>
                 
                 <!-- INSERT Footer Links // Insert Desired menu items  -->
                 <ul>
-                	<li><a href="#">Contact</a></li>
-                	<li><a href="https://twitter.com/guardianproject">Twitter</a></li>
-                	<li><a href="#">Press</a></li>
-                	<li><a href="#">Support</a></li>
-                	<li><a href="https://guardianproject.info/wiki/Ostel">Developers</a></li>
+                	<li><a href="mailto:support@ostel.me">Support</a></li>
+                	<li><a href="https://twitter.com/guardianproject" target="_blank">Twitter</a></li>
+                	<li><a href="press.html">Press</a></li>
+                	<li><a href="https://guardianproject.info/wiki/Ostel" target="_blank">Support</a></li>
+                	<li><a href="https://github.com/guardianproject/ostel" target="_blank">Developers</a></li>
                 	<li><a href="privacy.html">Privacy</a></li>
                 </ul>
                 

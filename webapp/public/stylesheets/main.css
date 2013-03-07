@@ -23,8 +23,8 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid #d3e1e6; padd
    ========================================================================== */
 .header-container .logo{
 	position: absolute;
-	width: 171px; /* Adjust Width for Logo if needed */
-	height: 46px; /* Adjust Height for Logo if needed */
+	width: 271px; /* Adjust Width for Logo if needed */
+	height: 66px; /* Adjust Height for Logo if needed */
 	top: 40px;
 	margin: 0;
 
@@ -159,8 +159,8 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid #d3e1e6; padd
    ========================================================================== */ 
 .footer-container h1{
 	position: relative;
-	width: 86px; /* Adjust Width for Logo if needed */
-	height: 23px; /* Adjust Height for Logo if needed */
+	width: 186px; /* Adjust Width for Logo if needed */
+	height: 92px; /* Adjust Height for Logo if needed */
 	margin: 0 auto 40px;
 }
 .footer-container h1 img{
