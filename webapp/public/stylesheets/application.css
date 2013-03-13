@@ -93,6 +93,7 @@ table.info th {
 
 #modal {
 	position: absolute;
+	z-index: 99;
 	background: rgba(0,0,0,0.2);
 	border-radius: 14px;
 	padding: 8px;
