@@ -77,10 +77,3 @@ var modal = (function(){
 	return method;
 
 }());
-
-$(document).ready(function(){
-	$('a.number').click(function(e){
-		modal.open({content: "MAKE THE CALL!"});
-		e.preventDefault();
-	});
-});
