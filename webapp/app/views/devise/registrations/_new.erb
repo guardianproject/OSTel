@@ -1,12 +1,19 @@
-<h2>Sign up</h2>
+<h2>Get A Free Phone Number</h2>
+<p>Connect in 3 easy steps:</p>
+		<ol>                     
+				<li>Sign up for an account.</li>
+				<li>We'll email you an Ostel phone number & the app.</li>
+				<li>Then you're ready to call other Ostel numbers securely.</li>  
+		</ol>        
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-  <div><%= f.label :email %><br />
+
+  <div><%= f.label :email, "Enter your email" %><br />
   <%= f.email_field :email %></div>
 
-  <div><%= f.label :password %><br />
+  <div><%= f.label :password, "Create an account password" %><br />
   <%= f.password_field :password %></div>
 
-  <div><%= f.label :password_confirmation %><br />
+  <div><%= f.label :password_confirmation, "Confirm your account password" %><br />
   <%= f.password_field :password_confirmation %></div>
 
   <div><%= f.submit "Sign up" %></div>
