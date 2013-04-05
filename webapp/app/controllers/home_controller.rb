@@ -7,7 +7,7 @@ class HomeController < ApplicationController
   def about
   end
 
-  def faq
+  def privacy
   end
 
   def token
