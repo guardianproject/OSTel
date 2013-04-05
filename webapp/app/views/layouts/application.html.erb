@@ -41,7 +41,6 @@
 		            <ul class="nav" id="nav">
 		              <li class="feat"><a class="active" href="#">Features</a></li>
 			      <li><%= link_to 'Info', :controller => 'home', :action => 'about' %></li>
-		              <li><a href="faq.html">FAQ</a></li>
 		              <li><a class="number" href="#">Sign Up</a></li>
 		            </ul>
 		        </nav>
@@ -78,12 +77,11 @@
                 
                 <!-- INSERT Footer Links // Insert Desired menu items  -->
                 <ul>
-                	<li><a href="mailto:support@ostel.me">Support</a></li>
-                	<li><a href="https://twitter.com/guardianproject" target="_blank">Twitter</a></li>
-                	<li><a href="press.html">Press</a></li>
-                	<li><a href="https://guardianproject.info/wiki/Ostel" target="_blank">Support</a></li>
-                	<li><a href="https://github.com/guardianproject/ostel" target="_blank">Developers</a></li>
-                	<li><a href="privacy.html">Privacy</a></li>
+                  <li><a href="mailto:support@ostel.me">Support</a></li>
+                  <li><a href="https://twitter.com/guardianproject" target="_blank">Twitter</a></li>
+                  <li><a href="https://guardianproject.info/wiki/Ostel" target="_blank">Support</a></li>
+                  <li><a href="https://github.com/guardianproject/ostel" target="_blank">Developers</a></li>
+                  <li><%= link_to "Privacy", :controller => 'home', :action => 'privacy' %></li>
                 </ul>
                 
             <!-- END FOOTER -->    
