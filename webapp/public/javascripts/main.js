@@ -95,19 +95,25 @@ $(document).ready(function() {
        
     });
 });
-  
-  
- 
-  
-  
-  // PAGE SCROLL   
+
+// PAGE SCROLL   
 $("document").ready(function() {			
 	$('.feat').click(function(){
-		$('html, body').animate({
-		scrollTop: $(".section").offset().top
-		}, 650);				   
+          $('html, body').animate({
+            scrollTop: $(".section").offset().top
+          }, 650);				   
 					 
-		});			
+        });			
+        $('.btn').click(function() {
+          $('html, body').animate({
+            scrollTop: $(".signup").offset().top
+          }, 650);
+        });
+        $('.number').click(function() {
+          $('html, body').animate({
+            scrollTop: $(".signup").offset().top
+          }, 650);
+        });
 });
 
 
