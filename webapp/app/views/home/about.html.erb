@@ -3,25 +3,17 @@
 	<!-- START FEATURES  -->	
         <div class="main-container internal">
             <div class="main wrapper clearfix section">
-		<article>
+		<article class="section">
                     
                     <section>
-                    <h2>About Ostel</h2>
-                    <a href="https://play.google.com/store/apps/details?id=com.csipsimplegr" target="_blank"><img class="icon" src="images/ostel.png" width="25" align="left" alt="Insert Alt" /></a>
+                    <h1>About Ostel</h1>
+                    
                     <p>Ostel is a tool for having end-to-end encrypted phone calls. Our goal is to promote the use of free, open protocols, standards and software, to power end-to-end secure voice communications on mobile devices, as well as with desktop computers.</p>
-                    
-                     <h3>Open Secure Telephone Network (OSTN)</h3>
-                    <p>We are working to define a defacto standard (OSTN) by which a voice over internet protocol service can be considered end-to-end secured, with verifiable encryption, minimal logging, and a decentralised model of deployment and use. From this standard, we will work to deploy a network of compliant server/service instances and client software, mobile and desktop, that are federated, audited and interoperable. Ostel and our affiliates our public testbeds of the OSTN initiative.</p>
                       
-                    <h2>About Our Development Team</h2>
-                    <a href="https://guardianproject.info" target="_blank"><img  src="images/guardianproject.jpg" width="5" align="left" alt="Insert Alt" /></a>
-                    <p>The Guardian Project is a research and development effort powered by technology-focused activists, concerned citizen users, and open-source security software hackers. We build tools based on real-world experience and feedback. Our process is transparent, inclusive and responsible.</p>
-                    
-                    <p>The Guardian Project aims to create easy to use mobile apps, open-source firmwares, and customized, commercial mobile phones that can be used and deployed around the world, by any person looking to protect their communications from unjust intrusion.</p>
-
-                    <p>Whether your are an average citizen looking to affirm your rights or an activist, journalist or humanitarian organization looking to safeguard your work in this age of global communication, Guardian is the solution for your mobile security needs.</p>
-                                        
-                    <h3>Our Goal</h3>
+                    <h2>Our Goal</h2>
+                    <!-- INSERT LOGO
+                    <a href="https://guardianproject.info" target="_blank"><img  src="images/guardianproject.jpg" width="65"  height="65" align="left" alt="Insert Alt" /></a>
+                    -->
                     <p>All of the necessary technologies and communications standards exist today for voice communications that is as secure as OpenPGP email. Many proprietary and open source solutions exist for desktop and mobile devices that already implement the necessary bits to provide a solution many times more secure than Skype, without dependence upon one global service provider. Yet people who are security conscious enough to use Skype to secure their computer based conversations will still hold sensitive discussion on mobile phones. The problem is simplicity, usability and reliability.</p>                  
 
                     <p>This project will provide an application for Android phones that will be only marginally more complex to use than dialing an existing phone number, while still being based entirely on open standards. The app itself is based on existing open source client code provided by the CSipSimple, pjsip and ZORG projects. We will coordinate with a network of audited, open service providers around the world who already provide free and commercial service to users, to ensure our users have an automated provisioning process to get connected.</p>                  
@@ -89,11 +81,41 @@
                     </section>
                     
                     <hr/>
-			<footer>
+			
+                </article>
+            </div> <!-- #main -->
+        </div> <!-- #main-container -->
+       <div class="main-container internal">
+            <div class="main wrapper clearfix section">
+		<article class="section">
+                    
+                    <section>                      
+                    <h1>About Our Development Team</h1>
+                    
+                    <p><a href="https://guardianproject.info/" target="_blank">The Guardian Project</a> is a research and development effort powered by technology-focused activists, concerned citizen users, and open-source security software hackers. We build tools based on real-world experience and feedback. Our process is transparent, inclusive and responsible.</p>
+                    
+                    <p><a href="https://guardianproject.info/" target="_blank">The Guardian Project</a> aims to create easy to use mobile apps, open-source firmwares, and customized, commercial mobile phones that can be used and deployed around the world, by any person looking to protect their communications from unjust intrusion.</p>
+
+                    <p>Whether your are an average citizen looking to affirm your rights or an activist, journalist or humanitarian organization looking to safeguard your work in this age of global communication, Guardian is the solution for your mobile security needs.</p>
+
+					<h2>Open Secure Telephone Network (OSTN)</h2>
+					 <!-- INSERT LOGO
+                     <a href="https://play.google.com/store/apps/details?id=com.csipsimplegr" target="_blank"><img class="photo" src="images/ostel.png" width="65" height="65" align="left" alt="Insert Alt" /></a>
+                     -->
+                    <p>We are working to define a defacto standard (OSTN) by which a voice over internet protocol service can be considered end-to-end secured, with verifiable encryption, minimal logging, and a decentralised model of deployment and use. From this standard, we will work to deploy a network of compliant server/service instances and client software, mobile and desktop, that are federated, audited and interoperable. Ostel and our affiliates our public testbeds of the OSTN initiative.</p>
+                    </section>
+                    
+                    <aside>
+                    	<%= image_tag "ostel.png", :alt => "mockup" %>
+                    	<p><em>Introducing a new standard for a secure telephone company. By <a href="https://guardianproject.info/" target="_blank">The Guardian Project</a>.</em></p>
+                    </aside>
+                    <footer>
 			  <div class="flexslider2">
                             <%= h(render "devise/registrations/new") %>
                           </div>	                  
 			</footer>
                 </article>
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
+                
+		<!-- END MAIN -->	
+            </div> 
+        </div> 
