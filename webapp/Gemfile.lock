@@ -94,5 +94,6 @@ DEPENDENCIES
   devise
   pg
   rails (= 3.0.19)
+  rake (>= 0.8.7)
   sqlite3-ruby
   unicorn
