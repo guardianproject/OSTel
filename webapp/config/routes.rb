@@ -1,4 +1,4 @@
-DeviseExample::Application.routes.draw do
+Devise::Application.routes.draw do
 	#these symbols map to models
   devise_for :users, :admin
 
