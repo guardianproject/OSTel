@@ -13,6 +13,5 @@ Devise::Application.routes.draw do
   # no admins yet. Devise makes them by default though.
   resources :admins, :only => :index
   resources :users, :only => [:show,:edit,:update,:destroy]
-
   match '/token' => 'home#token', :as => :token
 end

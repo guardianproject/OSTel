@@ -1,20 +1,34 @@
 <%- flash.each do |name, msg| -%>
   <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
 <%- end -%>
+</div>
+<div class="main-container internal">
+  <div class="main wrapper clearfix section">
+    <article>
+      <section>
+        <% if user_signed_in? %>
+          <div>
+            <p>Welcome to OSTel! Your almost done. The next step is to create your OSTel address. 
+            Your OSTel address looks similar to an
+            email address but it's used for secure voice calls.</p>
 
-<% if user_signed_in? %>
-  <div>
-  <p>Welcome to OSTel! Your almost done. Your OSTel address looks similar to an
-  email address but it's used for secure voice calls.</p>
-
-  <% if @suggestions.size == 1 %>
-    <p>Your suggested OSTel username is <%= @suggestions.first %></p>
-  <% else %>
-    <p>Your email name <i><%= @user.email.split("@").first %></i> is
-    unavailable, here are some suggestions</p>
-    <%- @suggestions.each do |suggestion| -%>
-      <p><%= suggestion %>
-    <%- end -%>
-  <% end %>
+          <% if @suggestions.size == 1 %>
+            <p>Your suggested OSTel username is <i><%= @suggestions.first %></i></p>
+            <p>Save this username?</p>
+            <%= form_for @user, :url => user_path(@user), :html => { :method => "put"} do |f| %>
+              <%= f.text_field :sip_username, :value => @suggestions.first %>
+              <%= f.submit "Save" %>
+            <% end %>
+          <% else %>
+            <p>Your email name <i><%= @user.email.split("@").first %></i> is
+            unavailable, here are some suggestions</p>
+            <%- @suggestions.each do |suggestion| -%>
+              <p><%= suggestion %>
+            <%- end -%>
+          <% end %>
+          </div>
+        <% end %>
+      </section>
+    </article>
   </div>
-<% end %>
+</div>
