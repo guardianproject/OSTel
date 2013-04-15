@@ -1,0 +1,14 @@
+<%- flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+<%- end -%>
+
+<% if user_signed_in? %>
+  <div>
+  <p>Welcome to OSTel! Follow the instructions below to configure your mobile client.</p>
+  <table class="info">
+    <tr><th>User Name</th><td><%= current_user.sip_username %></td></tr>
+    <tr><th>Password</th><td>The same password you used to sign up</td></tr>
+    <tr><th>Server</th><td><%= Devise::Application.config.domain %></td>
+  </table>
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+<%- flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+<%- end -%>
+
+<% if user_signed_in? %>
+  <div>
+  <p>Welcome to OSTel! Your almost done. Your OSTel address looks similar to an
+  email address but it's used for secure voice calls.</p>
+
+  <% if @suggestions.size == 1 %>
+    <p>Your suggested OSTel username is <%= @suggestions.first %></p>
+  <% else %>
+    <p>Your email name <i><%= @user.email.split("@").first %></i> is
+    unavailable, here are some suggestions</p>
+    <%- @suggestions.each do |suggestion| -%>
+      <p><%= suggestion %>
+    <%- end -%>
+  <% end %>
+  </div>
+<% end %>
