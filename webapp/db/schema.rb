@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120415160058) do
+ActiveRecord::Schema.define(:version => 20130415023815) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                             :default => "", :null => false
@@ -42,6 +42,10 @@ ActiveRecord::Schema.define(:version => 20120415160058) do
     t.string   "authentication_token"
     t.integer  "freeswitch_id"
     t.string   "freeswitch_password"
+    t.string   "ha1"
+    t.string   "ha1b"
+    t.string   "domain"
+    t.string   "sip_username"
   end
 
 end
