@@ -3,12 +3,18 @@ class User < ActiveRecord::Base
          :rememberable, :registerable, :timeoutable, :validatable,
          :token_authenticatable
 
-  attr_accessible :email, :password, :password_confirmation, :ha1, :ha1b, :username
+  attr_accessible :email, :password, :ha1, :ha1b, :sip_username, :domain
   before_create :generate_sip_hash
+
+  def create_suggestions
+    suggestions = ["foo", "bar"]
+    return suggestions
+  end
 
   protected
   def generate_sip_hash
-    self.ha1 = Digest::MD5.hexdigest("#{self.username}:#{self.password}:#{Devise::Application.config.domain}")
-    self.ha1b = Digest::MD5.hexdigest("#{self.username}@#{Devise::Application.config.domain}:#{self.password}:#{Devise::Application.config.domain}")
+    self.ha1 = Digest::MD5.hexdigest("#{self.sip_username}:#{self.password}:#{Devise::Application.config.domain}")
+    self.ha1b = Digest::MD5.hexdigest("#{self.sip_username}@#{Devise::Application.config.domain}:#{self.password}:#{Devise::Application.config.domain}")
+    self.domain = Devise::Application.config.domain
   end
 end
