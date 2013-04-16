@@ -1,4 +1,8 @@
+require 'sas_calculator'
+
 class User < ActiveRecord::Base
+  include SasCalculator
+
   devise :database_authenticatable, :lockable, :recoverable,
          :rememberable, :registerable, :timeoutable, :validatable,
          :token_authenticatable
@@ -9,7 +13,13 @@ class User < ActiveRecord::Base
 
   def create_suggestions
     desired_username = self.email.split("@").first
-    suggestions = ["foo", "bar"]
+    seed = desired_username.bytes.to_a.shuffle.first
+    indexes = desired_username.bytes.to_a.shuffle(random: Random.new(seed))
+    words = calculateSAS(indexes)
+    suggestions = ["#{desired_username}-#{words[0]}",
+                  "#{desired_username}-#{words[1]}",
+                  "#{words[0]}-#{desired_username}",
+                  "#{words[1]}-#{desired_username}"]
     return suggestions
   end
 
