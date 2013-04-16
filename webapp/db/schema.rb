@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130415023815) do
+ActiveRecord::Schema.define(:version => 20130416212105) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                             :default => "", :null => false
@@ -46,6 +46,11 @@ ActiveRecord::Schema.define(:version => 20130415023815) do
     t.string   "ha1b"
     t.string   "domain"
     t.string   "sip_username"
+  end
+
+  create_table "version", :id => false, :force => true do |t|
+    t.string  "table_name",    :limit => 64,                :null => false
+    t.integer "table_version",               :default => 0, :null => false
   end
 
 end
