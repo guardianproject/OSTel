@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(:version => 20130416212105) do
   end
 
   create_table "version", :id => false, :force => true do |t|
-    t.string  "table_name",    :limit => 64,                :null => false
+    t.string  "table_name",    :limit => 32,                :null => false
     t.integer "table_version",               :default => 0, :null => false
   end
 
