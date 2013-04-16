@@ -20,11 +20,15 @@
               <%= f.submit "Save" %>
             <% end %>
           <% else %>
-            <p>Your email name <i><%= @user.email.split("@").first %></i> is
+            <p>Your username <i><%= @user.email.split("@").first %></i> is
             unavailable, here are some suggestions</p>
-            <%- @suggestions.each do |suggestion| -%>
-              <p><%= suggestion %>
-            <%- end -%>
+            <%= form_for @user, :url => user_path(@user), :html => { :method => "put"} do |f| %>
+              <%- @suggestions.each do |suggestion| -%>
+                <%= f.radio_button :sip_username, suggestion %>
+                <%= f.label "sip_username_#{suggestion}".to_sym, suggestion %><br/>
+              <% end %>
+              <%= f.submit "Save" %>
+            <% end %>
           <% end %>
           </div>
         <% end %>

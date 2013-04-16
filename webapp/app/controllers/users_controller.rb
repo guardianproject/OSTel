@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_user!
   def suggest
     @user = User.find(current_user.id)
-    sip_username = @user.email.split("@")
+    sip_username = @user.email.split("@").first
     if ( ! User.find_by_sip_username(sip_username))
-      @suggestions = [sip_username.first]
+      @suggestions = [sip_username]
     else
-      @suggestions = User.create_suggestions 
+      @suggestions = @user.create_suggestions 
     end
   end
 
