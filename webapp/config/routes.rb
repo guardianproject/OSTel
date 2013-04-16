@@ -10,8 +10,7 @@ Devise::Application.routes.draw do
   match '/about' => 'home#about', :as => 'about'
   match '/privacy' => 'home#privacy', :as => 'privacy'
 
-  # no admins yet. Devise makes them by default though.
-  resources :admins, :only => :index
   resources :users, :only => [:show,:edit,:update,:destroy]
+  resources :admins, :only => :index
   match '/token' => 'home#token', :as => :token
 end

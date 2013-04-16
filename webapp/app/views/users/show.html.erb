@@ -14,6 +14,7 @@
             <tr><th>Password</th><td>Your sign up password</td></tr>
             <tr><th>Server</th><td><%= Devise::Application.config.domain %></td>
           </table>
+          <p><%= link_to "Sign out", destroy_user_session_path %></p>
           </div>
         <% end %>
       </section>
