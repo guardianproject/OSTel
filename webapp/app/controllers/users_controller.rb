@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     if (@user.save)
       redirect_to @user
     else
-      redirect_to users_suggest_path
+      redirect_to users_suggest_path, :flash => { :user_unavailable => "The username #{params[:user][:sip_username]} is not available"}
     end
   end
 
