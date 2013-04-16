@@ -30,6 +30,8 @@ class UsersController < ApplicationController
     @user.update_attributes(params[:user])
     if (@user.save)
       redirect_to @user
+    else
+      redirect_to users_suggest_path
     end
   end
 
