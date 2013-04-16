@@ -46,4 +46,8 @@ Devise::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  # ostel email stuff
+  config.action_mailer.default_url_options = { :host => 'example.com:8080' }
+  config.freeswitch_dir = "/usr/local/freeswitch"
+  config.domain = "example.com"
 end
