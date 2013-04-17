@@ -10,40 +10,49 @@
           <div>
           <h1>Welcome to OSTel! </h1>
           <p>Are you ready to start making secure phone calls? First you'll need a client for your phone or computer. Then you'll need to enter in your sweet new account info:</p>
-          <img class="icon" src="images/icon_phone.png" width="265" align="left" alt="Insert Alt" />
           <table class="info">
             <tr><th>User Name</th><td><%= current_user.sip_username %></td></tr>
             <tr><th>Password</th><td>Your sign up password</td></tr>
             <tr><th>Server</th><td><%= Devise::Application.config.domain %></td>
           </table>
-          <p><%= link_to "Sign out", destroy_user_session_path %> of your account.</p>
+
+          <p><em><%= link_to "Sign out", destroy_user_session_path %> of your account.</em></p>
+          <p><a href="https://guardianproject.info/" target="_blank">The Guardian Project</a> welcomes you to the open secure telephony future.</p>
           </div>
         <% end %>
       </section>
       
+      		<%= image_tag "icon_phone.png", :width => '265', :align => 'left', :class =>'icon', :alt => "Phone Icon" %>
+	  		
+                      </article>
+                
+		<!-- END MAIN -->	
+            </div> 
+        </div> 
       <div class="main-container">
             <div class="main wrapper clearfix">
 
                 <article class="section">
+                    <h1>Download the app</h1>
                     <p>If you have a device in your pocket or on your desk, then you can get OSTel working on it! Download any of these supporting apps:</p>
                     <!-- INSERT FEATURE TEXT  -->
                     <section>
                         <h2>Android</h2>
-                        <img class="icon" src="images/icon_mobile1.png" width="65" alt="Insert Alt" />
+                        <a href="https://play.google.com/store/apps/details?id=com.csipsimple" target="_blank" class="icon"><%= image_tag "icon_mobile1.png", :width => '65', :align => 'left', :alt=>"Mobile1 Icon" , :class =>'icon' %></a>
                         <p>We fully support and integrate with the <a href="https://play.google.com/store/apps/details?id=com.csipsimple" target="_blank">CSipSimple app</a> on Android. It even has an Ostel setup wizard to make life better. And there's an OSTN setup for experts.</p>
                     </section>
                     
                     <!-- INSERT FEATURE TEXT  -->
                     <section>
                         <h2>iPhone & iPad</h2>
-                        <img class="icon" src="images/icon_tablet.png" width="67" alt="Insert Alt" />
+                        <%= image_tag "icon_tablet.png", :width => '67', :align => 'left', :class =>'icon', :alt => "Tablet Icon" %>
                         <p>Ostel works great on the <a href="https://itunes.apple.com/en/app/groundwire-business-caliber/id378503081?mt=8" target="_blank">Groundwire app</a>. It's a paid app and for $10 you'll be able to receive encrypted calls. There's an additional $25 in-app purchase for the ZRTP extension to also place a secure call.</p>
                     </section>
                     
                     <!-- INSERT FEATURE TEXT  -->
                      <section class="last">
                         <h2>Mac</h2>
-                        <img class="icon" src="images/icon_laptop.png" width="67" alt="Insert Alt" />
+                        <%= image_tag "icon_laptop.png", :width => '67', :align => 'left', :class =>'icon', :alt => "Laptop Icon" %>                        
                         <p>The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> is an open source client that works for Ostel. It can also be used as a chat client for Facebook, Gchat, XMPP and others.</p>
                     </section>
                     
@@ -52,21 +61,21 @@
                      <!-- INSERT FEATURE TEXT  -->                   
                      <section>
                         <h2>Windows</h2>
-                        <img class="icon" src="images/icon_computer.png" width="58" alt="Insert Alt" />
+                        <%= image_tag "icon_computer.png", :width => '58', :align => 'left', :class =>'icon', :alt => "Computer Icon" %>                                                
                         <p>The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> is an open source client that works for Ostel. It can also be used as a chat client for Facebook, Gchat, XMPP and others.</p>
                     </section>
                     
                     <!-- INSERT FEATURE TEXT  -->
                     <section>
                         <h2>Linux</h2>
-                        <img class="icon" src="images/icon_free.png" width="64" alt="Insert Alt" />
+                        <%= image_tag "icon_free.png", :width => '64', :align => 'left', :class =>'icon', :alt => "Free Icon" %>                                                                        
                         <p>The <a href="http://sflphone.org/" target="_blank">sflphone app</a> is a GPL app that works well with Ostel. The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> works too!</p>
                     </section>
                     
                      <!-- INSERT FEATURE TEXT  -->
                      <section class="last">
                         <h2>Blackberry</h2>
-                        <img class="icon" src="images/icon_mobile.png" width="64" alt="Insert Alt" />
+                        <%= image_tag "icon_mobile.png", :width => '64', :align => 'left', :class =>'icon', :alt => "Mobile Icon" %>                                                                                                
                         <p>Not to be forgotten, <a href="http://www.privatewave.com/products-services/private-gsm/product.html" target="_blank">PrivateGSM</a> works on Blackberry and even on Nokia. An enterprise solution, it requires payment to function fully.</p>
                     </section>
                     

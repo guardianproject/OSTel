@@ -10,18 +10,16 @@
           <div>
             <h1>Pick a groovy code name.</h1>
             <p>Phone numbers are so old fashioned! At OSTel we know it's more fun to have a code name for receiving messages. Just pick a name and tell your friends to give you a ring.</p>
-		  <img class="icon" src="images/icon_atomic.png" width="265" align="left" alt="Insert Alt" />
 
           <% if @suggestions.size == 1 %>
-            <p>Your suggested OSTel code name is <i><%= @suggestions.first %></i></p>
-            <p>Pick your username:</p>
+            <p>What do you want your user name to be? We suggest: <i><%= @suggestions.first %></i></p>
             <%= form_for @user, :url => user_path(@user), :html => { :method => "put"} do |f| %>
               <%= f.text_field :sip_username, :value => @suggestions.first %>
               <%= f.submit "Create my account" %>
             <% end %>
           <% else %>
-            <p>This username <i><%= @user.email.split("@").first %></i> is
-            already taken! Here are some other suggestions:</p>
+            <p>Sorry but the username <i><%= @user.email.split("@").first %></i> is
+            already taken. Here are some other suggestions:</p>
             <%= form_for @user, :url => user_path(@user), :html => { :method => "put"} do |f| %>
               <%- @suggestions.each do |suggestion| -%>
                 <%= f.radio_button :sip_username, suggestion %>
@@ -33,6 +31,12 @@
           </div>
         <% end %>
       </section>
+      
+                          <aside>
+                    	<%= image_tag "icon_atomic.png", :width => '465', :align => 'left', :class =>'icon', :alt => "Atomic Ostel Phone" %>
+                    	<p><em>Introducing a new standard for a secure telephone company. By <a href="https://guardianproject.info/" target="_blank">The Guardian Project</a>.</em></p>
+                    </aside>
+                    
     </article>
   </div>
 </div>
