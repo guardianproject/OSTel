@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     end
   end
 
+
   def link
     # link account to third-party authentication services
   end
