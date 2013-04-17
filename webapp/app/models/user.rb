@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :ha1, :ha1b, :sip_username, :domain
   before_save :generate_sip_hash
-  validates :sip_username, :uniqueness => true
+  validates :sip_username, :uniqueness => true, :presence => true
 
   def create_suggestions
     desired_username = self.email.split("@").first
