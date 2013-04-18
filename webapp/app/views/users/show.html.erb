@@ -10,7 +10,7 @@
           <table class="info">
             <tr><th>User Name</th><td><%= current_user.sip_username %></td></tr>
             <tr><th>Password</th><td>Your sign up password</td></tr>
-            <tr><th>Server</th><td><%= Devise::Application.config.domain %></td>
+            <tr><th>Server</th><td><%= current_user.domain %></td>
           </table>
 
           <p><em><%= link_to "Sign out", destroy_user_session_path %> of your account.</em></p>
