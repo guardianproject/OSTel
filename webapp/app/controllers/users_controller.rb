@@ -1,5 +1,15 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+  #before_filter :authenticate_user!
+
+  def suggest
+    @user = User.new(params[:user])
+    sip_username = @user.email.split("@").first
+    if ( ! User.find_by_sip_username(sip_username))
+      @suggestions = [sip_username]
+    else
+      @suggestions = @user.create_suggestions 
+    end
+  end
 
   def link
     # link account to third-party authentication services
