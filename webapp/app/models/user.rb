@@ -25,8 +25,8 @@ class User < ActiveRecord::Base
 
   protected
   def generate_sip_hash
-    self.ha1 = Digest::MD5.hexdigest("#{self.sip_username}:#{self.password}:#{Devise::Application.config.domain}")
-    self.ha1b = Digest::MD5.hexdigest("#{self.sip_username}@#{Devise::Application.config.domain}:#{self.password}:#{Devise::Application.config.domain}")
+    self.ha1 = Digest::MD5.hexdigest("#{self.sip_username}:#{Devise::Application.config.domain}:#{self.password}")
+    self.ha1b = Digest::MD5.hexdigest("#{self.sip_username}@#{Devise::Application.config.domain}:#{Devise::Application.config.domain}:#{self.password}")
     self.domain = Devise::Application.config.domain
   end
 end
