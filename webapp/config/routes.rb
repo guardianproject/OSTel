@@ -4,8 +4,8 @@ Devise::Application.routes.draw do
   devise_for :users
   scope '/admin' do
     resources :users
-    get "users/link"
-    post "users/suggest"
+    get "users/link", {:controller => "users", :action => "link"}
+    post "users/suggest", {:controller => "users", :action => "suggest"}
   end
 
 
