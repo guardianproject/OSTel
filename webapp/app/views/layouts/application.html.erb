@@ -25,22 +25,24 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
-
-        
-		
+                <%- flash.each do |name, msg| -%>
+                  <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+                <%- end -%>
 		 <!-- START MAIN SLIDE CONTAINER -->
 		<div id="slides">
 		<div class="header-container">
 		    <header class="wrapper clearfix">
 		        
-		        <!-- LOGO Replace  -->
+		        <!-- LOGO -->
 		        <a href="/" class="logo"><%= image_tag "logo@2x.png" %></a>
 		        
 		        <nav>
 		          <a class="toggleMenu" href="#"><%= image_tag "icon_menu@2x.png"%></a>
 		            <ul class="nav" id="nav">
 		              <li class="feat"><a class="active" href="#">Features</a></li>
+		              <!-- LOGO Replace  
 		              <li><a href="/about">Info</a></li>
+		              -->
 		              <li><a class="number" href="#">Sign Up</a></li>
 		            </ul>
 		        </nav>
@@ -51,7 +53,20 @@
 		<article id="content">
 
                 
+                <%- flash.each do |name, msg| -%>
+                        <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+                <%- end -%>
 
+                <% if user_signed_in? %>
+                        <div>
+                        <p>Welcome to OSTel! This is your account information for the app.</p>
+                        <table class="info">
+                                <tr><th>OSTel User Name</th><td><%= current_user.freeswitch_id %></td></tr>
+                                <tr><th>OSTel Password</th><td><%= current_user.freeswitch_password %></td></tr>
+                                <tr><th>Server</th><td>ostel.me</td>
+                        </table>
+                        </div>
+                <% end %>
 							
 		<%= yield %>
   

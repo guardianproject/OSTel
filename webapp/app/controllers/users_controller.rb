@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :only => [:link, :show, :update, :delete, :create]
+
   def suggest
-    @user = User.find(current_user.id)
+    @user = User.new(params[:user])
     sip_username = @user.email.split("@").first
     if ( ! User.find_by_sip_username(sip_username))
       @suggestions = [sip_username]
