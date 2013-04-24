@@ -34,4 +34,6 @@ Devise::Application.configure do
   config.active_support.deprecation = :stderr
   config.serve_static_assets = true
   config.static_cache_control = "public, max-age=3600"
+  # Raise exception on mass assignment protection for Active Record model
+  config.active_record.mass_assignment_sanitizer = :strict
 end
