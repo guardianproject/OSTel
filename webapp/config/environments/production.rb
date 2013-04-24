@@ -50,4 +50,7 @@ Devise::Application.configure do
   config.action_mailer.default_url_options = { :host => 'example.com:8080' }
   config.freeswitch_dir = "/usr/local/freeswitch"
   config.domain = "example.com"
+  config.assets.compress = true
+  config.assets.compile = false
+  config.assets.digest = true
 end
