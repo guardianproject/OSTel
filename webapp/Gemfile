@@ -1,6 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.20'
+gem 'rails', '3.1.11'
+
+group :assets do
+  gem 'sass-rails',
+  gem 'coffee-rails',
+  gem 'uglifier',
+end
+
 group :development do
   gem 'sqlite3', :require => 'sqlite3'
 end
@@ -11,3 +18,4 @@ end
 
 gem 'devise'
 gem 'rake', '>= 0.8.7'
+gem 'jquery-rails'
