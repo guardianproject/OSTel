@@ -1,5 +1,7 @@
 #slides {
-	overflow: hidden;
+	min-height: 180px;
+	background-image: url(../images/4.png); /* Change Your Header Image */
+	overflow: visible;
 	width: 100%;
 	height: 100%;
 }

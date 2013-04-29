@@ -11,9 +11,9 @@
 							 <a class="btn" href="#">Sign Me Up!</a>
 		  	     </div>
 		  	  </div>
-		  	</li>
+		  	</li>		  	
 		  	<li>
-		  	  <img src="images/2.png" alt="Insert Alt">
+ 		  	  <img src="images/2.png" alt="Insert Alt">
 		  	  <div class="container">
 		  	  	<div class="column">
 							 <h1>Share your ideas freely and securely. </h1>
@@ -62,7 +62,6 @@
 
         <div class="main-container">
             <div class="main wrapper clearfix">
-
                 <article class="section">
                     
                     <!-- INSERT FEATURE TEXT  -->
@@ -85,11 +84,8 @@
                         <img class="icon" src="images/icon_world.png" width="67" alt="Insert Alt" />
                         <p>Talk to anyone in the world for free over WI-FI or a cell network.</p>
                     </section>
-               
-                    
-                    	<hr/>
-               
-                    
+                                   
+                    <hr/>
                      <!-- INSERT FEATURE TEXT  -->                   
                      <section>
                         <h2>A community project</h2>
@@ -112,12 +108,14 @@
                     </section>
                     
                     <hr/>
-			<footer class="signup">
-			  <div class="flexslider2">
-			    <%= h(render "devise/registrations/new") %>
-			  </div>	                  
-			</footer>
-                </article>
+                    
+				<footer class="signup">
+				  <div class="flexslider2">
+					<%= h(render "devise/registrations/new") %>
+				  </div>	                  
+				</footer>
 
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
+        	</article>
+
+        </div> <!-- #main -->
+    </div> <!-- #main-container -->

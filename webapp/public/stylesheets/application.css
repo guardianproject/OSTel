@@ -100,9 +100,10 @@ table.info th {
 }
 
 #content {
-	border-radius: 8px;
+	position: relative;
+	border-radius: 0px;
 	background: #fff;
-	padding: 20px;
+	padding: 0px;
 }
 
 #close {
@@ -110,7 +111,7 @@ table.info th {
 	width: 24px;
 	height: 27px;
 	display: block;
-	/*text-indent: -9999px;
+	text-indent: -9999px;
 	top: -7px;
-	right: -7px;*/
+	right: -7px;
 }
