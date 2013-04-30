@@ -3,57 +3,52 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Ostel: Encrypted Phone Calls</title>
-        <meta name="description" content="">
-        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-        <meta name="apple-mobile-web-app-capable" content="yes" />
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Ostel: Encrypted Phone Calls</title>
+    <meta name="description" content="">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
 
-        <%= stylesheet_link_tag "normalize.min" %>
-        <%= stylesheet_link_tag "main" %>
-        <%= stylesheet_link_tag "superslides" %>
-        <%= stylesheet_link_tag "flexslider" %>
-        <%= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "normalize.min" %>
+    <%= stylesheet_link_tag "main" %>
+    <%= stylesheet_link_tag "superslides" %>
+    <%= stylesheet_link_tag "flexslider" %>
+    <%= stylesheet_link_tag "application" %>
 
-        <%= javascript_include_tag "vendor/modernizr-2.6.2-respond-1.1.0.min.js" %>
-        
-
-    </head>
+    <%= javascript_include_tag "vendor/modernizr-2.6.2-respond-1.1.0.min.js" %>
+  </head>
     <body>
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
-                <%- flash.each do |name, msg| -%>
-                  <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
-                <%- end -%>
-		 <!-- START MAIN SLIDE CONTAINER -->
+    <!--[if lt IE 7]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+    <%- flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+    <%- end -%>
+		<!-- START MAIN SLIDE CONTAINER -->
 		<div id="slides">
-		<div class="header-container">
-		    <header class="wrapper clearfix">
-		        
-		        <!-- LOGO -->
-		        <a href="/" class="logo"><%= image_tag "logo@2x.png" %></a>
-		        
-		        <nav>
-		          <a class="toggleMenu" href="#"><%= image_tag "icon_menu@2x.png"%></a>
-		            <ul class="nav" id="nav">
-		              <li class="feat"><a class="active" href="#">Features</a></li>
-		              <!-- LOGO Replace  
-		              <li><a href="/about">Info</a></li>
-		              -->
-		              <li><a class="number" href="#">Sign Up</a></li>
-		            </ul>
-		        </nav>
-		    </header>
-		</div>
-		
-		<!--content -->
-		<article id="content">
-							
-		<%= yield %>
-  
+      <div class="header-container">
+        <header class="wrapper clearfix">
+          <!-- LOGO -->
+          <a href="/" class="logo"><%= image_tag "logo@2x.png" %></a>
+          <nav>
+            <a class="toggleMenu" href="#"><%= image_tag "icon_menu@2x.png"%></a>
+              <ul class="nav" id="nav">
+                <li class="feat"><a class="active" href="#">Features</a></li>
+                <!-- LOGO Replace  
+                <li><a href="/about">Info</a></li>
+                -->
+                <li><a class="number" href="#">Sign Up</a></li>
+              </ul>
+          </nav>
+        </header>
+      </div>
+      <!--content -->
+      <article id="content">
+
+      <%= yield %>
+
         <!-- START FOOTER  -->
         <div class="footer-container">
             <footer class="wrapper clearfix">
