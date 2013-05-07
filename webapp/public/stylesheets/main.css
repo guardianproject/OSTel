@@ -194,7 +194,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid #d3e1e6; padd
    ========================================================================== */
    
 .header-container.internal { height: 150px; background-color: #2d3b42;  background-size: 100%;  
-	background-image: url(../images/4.png); /* Change Your Header Image */
+	background-image: url(../images/4.jpg); /* Change Your Header Image */
 }
 .main-container.internal img{ width: 100%; border: none; float: none; padding-bottom: 3em; padding-top: 2em; max-width: 350px; }
 .internal .main{ padding-top: 30px;}
