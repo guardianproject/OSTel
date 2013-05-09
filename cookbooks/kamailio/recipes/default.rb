@@ -49,3 +49,9 @@ end
 template "/etc/default/kamailio" do
   source "kamailio.default.erb"
 end
+
+# configure some system attributes for the kamctl utility, which we'll use a
+# little later.
+template "/etc/kamailio/kamctlrc" do
+  source "kamctlrc.erb"
+end
