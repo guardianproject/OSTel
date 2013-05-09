@@ -15,7 +15,6 @@ end
 
 template "/etc/apt/sources.list.d/kamailio.list" do
   source "kamailio.list.erb"
-  creates "/etc/apt/sources.list.d/kamailio.list"
   notifies :run, "execute[apt-get-update]", :immediately
 end
 
@@ -29,3 +28,24 @@ package "kamailio-xmpp-modules" # support an XMPP gateway
 package "rtpproxy" # default configuration is fine
 
 # there are two configuration files required for kam
+
+template "/etc/kamailio/kamailio.cfg" do
+  source "kamailio.cfg.erb"
+end
+
+template "/etc/kamailio/tls.cfg" do
+  source "tls.cfg.erb"
+end
+
+# define the service
+service "kamailio" do
+  supports :restart => true, :start => true
+  action :nothing
+end
+
+# kam is disabled by default, which is good because at this point it won't start
+# anyway because the database is not set up. This template changes the default
+# to enable
+template "/etc/default/kamailio" do
+  source "kamailio.default.erb"
+end
