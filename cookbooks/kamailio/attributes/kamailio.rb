@@ -1,3 +1,5 @@
 default[:apt][:kamalio_repo] = "kamailio31-nightly"
 default[:apt][:distro] = "squeeze"
 default[:kamailio][:sip_domain] = "example.com"
+default[:kamailio][:db_engine] = "POSTGRES"
+default[:kamailio][:postgresql_schema_dir] = "/usr/share/kamailio/postgres"
