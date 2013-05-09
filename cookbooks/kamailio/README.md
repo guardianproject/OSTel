@@ -1,9 +1,9 @@
 kamailio Cookbook
 =================
-TODO: Enter the cookbook description here.
+Set up a secure SIP server acording to OSTN standards. Inspired by the Asipto
+document titled "Run your own Skype-like service in less than one hour"
 
-e.g.
-This cookbook makes your favorite breakfast sandwhich.
+http://kb.asipto.com/kamailio:skype-like-service-in-less-than-one-hour
 
 Requirements
 ------------
