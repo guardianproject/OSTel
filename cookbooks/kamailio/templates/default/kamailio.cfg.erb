@@ -1,10 +1,12 @@
 #!KAMAILIO
 #!define WITH_MYSQL
+#!define WITH_POSTGRES
 #!define WITH_AUTH
 #!define WITH_USRLOCDB
 #!define WITH_NAT
 #!define WITH_TLS
 #!define WITH_DEBUG
+#!define WITH_ALIASDB
 #
 # Kamailio (OpenSER) SIP Server v3.1 - default configuration script
 #     - web: http://www.kamailio.org
@@ -191,7 +193,10 @@ mpath="/usr/lib64/kamailio/modules_k/:/usr/lib64/kamailio/modules/"
 #!ifdef WITH_MYSQL
 loadmodule "db_mysql.so"
 #!endif
+
+#!ifdef WITH_POSTGRES
 loadmodule "db_postgres.so"
+#!endif
 
 loadmodule "mi_fifo.so"
 loadmodule "kex.so"
@@ -336,7 +341,7 @@ modparam("permissions", "db_mode", 1)
 
 # ----- alias_db params -----
 #!ifdef WITH_ALIASDB
-modparam("alias_db", "db_url", DBURL)
+modparam("alias_db", "db_url", "postgres://kamailio:8GfyThzGLDIFauae@127.0.0.1/webapp_production" )
 modparam("alias_db", "use_domain", MULTIDOMAIN)
 #!endif
 
