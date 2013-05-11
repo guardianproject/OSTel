@@ -322,7 +322,7 @@ modparam("usrloc", "use_domain", MULTIDOMAIN)
 
 # ----- auth_db params -----
 #!ifdef WITH_AUTH
-modparam("auth_db", "db_url", "postgres://kamailio:@127.0.0.1/webapp_production")
+modparam("auth_db", "db_url", "postgres://username:@hostname/databasename")
 modparam("auth_db", "user_column", "sip_username")
 #modparam("auth_db", "db_url", DBURL)
 #modparam("auth_db", "calculate_ha1", yes)
@@ -341,7 +341,7 @@ modparam("permissions", "db_mode", 1)
 
 # ----- alias_db params -----
 #!ifdef WITH_ALIASDB
-modparam("alias_db", "db_url", "postgres://kamailio:@127.0.0.1/webapp_production" )
+modparam("alias_db", "db_url", "postgres://username:@hostname/databasename")
 modparam("alias_db", "use_domain", MULTIDOMAIN)
 #!endif
 
