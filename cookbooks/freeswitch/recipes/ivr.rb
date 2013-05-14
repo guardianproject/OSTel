@@ -43,8 +43,10 @@ execute "git_clone" do
   creates "/usr/local/src/freeswitch"
 end
 
-template "/usr/local/src/freeswitch/modules.conf" do
-  source "modules.conf.erb"
+template "#{node[:freeswitch][:path]}/modules.conf" do
+  source "modules_ivr.conf.erb"
+  owner node[:freeswitch][:user]
+  group node[:freeswitch][:group]
 end
 
 # compile source and install
