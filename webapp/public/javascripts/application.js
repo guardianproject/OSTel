@@ -77,3 +77,13 @@ var modal = (function(){
 	return method;
 
 }());
+
+// add the text value of the selected suggestion radio button to the
+// sip_username text field
+$(function() {
+  var $radButton = $("form#user_new input:radio");
+  $radButton.click(function() {
+    var $radChecked = $(':radio:checked');
+    $("#sip_username").val($radChecked.next().text());
+  });
+});
