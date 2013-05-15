@@ -599,6 +599,7 @@ route[LOCATION] {
 			case -1:
 			case -3:
 				t_newtran();
+        xlog("L_INFO","User not found");
 				t_reply("404", "Not Found");
 				exit;
 			case -2:
