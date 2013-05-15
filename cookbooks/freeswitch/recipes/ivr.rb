@@ -35,6 +35,7 @@ package "gawk"
 package "pkg-config"
 package "gnutls-bin"
 package "libsqlite3-dev"
+package "libopus-dev" # needed for opus support in FS
 
 # get source
 execute "git_clone" do
@@ -43,7 +44,7 @@ execute "git_clone" do
   creates "/usr/local/src/freeswitch"
 end
 
-template "#{node[:freeswitch][:path]}/modules.conf" do
+template "/usr/local/src/freeswitch/modules.conf" do
   source "modules_ivr.conf.erb"
   owner node[:freeswitch][:user]
   group node[:freeswitch][:group]
