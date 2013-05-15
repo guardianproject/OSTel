@@ -9,5 +9,3 @@
 #
 package "kamailio-postgres-modules"
 
-# unpack a shitload of SQL
-# push that SQL through a lib to execute it before starting Kamailio
