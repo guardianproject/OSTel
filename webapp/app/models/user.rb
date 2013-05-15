@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   validates :sip_username, :uniqueness => true,
                            :presence => true,
                            :exclusion => {:in => %w(9196),
-                           :message => "is reserved, please choose another"}
+                           :message => "9196 is reserved, please choose another"}
 
   def create_suggestions
     desired_username = self.email.split("@").first
