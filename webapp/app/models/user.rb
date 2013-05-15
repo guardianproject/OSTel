@@ -9,7 +9,10 @@ class User < ActiveRecord::Base
 
   attr_accessible :email, :password, :ha1, :ha1b, :sip_username, :domain
   before_create :generate_sip_hash
-  validates :sip_username, :uniqueness => true, :presence => true
+  validates :sip_username, :uniqueness => true,
+                           :presence => true,
+                           :exclusion => {:in => %w(9196),
+                           :message => "is reserved, please choose another"}
 
   def create_suggestions
     desired_username = self.email.split("@").first
