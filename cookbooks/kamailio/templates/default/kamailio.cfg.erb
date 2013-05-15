@@ -7,6 +7,7 @@
 #!define WITH_TLS
 #!define WITH_DEBUG
 #!define WITH_ALIASDB
+#!define WITH_IVR
 #
 # Kamailio (OpenSER) SIP Server v3.1 - default configuration script
 #     - web: http://www.kamailio.org
@@ -469,6 +470,9 @@ route {
 	# dispatch destinations to PSTN
 	route(PSTN);
 
+  # IVR services
+  route(IVR);
+
 	# user location service
 	route(LOCATION);
 
@@ -788,6 +792,28 @@ route[PSTN] {
 #!endif
 
 	return;
+}
+
+route[IVR] {
+#!ifdef WITH_IVR
+  # IVR services like echo test, voicemail, etc
+
+  # TODO: add some logic to ignore any method other than those used to initiate a call
+  # since there's no reason to test the condition if we aren't making a call.
+  #
+  # This pseudo variable with the capital U holds the SIP username of the
+  # incoming request.
+  #  vvv
+  if($rU == "9196") {
+    xlog("Route to echo test");
+    # write the request URI to call Freeswitch on localhost
+    $ru = "sip:" + $rU + "@127.0.0.1";
+    route(RELAY);
+    exit;
+  }
+#!endif
+
+  return;
 }
 
 # XMLRPC routing
