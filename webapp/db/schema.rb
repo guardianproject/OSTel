@@ -21,10 +21,10 @@ ActiveRecord::Schema.define(:version => 20130516004113) do
   end
 
   create_table "dbaliases", :force => true do |t|
-    t.string "alias_username"
-    t.string "alias_domain"
-    t.string "username"
-    t.string "domain"
+    t.string "alias_username", :limit => 64, :default => "", :null => false
+    t.string "alias_domain",   :limit => 64, :default => "", :null => false
+    t.string "username",       :limit => 64, :default => "", :null => false
+    t.string "domain",         :limit => 64, :default => "", :null => false
   end
 
   add_index "dbaliases", ["alias_username", "alias_domain"], :name => "alias_idx", :unique => true
