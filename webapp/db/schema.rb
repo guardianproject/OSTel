@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516004113) do
+ActiveRecord::Schema.define(:version => 20130516040857) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                             :default => "", :null => false
@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(:version => 20130516004113) do
 
   add_index "dbaliases", ["alias_username", "alias_domain"], :name => "alias_idx", :unique => true
   add_index "dbaliases", ["username", "domain"], :name => "target_idx"
+
+  create_table "domains", :force => true do |t|
+    t.string   "domain",        :limit => 64, :default => "",                    :null => false
+    t.datetime "last_modified",               :default => '1900-01-01 00:00:01', :null => false
+  end
+
+  add_index "domains", ["domain"], :name => "index_domains_on_domain", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
