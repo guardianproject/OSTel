@@ -14,6 +14,7 @@
 #     - git: http://sip-router.org
 #
 # Direct your questions about this file to: <sr-users@lists.sip-router.org>
+# Edited by Lee Azzarello <lee@guardianproject.info> for ostel.co
 #
 # Refer to the Core CookBook at http://www.kamailio.org/dokuwiki/doku.php
 # for an explanation of possible statements, functions and parameters.
@@ -350,6 +351,7 @@ modparam("alias_db", "use_domain", MULTIDOMAIN)
 # ----- domain params -----
 #!ifdef WITH_MULTIDOMAIN
 modparam("domain", "db_url", DBURL)
+modparam("domain", "domain_table", "domains")
 # use caching
 modparam("domain", "db_mode", 1)
 # register callback to match myself condition with domains list
@@ -603,7 +605,7 @@ route[LOCATION] {
 			case -1:
 			case -3:
 				t_newtran();
-        xlog("L_INFO","User not found");
+        #xlog("L_INFO","User not found");
 				t_reply("404", "Not Found");
 				exit;
 			case -2:
@@ -747,7 +749,7 @@ route[RTPPROXY] {
 	if (is_method("BYE")) {
 		unforce_rtp_proxy();
 	} else if (is_method("INVITE")){
-		xlog("L_INFO","Using rtpproxy");
+		#xlog("L_INFO","Using rtpproxy");
 		force_rtp_proxy();
 	}
 	if (!has_totag()) add_rr_param(";nat=yes");
@@ -805,7 +807,7 @@ route[IVR] {
   # incoming request.
   #  vvv
   if($rU == "9196") {
-    xlog("Route to echo test");
+    #xlog("Route to echo test");
     # write the request URI to call Freeswitch on localhost
     $ru = "sip:" + $rU + "@127.0.0.1";
     route(RELAY);
