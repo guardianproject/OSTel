@@ -1,5 +1,4 @@
 #!KAMAILIO
-#!define WITH_MYSQL
 #!define WITH_POSTGRES
 #!define WITH_AUTH
 #!define WITH_USRLOCDB
@@ -8,6 +7,7 @@
 #!define WITH_DEBUG
 #!define WITH_ALIASDB
 #!define WITH_IVR
+#!define WITH_MULTIDOMAIN
 #
 # Kamailio (OpenSER) SIP Server v3.1 - default configuration script
 #     - web: http://www.kamailio.org
@@ -97,10 +97,10 @@
 ####### Defined Values #########
 
 # *** Value defines - IDs used later in config
-#!ifdef WITH_MYSQL
+#!ifdef WITH_POSTGRES
 # - database URL - used to connect to database server by modules such
 #       as: auth_db, acc, usrloc, a.s.o.
-#!define DBURL "mysql://openser:openserrw@localhost/openser"
+#!define DBURL "postgres://openser:openserrw@localhost/openser"
 #!endif
 #!ifdef WITH_MULTIDOMAIN
 # - the value for 'use_domain' parameters
@@ -323,7 +323,7 @@ modparam("usrloc", "use_domain", MULTIDOMAIN)
 
 # ----- auth_db params -----
 #!ifdef WITH_AUTH
-modparam("auth_db", "db_url", "postgres://username:@hostname/databasename")
+modparam("auth_db", "db_url", DBURL)
 modparam("auth_db", "user_column", "sip_username")
 #modparam("auth_db", "db_url", DBURL)
 #modparam("auth_db", "calculate_ha1", yes)
@@ -342,7 +342,7 @@ modparam("permissions", "db_mode", 1)
 
 # ----- alias_db params -----
 #!ifdef WITH_ALIASDB
-modparam("alias_db", "db_url", "postgres://username:@hostname/databasename")
+modparam("alias_db", "db_url", DBURL)
 modparam("alias_db", "use_domain", MULTIDOMAIN)
 #!endif
 
