@@ -39,7 +39,11 @@
 		            <ul class="nav" id="nav">
 		              <li class="feat"><a class="active" href="#">Features</a></li>
 		              <li><a href="/about">Info</a></li>
-		              <li><a class="number" href="#">Log In</a></li>
+                  <%- if user_signed_in? %>
+                    <li><%= link_to "Log Out", destroy_user_session_path %></li>
+                  <%- else %>
+                    <li><%= link_to "Log In", new_user_session_path %></li>
+                  <%- end %>
 		            </ul>
 		        </nav>
 		    </header>
