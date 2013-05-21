@@ -9,8 +9,11 @@
           <p>Are you ready to start making secure phone calls? First you'll need a client for your phone or computer. Then you'll need to enter in your sweet new account info:</p>
           <table class="info">
             <tr><th>User Name</th><td><%= current_user.sip_username %></td></tr>
-            <tr><th>Password</th><td>Your sign up password</td></tr>
-            <tr><th>Server</th><td><%= current_user.domain %></td>
+            <tr><th>Password</th><td>******** Your sign up password</td></tr>
+            <tr><th>Server</th><td><%= current_user.domain %></td></tr>
+            <%- if current_user.email %>
+              <tr><th>Email</th><td><%= current_user.email %></td></tr>
+            <%- end %>
           </table>
 
           <p><em><%= link_to "Sign out", destroy_user_session_path %> of your account.</em></p>
