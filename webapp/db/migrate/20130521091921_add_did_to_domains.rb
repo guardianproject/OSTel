@@ -1,6 +1,6 @@
 class AddDidToDomains < ActiveRecord::Migration
   def self.up
-    add_column :domains, :did
+    add_column :domains, :did, :string, {:length => 64}
     execute "UPDATE version set table_version=2 where table_name = 'domain'"
   end
 

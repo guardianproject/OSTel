@@ -9,7 +9,7 @@ class CreateDomainAttrs < ActiveRecord::Migration
     end
     execute "INSERT INTO version (table_name, table_version) values ('domain_attrs','1')"
 
-    add_index :domain_attrs_domain_attrs_idx, ["did","name","value"], :unique => true
+    add_index :domain_attrs, ["did","name","value"], :unique => true
   end
 
   def self.down
