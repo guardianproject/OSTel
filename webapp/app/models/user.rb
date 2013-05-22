@@ -2,6 +2,7 @@ require 'sas_calculator'
 
 class User < ActiveRecord::Base
   include SasCalculator
+  has_many :aliases
 
   devise :database_authenticatable, :lockable, :recoverable,
          :rememberable, :registerable, :timeoutable, :validatable,
