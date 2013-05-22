@@ -11,8 +11,9 @@ class UsersController < ApplicationController
     end
   end
 
-  def link
-    # link account to third-party authentication services
+  def aliases
+    @user = User.find(current_user.id)
+    @aliases = @User.aliases
   end
 
   def show
