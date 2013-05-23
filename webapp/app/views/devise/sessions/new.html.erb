@@ -3,13 +3,20 @@
   <div class="main wrapper clearfix section">
     <article>
       <section>
-        <h2>Sign in</h2>
-
+        <h1>Hello Again</h1>
+        <p>We've missed you! Welcome back to your OSTel account.</p>
+        
+    <p>OSTel is always improving. Here are some recent changes:<br />
+    ★ CODE NAMES: You can now choose a phone number or user name where people can call you.<br />
+    ★ MORE LANGUAGES: The secure user signup process is now available in Arabic, German, English, Spanish, Persian, French, Hungarian, Indonesian, Portuguese, Russian, Vietnamese and Chinese.<br />
+    ★ MASTER OF YOUR DOMAIN: With a little bit of advanced setup, you can now connect OSTel to any domain, making it easy for people to call you securely on your existing email address.<br />
+     </p>
+          
         <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-          <div><%= f.label :email %><br />
+          <div><b><%= f.label :email, "Email:" %></b><br />
           <%= f.email_field :email %></div>
 
-          <div><%= f.label :password %><br />
+          <div><b><%= f.label :password, "Password:" %></b><br />
           <%= f.password_field :password %></div>
 
           <% if devise_mapping.rememberable? -%>
@@ -18,9 +25,16 @@
 
           <div><%= f.submit "Sign in" %></div>
         <% end %>
+        
+       <br> 
 
-        <%= render :partial => "devise/shared/links" %>
+        <i><%= render :partial => "devise/shared/links" %></i>
       </section>
+      
+             <aside>
+                    	<%= image_tag "icon_sign.png", :alt => "mockup" %>
+                    	<p><em>Like a hand written letter to an old friend, a sign in form is important but seems to take too long.</em></p>
+        </aside>
     </article>
   </div>
 </div>
