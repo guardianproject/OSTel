@@ -23,13 +23,28 @@
         <div>
           <p>After you install the app on your mobile device, you can test connectivity by calling 9196. You should hear your own voice when you speak. You should also see "ZRTP - OK" in the yellow bar near the top of the screen.</p>
         </div>
-      </section>
       
       <div>
         <p><%= link_to "Domain Aliases Management", user_aliases_path %>: Add or modify custom domains for your account.</p>
+        <p>Associated Domains:</p>
+        <table border="1" cellpadding="20">
+          <%- @aliases_list.each do |a| %>
+            <tr>
+              <%- a.each do |k,v| %>
+                <th>
+                  <%= k %>
+                </th>
+                <td>
+                  <%= v %>
+                </td>
+              <%- end %>
+            </tr>
+          <%- end %>
+        </table>
       </div>
-      		<%= image_tag "icon_phone.png", :width => '265', :align => 'left', :class =>'icon', :alt => "Phone Icon" %>
-	  		
+      </section>
+
+      <div><%= image_tag "icon_phone.png", :width => '265', :align => 'left', :class =>'icon', :alt => "Phone Icon" %></div>
                       </article>
                 
 		<!-- END MAIN -->	

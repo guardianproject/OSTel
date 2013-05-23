@@ -11,15 +11,17 @@ class UsersController < ApplicationController
     end
   end
 
-  def aliases
-    @user = User.find(current_user.id)
-    @aliases = @User.aliases
-  end
-
   def show
     @user = User.find(current_user.id)
     if ( @user.sip_username.nil? )
       redirect_to users_suggest_path
+    end
+    @aliases = @user.aliases
+    @aliases_list = @aliases.collect do |a|
+      i = a.attributes.partition do |k,v|
+        k == "alias_username" || k == "alias_domain"
+      end
+      Hash[*i[0].flatten]
     end
   end
 
