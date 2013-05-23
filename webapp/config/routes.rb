@@ -2,10 +2,12 @@ Devise::Application.routes.draw do
   root :to => 'home#index'
   #these symbols map to models
   devise_for :users
-  scope '/admin' do
+
+  scope '/manage' do
     resources :users
     get "users/link", {:controller => "users", :action => "link"}
     post "users/suggest", {:controller => "users", :action => "suggest"}
+    get "user/aliases", {:controller => "users", :action => "aliases"}
   end
 
 
