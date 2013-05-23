@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516040857) do
+ActiveRecord::Schema.define(:version => 20130523202226) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                             :default => "", :null => false
@@ -20,19 +20,32 @@ ActiveRecord::Schema.define(:version => 20130516040857) do
     t.datetime "updated_at"
   end
 
-  create_table "dbaliases", :force => true do |t|
-    t.string "alias_username", :limit => 64, :default => "", :null => false
-    t.string "alias_domain",   :limit => 64, :default => "", :null => false
-    t.string "username",       :limit => 64, :default => "", :null => false
-    t.string "domain",         :limit => 64, :default => "", :null => false
+  create_table "aliases", :force => true do |t|
+    t.string  "alias_username", :limit => 64, :default => "", :null => false
+    t.string  "alias_domain",   :limit => 64, :default => "", :null => false
+    t.string  "local_username", :limit => 64, :default => "", :null => false
+    t.string  "local_domain",   :limit => 64, :default => "", :null => false
+    t.integer "user_id"
+    t.integer "domain_id"
   end
 
-  add_index "dbaliases", ["alias_username", "alias_domain"], :name => "alias_idx", :unique => true
-  add_index "dbaliases", ["username", "domain"], :name => "target_idx"
+  add_index "aliases", ["alias_username", "alias_domain"], :name => "alias_idx", :unique => true
+  add_index "aliases", ["local_username", "local_domain"], :name => "target_idx"
+
+  create_table "domain_attrs", :force => true do |t|
+    t.string   "did",           :limit => 64,                                    :null => false
+    t.string   "name",          :limit => 32,                                    :null => false
+    t.integer  "type",                                                           :null => false
+    t.string   "value",                                                          :null => false
+    t.datetime "last_modified",               :default => '1900-01-01 00:00:01', :null => false
+  end
+
+  add_index "domain_attrs", ["did", "name", "value"], :name => "index_domain_attrs_on_did_and_name_and_value", :unique => true
 
   create_table "domains", :force => true do |t|
     t.string   "domain",        :limit => 64, :default => "",                    :null => false
     t.datetime "last_modified",               :default => '1900-01-01 00:00:01', :null => false
+    t.string   "did"
   end
 
   add_index "domains", ["domain"], :name => "index_domains_on_domain", :unique => true
