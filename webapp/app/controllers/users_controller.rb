@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, :only => [:link, :show, :update, :delete, :create]
+  before_filter :authenticate_user!, :only => [:link, :show, :update, :delete, :create, :edit]
 
   def suggest
     @user = User.new(params[:user])
@@ -22,10 +22,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def edit
-
-  end
-
   def update
     @user = User.find(params[:id])
     @user.update_attributes(params[:user])
@@ -34,9 +30,5 @@ class UsersController < ApplicationController
     else
       redirect_to users_suggest_path, :flash => { :user_unavailable => "The username #{params[:user][:sip_username]} is not available"}
     end
-  end
-
-  def delete
-
   end
 end
