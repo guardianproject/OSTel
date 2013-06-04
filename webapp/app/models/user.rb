@@ -16,11 +16,8 @@ class User < ActiveRecord::Base
 
   # validations
   #
-  # this validation only happens during new user registration
-  validates :sip_username, :uniqueness => true, :unless => "user_signed_in?"
-
   # this validation should always happen
-  validates :sip_username, :presence => true,
+  validates :sip_username, :presence => true, :uniqueness => true, :unless => :update_username?,
                            :exclusion => {:in => %w(9196),
                            :message => "9196 is reserved, please choose another"}
 
@@ -37,10 +34,20 @@ class User < ActiveRecord::Base
   end
 
   protected
+
   def generate_sip_hash
     domain = Devise::Application.config.domain
     self.ha1 = Digest::MD5.hexdigest("#{self.sip_username}:#{domain}:#{self.password}")
     self.ha1b = Digest::MD5.hexdigest("#{self.sip_username}@#{domain}:#{domain}:#{self.password}")
     self.domain = domain
+  end
+
+  def update_username?
+    # check to see if we are updating a sip_username for an existing user
+    stored_user = User.find_by_sip_username self.sip_username
+    # the id of the user is the same as me and sip_username hasn't been changed. skip validations.
+    if ( stored_user.present?)
+      stored_user.id == self.id && stored_user.sip_username == self.sip_username
+    end
   end
 end
