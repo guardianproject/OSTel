@@ -7,10 +7,20 @@ class User < ActiveRecord::Base
          :rememberable, :registerable, :timeoutable, :validatable,
          :token_authenticatable
 
+  # accessable attributes for kam integration and account editing
   attr_accessible :email, :password, :ha1, :ha1b, :sip_username, :domain
+  
+  # callbacks for Kam integration
   before_create :generate_sip_hash
-  validates :sip_username, :uniqueness => true,
-                           :presence => true,
+  before_update :generate_sip_hash
+
+  # validations
+  #
+  # this validation only happens during new user registration
+  validates :sip_username, :uniqueness => true, :unless => "user_signed_in?"
+
+  # this validation should always happen
+  validates :sip_username, :presence => true,
                            :exclusion => {:in => %w(9196),
                            :message => "9196 is reserved, please choose another"}
 
