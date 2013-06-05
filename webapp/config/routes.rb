@@ -13,6 +13,7 @@ Devise::Application.routes.draw do
 
   #these symbols map to controllers
   match '/about' => 'home#about', :as => 'about'
+  match '/faq' => 'home#faq', :as => 'faq'
   match '/privacy' => 'home#privacy', :as => 'privacy'
   match '/token' => 'home#token', :as => :token
 end

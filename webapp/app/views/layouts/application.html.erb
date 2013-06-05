@@ -45,6 +45,7 @@
 		            <ul class="nav" id="nav">
 		              <li class="feat"><a class="active" href="#">Features</a></li>
 		              <li><a href="/about">Info</a></li>
+		              <li><a href="/faq">FAQ</a></li>
                   <%- if user_signed_in? %>
                     <li><%= link_to "My Account", user_root_path %></li>
                     <li><%= link_to "Log Out", destroy_user_session_path %> </li>
@@ -72,7 +73,7 @@
                 <ul>
                   <li><a href="mailto:support@ostel.me">Contact</a></li>
                   <li><a href="https://twitter.com/guardianproject" target="_blank">Twitter</a></li>
-                  <li><a href="https://guardianproject.info/wiki/Ostel" target="_blank">Help</a></li>
+                  <li><a href="https://dev.guardianproject.info/projects/ostel/wiki" target="_blank">Help</a></li>
                   <li><a href="https://github.com/guardianproject/ostel" target="_blank">Developers</a></li>
                   <li><a href="/privacy">Privacy</a></li>
                 </ul>

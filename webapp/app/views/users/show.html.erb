@@ -8,21 +8,21 @@
           <h1>Welcome to OSTel </h1>
           <p>Are you ready to start making secure phone calls? Great! First you'll need the right app for your phone or computer. Then you'll need to enter in your sweet new account info:</p>
           <table class="info">
-            <tr><th>User Name</th><td><%= current_user.sip_username %></td></tr>
-            <tr><th>Password</th><td><em>******** Your sign up password</em> <%= link_to "(change password)", edit_user_registration_path %></td></tr>
-            <tr><th>Server</th><td><%= current_user.domain %></td></tr>
+            <tr><th>User Name:</th><td><%= current_user.sip_username %></td></tr>
+            <tr><th>Password:</th><td><em>****from sign up**** </em> <%= link_to "(change password)", edit_user_registration_path %></td></tr>
+            <tr><th>Server:</th><td><%= current_user.domain %></td></tr>
             <%- if current_user.email %>
-              <tr><th>Email</th><td><%= current_user.email %></td></tr>
+              <tr><th>Email:</th><td><%= current_user.email %></td></tr>
             <%- end %>
           </table>
 
           <p><em><%= link_to "Sign out", destroy_user_session_path %> of your account.</em></p>
-          <p><a href="https://guardianproject.info/" target="_blank">The Guardian Project</a> welcomes you to the open secure telephony future.</p>
+          <p><a href="https://guardianproject.info/" target="_blank">Guardian Project</a> welcomes you to the open secure telephony future.</p>
           </div>
         <% end %>
         <h1>Setting up OSTel </h1>
         <div>
-          <p>After you install the app on your mobile device, you can test that everything is working by calling the user code named <i>echo</i> or the number <i>411</i>. In this echo test, you should hear your own voice when you speak into the phone. You should also see "ZRTP - OK" in the yellow bar near the top of the screen, letting you know that the encryption is working.
+          <p>After you install the app on your mobile device, you can test that everything is working by calling the user code named <i>echo</i> or the number <i>411</i>. In this echo test, you should hear your own voice when you speak into the phone. You should also see "ZRTP - OK" in the yellow bar near the top of the screen, letting you know that the encryption is working. Now make sure that your friend also has Ostel set up so you can give them a call. To ensure maximum security, 
       </section>
       
       		<%= image_tag "icon_phone.png", :width => '265', :align => 'left', :class =>'icon', :alt => "Phone Icon" %>
