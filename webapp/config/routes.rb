@@ -1,7 +1,9 @@
 Devise::Application.routes.draw do
   root :to => 'home#index'
   #these symbols map to models
-  devise_for :users
+  devise_for :users do
+    get 'users', :to => 'users#show', :as => :user_root
+  end
   scope '/admin' do
     resources :users
     get "users/link", {:controller => "users", :action => "link"}
