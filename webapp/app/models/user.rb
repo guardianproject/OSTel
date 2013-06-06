@@ -36,10 +36,12 @@ class User < ActiveRecord::Base
   protected
 
   def generate_sip_hash
-    domain = Devise::Application.config.domain
-    self.ha1 = Digest::MD5.hexdigest("#{self.sip_username}:#{domain}:#{self.password}")
-    self.ha1b = Digest::MD5.hexdigest("#{self.sip_username}@#{domain}:#{domain}:#{self.password}")
-    self.domain = domain
+    if (self.password)
+      domain = Devise::Application.config.domain
+      self.ha1 = Digest::MD5.hexdigest("#{self.sip_username}:#{domain}:#{self.password}")
+      self.ha1b = Digest::MD5.hexdigest("#{self.sip_username}@#{domain}:#{domain}:#{self.password}")
+      self.domain = domain
+    end
   end
 
   def update_username?
