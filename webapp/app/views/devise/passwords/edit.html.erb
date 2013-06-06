@@ -1,17 +1,26 @@
-<h2>Change your account password</h2>
-<p> Forgot that pesky password? Don't worry about it! Just input your email below and send you another message with the info. Thanks again for your interest in Ostel!</p>
+</div>
+<div class="main-container internal">
+  <div class="main wrapper clearfix section">
+    <article>
+      <section>
+        <h2>Change your account password</h2>
+        <p> Forgot that pesky password? Don't worry about it! Just input your email below and send you another message with the info. Thanks again for your interest in Ostel!</p>
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
+        <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
+          <%= devise_error_messages! %>
+          <%= f.hidden_field :reset_password_token %>
 
-  <div><%= f.label :password, "Get a new password" %><br />
-  <%= f.password_field :password %></div>
+          <div><%= f.label :password, "Get a new password" %><br />
+          <%= f.password_field :password %></div>
 
-  <div><%= f.label :password_confirmation, "Confirm your new password" %><br />
-  <%= f.password_field :password_confirmation %></div>
+          <div><%= f.label :password_confirmation, "Confirm your new password" %><br />
+          <%= f.password_field :password_confirmation %></div>
 
-  <div><%= f.submit "Change my password" %></div>
-<% end %>
+          <div><%= f.submit "Change my password" %></div>
+        <% end %>
 
-<%= render :partial => "devise/shared/links" %>
+        <%= render :partial => "devise/shared/links" %>
+      </section>
+    </article>
+  </div>
+</div>
