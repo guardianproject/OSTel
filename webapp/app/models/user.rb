@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   
   # callbacks for Kam integration
   before_create :generate_sip_hash
+  after_create :send_welcome_email
   before_update :generate_sip_hash
 
   # validations
@@ -50,6 +51,12 @@ class User < ActiveRecord::Base
     # the id of the user is the same as me and sip_username hasn't been changed. skip validations.
     if ( stored_user.present?)
       stored_user.id == self.id && stored_user.sip_username == self.sip_username
+    end
+  end
+
+  def send_welcome_email
+    if (self.email)
+      UserMailer.welcome_email(self).deliver
     end
   end
 end
