@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> 
+<!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Ostel: Encrypted Phone Calls</title>
+    <meta name="description" content="">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link href="https://ostel.co/stylesheets/normalize.min.css?1365887311" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://ostel.co/stylesheets/main.css?1367952522" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://ostel.co/stylesheets/superslides.css?1367952537" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://ostel.co/stylesheets/flexslider.css?1367353623" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://ostel.co/stylesheets/application.css?1367353623" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <article id="content">
+      <div class="main-container internal">
+        <div class="main wrapper clearfix section">
+          <article>
+            <section>
+              <div>
+                <h1>Welcome to OSTel </h1>
+                <p>Are you ready to start making secure phone calls? Great! First you'll need the
+                right app for your phone or computer. Then you'll need to sign in with your
+                sweet new account info. Click <a href="https://ostel.co/users/log_in">here</a> 
+                and enter this account info.</p>
+                <table class="info">
+                  <tr><th>User Name:</th><td><%= @user.sip_username %></td></tr>
+                  <tr><th>Password:</th><td><em>****from sign up**** </em></td></tr>
+                  <tr><th>Server:</th><td><%= @user.domain %></td></tr>
+                </table>
+                <p><a href="https://guardianproject.info/" target="_blank">Guardian Project</a>
+                welcomes you to the open secure telephony future.</p>
+              </div>
+              <h1>Setting up OSTel </h1>
+              <div>
+                <p>After you install the app on your mobile device, you can test
+                that everything is working by calling the user code named
+                <i>9-1-9-6</i>. In this echo test, you should hear your own
+                voice when you speak into the phone. You should also see "ZRTP -
+                OK" in the yellow bar near the top of the screen, letting you
+                know that the encryption is working. Now you can place free and
+                secure calls to your friends who also have Ostel set up. To
+                ensure maximum security, confirm that the same 4-digit code
+                appears on both phones. 
+              </div>
+            </section>
+            <img src="https://ostel.co/images/icon_phone.png" width='265' align='left' class='icon' alt="Phone Icon" />
+          </article>
+          <!-- END MAIN -->	
+        </div> 
+      </div> 
+      <div class="main-container">
+        <div class="main wrapper clearfix">
+          <article class="section">
+            <h1>Download the App</h1>
+            <p>If you have a device in your pocket or on your desk, then you can
+            get OSTel working on it! Download any of these supporting apps:</p>
+            <!-- INSERT FEATURE TEXT  -->
+            <section>
+              <h2>Android</h2>
+              <a href="https://play.google.com/store/apps/details?id=com.csipsimple" target="_blank" class="icon">
+              <img src="https://ostel.co/images/icon_mobile1.png" width='65' align='left' alt="Mobile1 Icon" class='icon' /></a>
+              <p>We fully support and integrate with the <a href="https://play.google.com/store/apps/details?id=com.csipsimple" target="_blank">CSipSimple app</a> on Android. Go to the OSTN wizard to easily set it up. There's an Ostel setup wizard coming soon to make life even better.</p>
+            </section>
+            <!-- INSERT FEATURE TEXT  -->
+            <section>
+              <h2>iPhone & iPad</h2>
+              <img src="https://ostel.co/images/icon_tablet.png" width='67' align='left' class='icon' alt="Tablet Icon" />
+              <p>Ostel works great on the <a href="https://itunes.apple.com/en/app/groundwire-business-caliber/id378503081?mt=8" target="_blank">Groundwire app</a>. It's a paid app and for $10 you'll be able to receive encrypted calls. There's an additional $25 in-app purchase for the ZRTP extension to also place a secure call.</p>
+            </section>
+            <!-- INSERT FEATURE TEXT  -->
+            <section class="last">
+              <h2>Mac</h2>
+              <p>The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> is an open source client that works for Ostel. It can also be used as a chat client for Facebook, Gchat, XMPP and others.</p>
+            </section>
+            <hr/>
+            <!-- INSERT FEATURE TEXT  -->                   
+            <section>
+              <h2>Windows</h2>
+              <p>The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> is an open source client that works for Ostel. It can also be used as a chat client for Facebook, Gchat, XMPP and others.</p>
+            </section>
+            <!-- INSERT FEATURE TEXT  -->
+            <section>
+              <h2>Linux</h2>
+              <p>The <a href="http://sflphone.org/" target="_blank">sflphone app</a> is a GPL app that works well with Ostel. The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> works too!</p>
+            </section>
+            <!-- INSERT FEATURE TEXT  -->
+            <section class="last">
+              <h2>Blackberry</h2>
+              <p>Not to be forgotten, <a href="http://www.privatewave.com/products-services/private-gsm/product.html" target="_blank">PrivateGSM</a> works on Blackberry and even on Nokia. An enterprise solution, it requires payment to function fully.</p>
+            </section>
+            <hr/>
+          </article>
+        </div> <!-- #main -->
+      </div> <!-- #main-container -->
+    </article>
+    <!-- START FOOTER  -->
+    <div class="footer-container">
+      <footer class="wrapper clearfix">
+        <!-- LOGO Replace  -->
+        <h1><a href="https://guardianproject.info" target="_blank"><img src="https://ostel.co/images/footlogo@2x.png" /></a></h1>
+        <!-- INSERT Footer Links // Insert Desired menu items  -->
+        <ul>
+          <li><a href="mailto:support@guardianproject.info">Support Email</a></li>
+          <li><a href="https://twitter.com/guardianproject" target="_blank">Twitter</a></li>
+          <li><a href="https://dev.guardianproject.info/projects/ostel" target="_blank">Help</a></li>
+          <li><a href="https://github.com/guardianproject/ostel" target="_blank">Developers</a></li>
+          <li><a href="https://ostel.co/privacy">Privacy</a></li>
+        </ul>
+        <!-- END FOOTER -->    
+      </footer>
+    </div>
+  </body>
+</html>
