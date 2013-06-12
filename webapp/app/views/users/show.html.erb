@@ -1,111 +1,81 @@
-</div>
-<div class="main-container internal">
-  <div class="main wrapper clearfix section">
-    <article>
-      <section>
-        <% if user_signed_in? %>
-          <div>
-          <h1>Welcome to OSTel </h1>
-          <p>Are you ready to start making secure phone calls? Great! First you'll need the right app for your phone or computer. Then you'll need to enter in your sweet new account info:</p>
-          <table class="info">
-            <tr><th>User Name:</th><td><%= current_user.sip_username %></td></tr>
-            <tr><th>Password:</th><td><em>****from sign up**** </em> <%= link_to "(change password)", edit_user_registration_path %></td></tr>
-            <tr><th>Server:</th><td><%= current_user.domain %></td></tr>
-            <%- if current_user.email %>
-              <tr><th>Email:</th><td><%= current_user.email %></td></tr>
-            <%- end %>
-          </table>
-
-          <p><em><%= link_to "Sign out", destroy_user_session_path %> of your account.</em></p>
-          <p><a href="https://guardianproject.info/" target="_blank">Guardian Project</a> welcomes you to the open secure telephony future.</p>
-          </div>
-        <% end %>
-        <h1>Setting up OSTel </h1>
-        <div>
-          <p>After you install the app on your mobile device, you can test that everything is working by calling the user code named <i>9-1-9-6</i>. In this echo test, you should hear your own voice when you speak into the phone. You should also see "ZRTP - OK" in the yellow bar near the top of the screen, letting you know that the encryption is working. Now you can place free and secure calls to your friends who also have Ostel set up. To ensure maximum security, confirm that the same 4-digit code appears on both phones. 
-
-      </section>
-      
-      		<%= image_tag "icon_phone.png", :width => '265', :align => 'left', :class =>'icon', :alt => "Phone Icon" %>
-            <p><em>Tell your friends to give you a free call on your own personal Batphone,  <b><%= current_user.sip_username %></b>.</em></p>	  		
-    </article>
-                
-		<!-- END MAIN -->	
-            </div> 
-        </div> 
-      <div class="main-container">
-            <div class="main wrapper clearfix">
-
-                <article class="section">
-                    <h1>Download the App</h1>
-                    <p>If you have a device in your pocket or on your desk, then you can get OSTel working on it! Download any of these supporting apps:</p>
-                    <!-- INSERT FEATURE TEXT  -->
-                    <section>
-                        <h2>Android</h2>
-                        <a href="https://play.google.com/store/apps/details?id=com.csipsimple" target="_blank" class="icon"><%= image_tag "icon_mobile1.png", :width => '65', :align => 'left', :alt=>"Mobile1 Icon" , :class =>'icon' %></a>
-
-
-
-                        <p>We fully support and integrate with the <a href="https://play.google.com/store/apps/details?id=com.csipsimple" target="_blank">CSipSimple app</a> on Android. Go to the OSTN wizard to easily set it up. There's an Ostel setup wizard coming soon to make life even better.</p>
-                    </section>
-                    
-                    <!-- INSERT FEATURE TEXT  -->
-                    <section>
-                        <h2>iPhone & iPad</h2>
-                        <%= image_tag "icon_tablet.png", :width => '67', :align => 'left', :class =>'icon', :alt => "Tablet Icon" %>
-
-
-
-                        <p>Ostel works great on the <a href="https://itunes.apple.com/en/app/groundwire-business-caliber/id378503081?mt=8" target="_blank">Groundwire app</a>. It's a paid app and for $10 you'll be able to receive encrypted calls. There's an additional $25 in-app purchase for the ZRTP extension to also place a secure call.</p>
-                    </section>
-                    
-                    <!-- INSERT FEATURE TEXT  -->
-                     <section class="last">
-                        <h2>Mac</h2>
-                        <%= image_tag "icon_laptop.png", :width => '67', :align => 'left', :class =>'icon', :alt => "Laptop Icon" %>                        
-
-
-
-                        <p>The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> is an open source client that works for Ostel. It can also be used as a chat client for Facebook, Gchat, XMPP and others.</p>
-                    </section>
-                    
-                    	<hr/>
-                    
-                     <!-- INSERT FEATURE TEXT  -->                   
-                     <section>
-                        <h2>Windows</h2>
-                        <%= image_tag "icon_computer.png", :width => '58', :align => 'left', :class =>'icon', :alt => "Computer Icon" %>                                                
-
-
-
-                        <p>The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> is an open source client that works for Ostel. It can also be used as a chat client for Facebook, Gchat, XMPP and others.</p>
-                    </section>
-                    
-                    <!-- INSERT FEATURE TEXT  -->
-                    <section>
-                        <h2>Linux</h2>
-                        <%= image_tag "icon_free.png", :width => '64', :align => 'left', :class =>'icon', :alt => "Free Icon" %>                                                                        
-
-
-
-                        <p>The <a href="http://sflphone.org/" target="_blank">sflphone app</a> is a GPL app that works well with Ostel. The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> works too!</p>
-                    </section>
-                    
-                     <!-- INSERT FEATURE TEXT  -->
-                     <section class="last">
-                        <h2>Blackberry</h2>
-                        <%= image_tag "icon_mobile.png", :width => '64', :align => 'left', :class =>'icon', :alt => "Mobile Icon" %>                                                                                                
-
-
-
-                        <p>Not to be forgotten, <a href="http://www.privatewave.com/products-services/private-gsm/product.html" target="_blank">PrivateGSM</a> works on Blackberry and even on Nokia. An enterprise solution, it requires payment to function fully.</p>
-                    </section>
-                    
-                    <hr/>
-			
-                </article>
-            </div> <!-- #main -->
-        </div> <!-- #main-container -->
-    </article>
   </div>
-</div>
+  <div class="main-container internal">
+    <div class="main wrapper clearfix section">
+      <article>
+        <section>
+          <% if user_signed_in? %>
+            <div>
+              <h1>Welcome to OSTel </h1>
+              <p>Are you ready to start making secure phone calls? Great! First you'll need the right app for your phone or computer. Then you'll need to enter in your sweet new account info:</p>
+              <table class="info">
+                <tr><th>User Name:</th><td><%= current_user.sip_username %></td></tr>
+                <tr><th>Password:</th><td><em>****from sign up**** </em> <%= link_to "(change password)", edit_user_registration_path %></td></tr>
+                <tr><th>Server:</th><td><%= current_user.domain %></td></tr>
+                <%- if current_user.email %>
+                  <tr><th>Email:</th><td><%= current_user.email %></td></tr>
+                <%- end %>
+              </table>
+
+              <p><em><%= link_to "Sign out", destroy_user_session_path %> of your account.</em></p>
+              <p><a href="https://guardianproject.info/" target="_blank">Guardian Project</a> welcomes you to the open secure telephony future.</p>
+            </div>
+          <% end %>
+          <h1>Setting up OSTel </h1>
+          <div>
+            <p>After you install the app on your mobile device, you can test that everything is working by calling the user code named <i>9-1-9-6</i>. In this echo test, you should hear your own voice when you speak into the phone. You should also see "ZRTP - OK" in the yellow bar near the top of the screen, letting you know that the encryption is working. Now you can place free and secure calls to your friends who also have Ostel set up. To ensure maximum security, confirm that the same 4-digit code appears on both phones. 
+
+        </section>
+        
+        <%= image_tag "icon_phone.png", :width => '265', :align => 'left', :class =>'icon', :alt => "Phone Icon" %>
+        <p><em>Tell your friends to give you a free call on your own personal Batphone,  <b><%= current_user.sip_username %></b>.</em></p>	  		
+      </article>
+                  
+      <!-- END MAIN -->	
+    </div> 
+  </div> 
+  <div class="main-container">
+    <div class="main wrapper clearfix">
+      <article class="section">
+        <h1>Download the App</h1>
+        <p>If you have a device in your pocket or on your desk, then you can get OSTel working on it! Download any of these supporting apps:</p>
+        <!-- INSERT FEATURE TEXT  -->
+        <section>
+            <h2>Android</h2>
+            <a href="https://play.google.com/store/apps/details?id=com.csipsimple" target="_blank" class="icon"><%= image_tag "icon_mobile1.png", :width => '65', :align => 'left', :alt=>"Mobile1 Icon" , :class =>'icon' %></a>
+            <p>We fully support and integrate with the <a href="https://play.google.com/store/apps/details?id=com.csipsimple" target="_blank">CSipSimple app</a> on Android. Go to the OSTN wizard to easily set it up. There's an Ostel setup wizard coming soon to make life even better.</p>
+        </section>
+        <!-- INSERT FEATURE TEXT  -->
+        <section>
+            <h2>iPhone & iPad</h2>
+            <%= image_tag "icon_tablet.png", :width => '67', :align => 'left', :class =>'icon', :alt => "Tablet Icon" %>
+            <p>Ostel works great on the <a href="https://itunes.apple.com/en/app/groundwire-business-caliber/id378503081?mt=8" target="_blank">Groundwire app</a>. It's a paid app and for $10 you'll be able to receive encrypted calls. There's an additional $25 in-app purchase for the ZRTP extension to also place a secure call.</p>
+        </section>
+        <!-- INSERT FEATURE TEXT  -->
+        <section class="last">
+          <h2>Mac</h2>
+          <%= image_tag "icon_laptop.png", :width => '67', :align => 'left', :class =>'icon', :alt => "Laptop Icon" %>                        
+          <p>The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> is an open source client that works for Ostel. It can also be used as a chat client for Facebook, Gchat, XMPP and others.</p>
+        </section>
+        <hr/>
+        <!-- INSERT FEATURE TEXT  -->                   
+        <section>
+          <h2>Windows</h2>
+          <%= image_tag "icon_computer.png", :width => '58', :align => 'left', :class =>'icon', :alt => "Computer Icon" %>                                                                <p>The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> is an open source client that works for Ostel. It can also be used as a chat client for Facebook, Gchat, XMPP and others.</p>
+        </section>
+        <!-- INSERT FEATURE TEXT  -->
+        <section>
+          <h2>Linux</h2>
+          <%= image_tag "icon_free.png", :width => '64', :align => 'left', :class =>'icon', :alt => "Free Icon" %>                                                                        <p>The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> is a GPL app that works well with Ostel. The <a href="http://sflphone.org/" target="_blank">sflphone app</a> works too!</p>
+        </section>
+        
+        <!-- INSERT FEATURE TEXT  -->
+        <section class="last">
+          <h2>Blackberry</h2>
+          <%= image_tag "icon_mobile.png", :width => '64', :align => 'left', :class =>'icon', :alt => "Mobile Icon" %>
+          <p>Not to be forgotten, <a href="http://www.privatewave.com/products-services/private-gsm/product.html" target="_blank">PrivateGSM</a> works on Blackberry and even on Nokia. An enterprise solution, it requires payment to function fully.</p>
+        </section>
+        <hr/>
+      </article>
+    </div> <!-- #main -->
+  </div> <!-- #main-container -->
+</article>
