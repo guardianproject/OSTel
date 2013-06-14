@@ -11,17 +11,19 @@
 							 <h2>How do I set it up?</h2>
 									 <p>Register for an account. Then download the app and enter the username and password of your ostel account to get started. The server name is "ostel.co". A list of compatible apps is listed on your account profile page and in the welcome email.</p>
 							 <h2>How do I test that everything is working?</h2>
-									 <p>From the dial pad, dial 9-1-9-6 then click the green receiver icon at the bottom. Speak into the microphone. You should hear yourself. If so, you have successfully completed the echo test and your client should be fully functional.</p>
+									 <p>From the dial pad, dial 9-1-9-6 then click the green receiver icon at the bottom. Speak into the microphone. You should hear yourself. If so, you have successfully completed the <em>echo test</em> and your client should be fully functional.</p>
 							 <h2>How do I call my friends</h2>
-               <p>Your friends need an ostel account too. To ensure your call security, ostel service cannot make calls to land lines or SIM card phone numbers on cellular networks. In the CSipSimple app, click 'txt' to type in your friend's user name and click the phone icon to place the call. See? Wasn't that easy?</p>
+               						<p>Your friends need an ostel account too. To ensure your call security, ostel service cannot make calls to land lines or SIM card phone numbers on cellular networks. In the CSipSimple app, click 'txt' to type in your friend's user name and click the phone icon to place the call. See? Wasn't that easy?</p>
 							 <h2>Does ostel work on my mobile device or desktop?</h2>
 									 <p>Yes and yes! OStel works on every smartphone (Blackberry, iPhone, Nokia, Android) and every desktop (Mac, PC, Linux, etc) through accompanying apps that support SIP and ZRTP. Check out our <a href="/about">features page</a> for instructions to get it up and running on your platform.</p>
 							 <h2>I didn't get a confirmation email. What happened?</h2>
-               <p>Check your spam box for an email from ostel@guardianproject.info. If you forgot your password, you can <%= link_to "reset it here.", new_user_password_path %></p>
+               						 <p>Check your spam box for an email from ostel@guardianproject.info. If you forgot your password, you can <%= link_to "reset it here.", new_user_password_path %></p>
+							 <h2>Can I call landlines from Ostel and have it encrypted?</h2>
+               						 <p>Unfortunately, no. Our open secure telephony network (OSTN) doesn't communicate with the public switched telephone network (PSTN). If it did, all land lines would basically have to subscribe to that same service to receive secure calls.</p>
 							 <h2>Error while registering - Forbidden. What happened?</h2>
 									 <p>Please check that there are no extra spaces in any of the fields you were meant to alter. Check that all spelling is using lowercase.</p>
 							 <h2>Error while registering - Bad Gateway. What happened?</h2>
-									 <p>Please make sure that your account information is correct by logging into the web site. If the problem persists, restart the CSipSimple app and try again.</p>
+									 <p>Please make sure that your account information is correct by logging into the web site. If the problem persists, restart the app and try again.</p>
 							 <h2>I changed my settings but I'm getting the same error.</h2>
 									 <p>Try to exit the application and restart it. Click "Back" until you read the dial pad. Click "Settings" to reveal the options Menu. Click "Disconnect" to exit the app completely. Launch the app again from the applications folder and it will reboot and try to connect using the new settings you entered.</p>
 							 <h2>My connection is now inactive. What happened?</h2>
@@ -38,18 +40,24 @@
 									 <p>No Voice over IP services work over a Tor connection due the limitations of the Tor network and VoIP protocols. Please turn off Orbot when running OStel if you've enabled transparent proxying. There are more details <a href="https://guardianproject.info/2012/12/10/voice-over-tor/" target="_blank"> over on our blog</a>.</p>
 							 <h2>My phone won't allow me to install the CSipSimple App.</h2>
 									 <p>Don't want to use the Google Play store? Enable your phone to install apps from 3rd parties then get it directly. Go to Settings then click on Applications. Under Unknown sources, make sure that the box is checked, allowing the installation of non-Market applications.</p>
+							<h2>Does Ostel support text messaging?</h2>
+									 <p>Sort of. It works, but messages are only encrypted between the device/app and the server. This means they are more secure than SMS or plain email, especially since we don't log, but they are not encrypted end-to-end. We hope to enable OTR encryption for messages soon, but in the meantime, you can <a href="https://guardianproject.info/apps/gibber/" target="_blank"> use our Gibberbot app on Android</a> for end-to-end encrypted messaging.</p>		 
+							<h2>Where are your servers located?</h2>
+									 <p>Currently they're at a privacy-friendly provider in the U.S. but we are exploring alternate instances in other locales and jurisdictions.</p>		 		 
 							 <h2>What are the technical details on Ostel & the Open Secure Telephony Network (OSTN)?</h2>
 									 <p>Happy to share! Check out the full details about our software and hardware on our wiki at <a href="https://guardianproject.info/wiki/OSTN" target="_blank">Open Secure Telephony Network (OSTN)</a>.</p>
 							<h2>What are the technical details on Ostel & the Open Secure Telephony Network (OSTN)?</h2>
 									 <p>Happy to share! Check out the full details about our software and hardware on our wiki at <a href="https://guardianproject.info/wiki/OSTN" target="_blank">Open Secure Telephony Network (OSTN)</a>.</p>
 							<h2>How do I set up Ostel on an Android?</h2>
-									 <p>You'll have to have the CSipSimple app and add your Ostel account information. Check out the full details about it on our wiki at <a href="https://guardianproject.info/wiki/CSipSimple" target="_blank">CSipSimple</a>.</p>
+									 <p>You'll have to have the CSipSimple app and add your Ostel account information. Check out the full details about it on our wiki at <a href="https://guardianproject.info/wiki/CSipSimple" target="_blank">CSipSimple</a>. Please note that the nightly releases may or may not be stable if you get the app directly from their site.</p>
 							<h2>How do I set up Ostel on an iPhone or iPad?</h2>
 									 <p>You'll have to have the Groundwire app and add your Ostel account information. Check out the full details about it on our wiki at <a href="https://guardianproject.info/wiki/Groundwire" target="_blank">Groundwire</a>.</p>
 							<h2>How do I set up Ostel on Linux or Windows?</h2>
 									 <p>You'll have to have the Jitsi app and add your Ostel account information. Check out the full details about it on our wiki at <a href="https://guardianproject.info/wiki/Jitsi" target="_blank">Jitsi</a>.</p>
 							<h2>How do I set up Ostel on Blackberry or Nokia?</h2>
 									 <p>You'll have to have the PrivateGSM app and add your Ostel account information. Check out the full details about it on our wiki at <a href="https://guardianproject.info/wiki/PrivateGSM" target="_blank">PrivateGSM</a>.</p>		 		 		 		 
+							<h2>I had an account on Ostel.me. Do I have one on Ostel.co?</h2>
+									 <p>Nope! Our project is opt-in only to keep our users nice and happy.</p>		 		 		 		 
 							 <h2>My problems aren't listed here. Can I get in touch with someone?</h2>
 									 <p>We're always happy to help! <a href="mailto:support@guardianproject.info?Subject=Ostel%20Question" target="_blank">Send us an email</a> and we'll help troubleshoot your issue.</p>
 							 <h2>How can I get my friends involved?</h2>
