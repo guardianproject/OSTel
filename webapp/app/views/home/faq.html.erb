@@ -18,6 +18,8 @@
 									 <p>Yes and yes! OStel works on every smartphone (Blackberry, iPhone, Nokia, Android) and every desktop (Mac, PC, Linux, etc) through accompanying apps that support SIP and ZRTP. Check out our <a href="/about">features page</a> for instructions to get it up and running on your platform.</p>
 							 <h2>I didn't get a confirmation email. What happened?</h2>
                						 <p>Check your spam box for an email from ostel@guardianproject.info. If you forgot your password, you can <%= link_to "reset it here.", new_user_password_path %></p>
+							 <h2>What kind of encryption do you use?</h2>
+               						 <p>Phone calls with Ostel are end-to-end encrypted using ZRTP & SRTP. Each phone client has its own cipher strength options. We use SIP over TLS for signaling encryption. The TLS certifcates are based on the standard Root CA trust model.</p>
 							 <h2>Can I call landlines from Ostel and have it encrypted?</h2>
                						 <p>Unfortunately, no. Our open secure telephony network (OSTN) doesn't communicate with the public switched telephone network (PSTN). If it did, all land lines would basically have to subscribe to that same service to receive secure calls.</p>
 							 <h2>Error while registering - Forbidden. What happened?</h2>
