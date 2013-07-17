@@ -345,6 +345,8 @@ modparam("permissions", "db_mode", 1)
 #!ifdef WITH_ALIASDB
 modparam("alias_db", "db_url", DBURL)
 modparam("alias_db", "use_domain", MULTIDOMAIN)
+modparam("alias_db", "user_column", "local_username")
+modparam("alias_db", "domain_column", "local_domain")
 #!endif
 
 
@@ -597,7 +599,7 @@ route[LOCATION] {
 
 #!ifdef WITH_ALIASDB
 	# search in DB-based aliases
-	alias_db_lookup("dbaliases");
+	alias_db_lookup("aliases");
 #!endif
 
 	if (!lookup("location")) {
