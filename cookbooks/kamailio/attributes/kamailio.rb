@@ -1,4 +1,4 @@
-default[:apt][:kamalio_repo] = "kamailio40"
+default[:apt][:kamailio_repo] = "kamailio40"
 default[:apt][:distro] = "squeeze"
 default[:kamailio][:sip_domain] = node[:fqdn].to_s
 default[:kamailio][:db_engine] = "POSTGRES"
