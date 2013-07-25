@@ -1,22 +1,21 @@
 #!KAMAILIO
-#!define WITH_POSTGRES
+#!define WITH_<%= node[:kamailio][:db_engine] %>
 #!define WITH_AUTH
 #!define WITH_USRLOCDB
 #!define WITH_NAT
 #!define WITH_TLS
-#!define WITH_DEBUG
 #!define WITH_ALIASDB
 #!define WITH_IVR
 #!define WITH_MULTIDOMAIN
+
 #
-# Kamailio (OpenSER) SIP Server v3.1 - default configuration script
+# Kamailio (OpenSER) SIP Server v4.0 - default configuration script
 #     - web: http://www.kamailio.org
 #     - git: http://sip-router.org
 #
 # Direct your questions about this file to: <sr-users@lists.sip-router.org>
-# Edited by Lee Azzarello <lee@guardianproject.info> for ostel.co
 #
-# Refer to the Core CookBook at http://www.kamailio.org/dokuwiki/doku.php
+# Refer to the Core CookBook at http://www.kamailio.org/wiki/
 # for an explanation of possible statements, functions and parameters.
 #
 # Several features can be enabled using '#!define WITH_FEATURE' directives:
@@ -61,6 +60,10 @@
 #     - enable mysql
 #     - define WITH_ALIASDB
 #
+# *** To enable speed dial lookup execute:
+#     - enable mysql
+#     - define WITH_SPEEDDIAL
+#
 # *** To enable multi-domain support execute:
 #     - enable mysql
 #     - define WITH_MULTIDOMAIN
@@ -78,6 +81,14 @@
 #       block if more than 16 requests in 2 seconds and ban for 300 seconds)
 #     - define WITH_ANTIFLOOD
 #
+# *** To block 3XX redirect replies execute:
+#     - define WITH_BLOCK3XX
+#
+# *** To enable VoiceMail routing execute:
+#     - define WITH_VOICEMAIL
+#     - set the value of voicemail.srv_ip
+#     - adjust the value of voicemail.srv_port
+#
 # *** To enhance accounting execute:
 #     - enable mysql
 #     - define WITH_ACCDB
@@ -85,15 +96,20 @@
 #!ifdef ACCDB_COMMENT
   ALTER TABLE acc ADD COLUMN src_user VARCHAR(64) NOT NULL DEFAULT '';
   ALTER TABLE acc ADD COLUMN src_domain VARCHAR(128) NOT NULL DEFAULT '';
+  ALTER TABLE acc ADD COLUMN src_ip varchar(64) NOT NULL default '';
   ALTER TABLE acc ADD COLUMN dst_ouser VARCHAR(64) NOT NULL DEFAULT '';
   ALTER TABLE acc ADD COLUMN dst_user VARCHAR(64) NOT NULL DEFAULT '';
   ALTER TABLE acc ADD COLUMN dst_domain VARCHAR(128) NOT NULL DEFAULT '';
   ALTER TABLE missed_calls ADD COLUMN src_user VARCHAR(64) NOT NULL DEFAULT '';
   ALTER TABLE missed_calls ADD COLUMN src_domain VARCHAR(128) NOT NULL DEFAULT '';
+  ALTER TABLE missed_calls ADD COLUMN src_ip varchar(64) NOT NULL default '';
   ALTER TABLE missed_calls ADD COLUMN dst_ouser VARCHAR(64) NOT NULL DEFAULT '';
   ALTER TABLE missed_calls ADD COLUMN dst_user VARCHAR(64) NOT NULL DEFAULT '';
   ALTER TABLE missed_calls ADD COLUMN dst_domain VARCHAR(128) NOT NULL DEFAULT '';
 #!endif
+
+####### Include Local Config If Exists #########
+import_file "kamailio-local.cfg"
 
 ####### Defined Values #########
 
@@ -101,7 +117,9 @@
 #!ifdef WITH_POSTGRES
 # - database URL - used to connect to database server by modules such
 #       as: auth_db, acc, usrloc, a.s.o.
-#!define DBURL "postgres://openser:openserrw@localhost/openser"
+#!ifndef DBURL
+#!define DBURL "postgres://kamailio:L7hfeZG2ODDO9Diw@127.0.0.1/webapp_production"
+#!endif
 #!endif
 #!ifdef WITH_MULTIDOMAIN
 # - the value for 'use_domain' parameters
@@ -123,21 +141,25 @@
 
 ####### Global Parameters #########
 
+### LOG Levels: 3=DBG, 2=INFO, 1=NOTICE, 0=WARN, -1=ERR
 #!ifdef WITH_DEBUG
-debug=3
+debug=4
 log_stderror=no
-#!else
-debug=2
-log_stderror=no
-#!endif
-
 memdbg=5
 memlog=5
+#!else
+# no logging, bro
+corelog=-1
+debug=-1
+log_stderror=no
+memdbg=-1
+memlog=-1
+#!endif
 
 log_facility=LOG_LOCAL0
 
 fork=yes
-children=4
+children=8
 
 /* uncomment the next line to disable TCP (default on) */
 #disable_tcp=yes
@@ -151,7 +173,7 @@ children=4
 
 /* uncomment and configure the following line if you want Kamailio to 
    bind on a specific interface/port/proto (default bind on all available) */
-listen=eth0:5060
+listen=<%= node[:kamailio][:listen] %>
 
 /* port to listen to
  * - can be specified more than once if needed to listen on many ports */
@@ -161,6 +183,8 @@ port=5060
 enable_tls=yes
 #!endif
 
+# life time of TCP connection when there is no traffic
+# - a bit higher than registration expires to cope with UA behind NAT
 tcp_connection_lifetime=3605
 
 ####### Custom Parameters #########
@@ -180,16 +204,24 @@ tcp_connection_lifetime=3605
 #
 # - by default is empty to avoid misrouting
 pstn.gw_ip = "" desc "PSTN GW Address"
+pstn.gw_port = "" desc "PSTN GW Port"
 #!endif
 
+#!ifdef WITH_VOICEMAIL
+# VoiceMail Routing on offline, busy or no answer
+#
+# - by default Voicemail server IP is empty to avoid misrouting
+voicemail.srv_ip = "" desc "VoiceMail IP Address"
+voicemail.srv_port = "5060" desc "VoiceMail Port"
+#!endif
 
 ####### Modules Section ########
 
-# set paths to location of modules
-#!ifdef LOCAL_TEST_RUN
+# set paths to location of modules (to sources or installation folders)
+#!ifdef WITH_SRCPATH
 mpath="modules_k:modules"
 #!else
-mpath="/usr/lib64/kamailio/modules_k/:/usr/lib64/kamailio/modules/"
+mpath="/usr/local/lib/kamailio/modules_k/:/usr/local/lib64/kamailio/modules/"
 #!endif
 
 #!ifdef WITH_MYSQL
@@ -202,6 +234,7 @@ loadmodule "db_postgres.so"
 
 loadmodule "mi_fifo.so"
 loadmodule "kex.so"
+loadmodule "corex.so"
 loadmodule "tm.so"
 loadmodule "tmx.so"
 loadmodule "sl.so"
@@ -215,6 +248,7 @@ loadmodule "siputils.so"
 loadmodule "xlog.so"
 loadmodule "sanity.so"
 loadmodule "ctl.so"
+loadmodule "cfg_rpc.so"
 loadmodule "mi_rpc.so"
 loadmodule "acc.so"
 
@@ -228,6 +262,10 @@ loadmodule "permissions.so"
 
 #!ifdef WITH_ALIASDB
 loadmodule "alias_db.so"
+#!endif
+
+#!ifdef WITH_SPEEDDIAL
+loadmodule "speeddial.so"
 #!endif
 
 #!ifdef WITH_MULTIDOMAIN
@@ -255,6 +293,10 @@ loadmodule "pike.so"
 
 #!ifdef WITH_XMLRPC
 loadmodule "xmlrpc.so"
+#!endif
+
+#!ifdef WITH_DEBUG
+loadmodule "debugger.so"
 #!endif
 
 # ----------------- setting module-specific parameters ---------------
@@ -286,6 +328,10 @@ modparam("registrar", "method_filtering", 1)
 # modparam("registrar", "append_branches", 0)
 /* uncomment the next line not to allow more than 10 contacts per AOR */
 #modparam("registrar", "max_contacts", 10)
+# max value for expires of registrations
+modparam("registrar", "max_expires", 3600)
+# set it to 1 to enable GRUU
+modparam("registrar", "gruu_enabled", 0)
 
 
 # ----- acc params -----
@@ -301,7 +347,8 @@ modparam("acc", "detect_direction", 0)
 modparam("acc", "log_flag", FLT_ACC)
 modparam("acc", "log_missed_flag", FLT_ACCMISSED)
 modparam("acc", "log_extra", 
-	"src_user=$fU;src_domain=$fd;dst_ouser=$tU;dst_user=$rU;dst_domain=$rd")
+	"src_user=$fU;src_domain=$fd;src_ip=$si;"
+	"dst_ouser=$tU;dst_user=$rU;dst_domain=$rd")
 modparam("acc", "failed_transaction_flag", FLT_ACCFAILED)
 /* enhanced DB accounting */
 #!ifdef WITH_ACCDB
@@ -309,7 +356,8 @@ modparam("acc", "db_flag", FLT_ACC)
 modparam("acc", "db_missed_flag", FLT_ACCMISSED)
 modparam("acc", "db_url", DBURL)
 modparam("acc", "db_extra",
-	"src_user=$fU;src_domain=$fd;dst_ouser=$tU;dst_user=$rU;dst_domain=$rd")
+	"src_user=$fU;src_domain=$fd;src_ip=$si;"
+	"dst_ouser=$tU;dst_user=$rU;dst_domain=$rd")
 #!endif
 
 
@@ -317,7 +365,7 @@ modparam("acc", "db_extra",
 /* enable DB persistency for location entries */
 #!ifdef WITH_USRLOCDB
 modparam("usrloc", "db_url", DBURL)
-modparam("usrloc", "db_mode", 2)
+modparam("usrloc", "db_mode", 0)
 modparam("usrloc", "use_domain", MULTIDOMAIN)
 #!endif
 
@@ -325,10 +373,7 @@ modparam("usrloc", "use_domain", MULTIDOMAIN)
 # ----- auth_db params -----
 #!ifdef WITH_AUTH
 modparam("auth_db", "db_url", DBURL)
-modparam("auth_db", "user_column", "sip_username")
-#modparam("auth_db", "db_url", DBURL)
-#modparam("auth_db", "calculate_ha1", yes)
-#modparam("auth_db", "password_column", "password")
+modparam("auth_db", "user_column", "<%= node[:kamailio][:user_column] %>")
 modparam("auth_db", "load_credentials", "")
 modparam("auth_db", "use_domain", MULTIDOMAIN)
 
@@ -345,19 +390,22 @@ modparam("permissions", "db_mode", 1)
 #!ifdef WITH_ALIASDB
 modparam("alias_db", "db_url", DBURL)
 modparam("alias_db", "use_domain", MULTIDOMAIN)
-modparam("alias_db", "user_column", "local_username")
-modparam("alias_db", "domain_column", "local_domain")
+#!endif
+
+
+# ----- speeddial params -----
+#!ifdef WITH_SPEEDDIAL
+modparam("speeddial", "db_url", DBURL)
+modparam("speeddial", "use_domain", MULTIDOMAIN)
 #!endif
 
 
 # ----- domain params -----
 #!ifdef WITH_MULTIDOMAIN
 modparam("domain", "db_url", DBURL)
-modparam("domain", "domain_table", "domains")
-# use caching
-modparam("domain", "db_mode", 1)
 # register callback to match myself condition with domains list
 modparam("domain", "register_myself", 1)
+modparam("domain","domain_table", "<%= node[:kamailio][:domain_table] %>")
 #!endif
 
 
@@ -373,14 +421,13 @@ modparam("presence_xml", "force_active", 1)
 
 #!ifdef WITH_NAT
 # ----- rtpproxy params -----
-# modparam("rtpproxy", "rtpproxy_sock", "udp:127.0.0.1:7722")
 modparam("rtpproxy", "rtpproxy_sock", "unix:/var/run/rtpproxy/rtpproxy.sock")
 
 # ----- nathelper params -----
-modparam("nathelper", "natping_interval", 30)
-modparam("nathelper", "ping_nated_only", 1)
+modparam("nathelper", "natping_interval", 0)
+modparam("nathelper", "ping_nated_only", 0)
 modparam("nathelper", "sipping_bflag", FLB_NATSIPPING)
-modparam("nathelper", "sipping_from", "sip:pinger@ostel.co")
+modparam("nathelper", "sipping_from", "sip:pinger@kamailio.org")
 
 # params needed for NAT traversal in other modules
 modparam("nathelper|registrar", "received_avp", "$avp(RECEIVED)")
@@ -410,31 +457,38 @@ modparam("xmlrpc", "route", "XMLRPC");
 modparam("xmlrpc", "url_match", "^/RPC")
 #!endif
 
+#!ifdef WITH_DEBUG
+# ----- debugger params -----
+modparam("debugger", "cfgtrace", 1)
+#!endif
+
 ####### Routing Logic ########
 
 
 # Main SIP request routing logic
 # - processing of any incoming SIP request starts with this route
-route {
+# - note: this is the same as route { ... }
+request_route {
 
 	# per request initial checks
 	route(REQINIT);
 
 	# NAT detection
-	route(NAT);
+	route(NATDETECT);
+
+	# CANCEL processing
+	if (is_method("CANCEL"))
+	{
+		if (t_check_trans()) {
+			route(RELAY);
+		}
+		exit;
+	}
 
 	# handle requests within SIP dialogs
 	route(WITHINDLG);
 
 	### only initial requests (no To tag)
-
-	# CANCEL processing
-	if (is_method("CANCEL"))
-	{
-		if (t_check_trans())
-			t_relay();
-		exit;
-	}
 
 	t_check_trans();
 
@@ -474,31 +528,26 @@ route {
 	# dispatch destinations to PSTN
 	route(PSTN);
 
-  # IVR services
-  route(IVR);
+	# TODO: test the new built-in voicemail route. I think it's the same thing.
+	route(IVR);
 
 	# user location service
 	route(LOCATION);
-
-	route(RELAY);
 }
 
 
 route[RELAY] {
-#!ifdef WITH_NAT
-	if (check_route_param("nat=yes")) {
-		setbflag(FLB_NATB);
-	}
-	if (isflagset(FLT_NATS) || isbflagset(FLB_NATB)) {
-		route(RTPPROXY);
-	}
-#!endif
 
-	/* example how to enable some additional event routes */
+	# enable additional event routes for forwarded requests
+	# - serial forking, RTP relaying handling, a.s.o.
+	if (is_method("INVITE|BYE|SUBSCRIBE|UPDATE")) {
+		if(!t_is_set("branch_route")) t_on_branch("MANAGE_BRANCH");
+	}
+	if (is_method("INVITE|SUBSCRIBE|UPDATE")) {
+		if(!t_is_set("onreply_route")) t_on_reply("MANAGE_REPLY");
+	}
 	if (is_method("INVITE")) {
-		#t_on_branch("BRANCH_ONE");
-		t_on_reply("REPLY_ONE");
-		t_on_failure("FAIL_ONE");
+		if(!t_is_set("failure_route")) t_on_failure("MANAGE_FAILURE");
 	}
 
 	if (!t_relay()) {
@@ -548,9 +597,18 @@ route[WITHINDLG] {
 		# sequential request withing a dialog should
 		# take the path determined by record-routing
 		if (loose_route()) {
+			route(DLGURI);
 			if (is_method("BYE")) {
 				setflag(FLT_ACC); # do accounting ...
 				setflag(FLT_ACCFAILED); # ... even if the transaction fails
+			}
+			else if ( is_method("ACK") ) {
+				# ACK is forwarded statelessy
+				route(NATMANAGE);
+			}
+			else if ( is_method("NOTIFY") ) {
+				# Add Record-Route for in-dialog NOTIFY as per RFC 6665.
+				record_route();
 			}
 			route(RELAY);
 		} else {
@@ -564,7 +622,7 @@ route[WITHINDLG] {
 					# no loose-route, but stateful ACK;
 					# must be an ACK after a 487
 					# or e.g. 404 from upstream server
-					t_relay();
+					route(RELAY);
 					exit;
 				} else {
 					# ACK without matching transaction ... ignore and discard
@@ -585,7 +643,7 @@ route[REGISTRAR] {
 		{
 			setbflag(FLB_NATB);
 			# uncomment next line to do SIP NAT pinging 
-			setbflag(FLB_NATSIPPING);
+			## setbflag(FLB_NATSIPPING);
 		}
 		if (!save("location"))
 			sl_reply_error();
@@ -597,37 +655,43 @@ route[REGISTRAR] {
 # USER location service
 route[LOCATION] {
 
-#!ifdef WITH_ALIASDB
-	# search in DB-based aliases
-	alias_db_lookup("aliases");
+#!ifdef WITH_SPEEDDIAL
+	# search for short dialing - 2-digit extension
+	if($rU=~"^[0-9][0-9]$")
+		if(sd_lookup("speed_dial"))
+			route(SIPOUT);
 #!endif
 
+#!ifdef WITH_ALIASDB
+	# search in DB-based aliases
+	if(alias_db_lookup("dbaliases"))
+		route(SIPOUT);
+#!endif
+
+	$avp(oexten) = $rU;
 	if (!lookup("location")) {
-		switch ($rc) {
+		$var(rc) = $rc;
+		route(TOVOICEMAIL);
+		t_newtran();
+		switch ($var(rc)) {
 			case -1:
 			case -3:
-				t_newtran();
-        #xlog("L_INFO","User not found");
-				t_reply("404", "Not Found");
+				send_reply("404", "Not Found");
 				exit;
 			case -2:
-				sl_send_reply("405", "Method Not Allowed");
+				send_reply("405", "Method Not Allowed");
 				exit;
 		}
 	}
-	# If the source IP address is equal to the request domain and the domain of destination
-	# reset both NAT flags
-	#if ( $si==$dd && $si==$rd) {
-	#	xlog("L_INFO","Detected two clients behind same NAT ");
-	#	resetflag(FLT_NATS);
-	#	resetflag(FLB_NATB);
-	#}
 
 	# when routing via usrloc, log the missed calls also
 	if (is_method("INVITE"))
 	{
 		setflag(FLT_ACCMISSED);
 	}
+
+	route(RELAY);
+	exit;
 }
 
 # Presence server route
@@ -668,76 +732,47 @@ route[PRESENCE] {
 # Authentication route
 route[AUTH] {
 #!ifdef WITH_AUTH
-	if (is_method("REGISTER"))
-	{
-		# authenticate the REGISTER requests (uncomment to enable auth)
-		if (!www_authorize("$td", "users"))
-		{
-			www_challenge("$td", "0");
-			exit;
-		}
-
-		if ($au!=$tU)
-		{
-			sl_send_reply("403","Forbidden auth ID");
-			exit;
-		}
-	} else {
 
 #!ifdef WITH_IPAUTH
-		if(allow_source_address())
-		{
-			# source IP allowed
-			return;
-		}
+	if((!is_method("REGISTER")) && allow_source_address())
+	{
+		# source IP allowed
+		return;
+	}
 #!endif
 
-		# authenticate if from local subscriber
-		if (from_uri==myself)
-		{
-			if (!proxy_authorize("$fd", "users")) {
-				proxy_challenge("$fd", "0");
-				exit;
-			}
-			if (is_method("PUBLISH"))
-			{
-				if ($au!=$tU) {
-					sl_send_reply("403","Forbidden auth ID");
-					exit;
-				}
-			} else {
-				if ($au!=$fU) {
-					sl_send_reply("403","Forbidden auth ID");
-					exit;
-				}
-			}
-
-			consume_credentials();
-			# caller authenticated
-		} else {
-			# caller is not local subscriber, then check if it calls
-			# a local destination, otherwise deny, not an open relay here
-			if (!uri==myself)
-			{
-				sl_send_reply("403","Not relaying");
-				exit;
-			}
+	if (is_method("REGISTER") || from_uri==myself)
+	{
+		# authenticate requests
+		if (!auth_check("$fd", "users", "1")) {
+			auth_challenge("$fd", "0");
+			exit;
 		}
+		# user authenticated - remove auth header
+		if(!is_method("REGISTER|PUBLISH"))
+			consume_credentials();
 	}
+	# if caller is not local subscriber, then check if it calls
+	# a local destination, otherwise deny, not an open relay here
+	if (from_uri!=myself && uri!=myself)
+	{
+		sl_send_reply("403","Not relaying");
+		exit;
+	}
+
 #!endif
 	return;
 }
 
 # Caller NAT detection route
-route[NAT] {
+route[NATDETECT] {
 #!ifdef WITH_NAT
 	force_rport();
-	setflag(FLT_NATS);
 	if (nat_uac_test("19")) {
-		if (method=="REGISTER") {
+		if (is_method("REGISTER")) {
 			fix_nated_register();
 		} else {
-			fix_nated_contact();
+			add_contact_alias();
 		}
 		setflag(FLT_NATS);
 	}
@@ -746,15 +781,40 @@ route[NAT] {
 }
 
 # RTPProxy control
-route[RTPPROXY] {
+route[NATMANAGE] {
 #!ifdef WITH_NAT
-	if (is_method("BYE")) {
-		unforce_rtp_proxy();
-	} else if (is_method("INVITE")){
-		#xlog("L_INFO","Using rtpproxy");
-		force_rtp_proxy();
+	if (is_request()) {
+		if(has_totag()) {
+			if(check_route_param("nat=yes")) {
+				setbflag(FLB_NATB);
+			}
+		}
 	}
-	if (!has_totag()) add_rr_param(";nat=yes");
+	if (!(isflagset(FLT_NATS) || isbflagset(FLB_NATB)))
+		return;
+
+	rtpproxy_manage();
+
+	if (is_request()) {
+		if (!has_totag()) {
+			add_rr_param(";nat=yes");
+		}
+	}
+	if (is_reply()) {
+		if(isbflagset(FLB_NATB)) {
+			add_contact_alias();
+		}
+	}
+#!endif
+	return;
+}
+
+# URI update for dialog requests
+route[DLGURI] {
+#!ifdef WITH_NAT
+	if(!isdsturiset()) {
+		handle_ruri_alias();
+	}
 #!endif
 	return;
 }
@@ -789,7 +849,12 @@ route[PSTN] {
 		exit;
 	}
 
-	$ru = "sip:" + $rU + "@" + $sel(cfg_get.pstn.gw_ip);
+	if (strempty($sel(cfg_get.pstn.gw_port))) {
+		$ru = "sip:" + $rU + "@" + $sel(cfg_get.pstn.gw_ip);
+	} else {
+		$ru = "sip:" + $rU + "@" + $sel(cfg_get.pstn.gw_ip) + ":"
+					+ $sel(cfg_get.pstn.gw_port);
+	}
 
 	route(RELAY);
 	exit;
@@ -798,32 +863,9 @@ route[PSTN] {
 	return;
 }
 
-route[IVR] {
-#!ifdef WITH_IVR
-  # IVR services like echo test, voicemail, etc
-
-  # TODO: add some logic to ignore any method other than those used to initiate a call
-  # since there's no reason to test the condition if we aren't making a call.
-  #
-  # This pseudo variable with the capital U holds the SIP username of the
-  # incoming request.
-  #  vvv
-  if($rU == "9196") {
-    #xlog("Route to echo test");
-    # write the request URI to call Freeswitch on localhost
-    $ru = "sip:" + $rU + "@127.0.0.1";
-    route(RELAY);
-    exit;
-  }
-#!endif
-
-  return;
-}
-
 # XMLRPC routing
 #!ifdef WITH_XMLRPC
-route[XMLRPC]
-{
+route[XMLRPC] {
 	# allow XMLRPC from localhost
 	if ((method=="POST" || method=="GET")
 			&& (src_ip==127.0.0.1)) {
@@ -840,51 +882,79 @@ route[XMLRPC]
 }
 #!endif
 
-# Sample branch router
-branch_route[BRANCH_ONE] {
-	xdbg("new branch at $ru\n");
+route[IVR] {
+#!ifdef WITH_IVR
+  # IVR services like echo test, voicemail, etc
+
+  if($rU == "9196") {
+    #xlog("L_INFO", "Route to echo test");
+    # write the request URI to call Freeswitch on localhost
+    $ru = "sip:" + $rU + "@127.0.0.1";
+    route(RELAY);
+    exit;
+  }
+#!endif
+  return;
 }
 
-# Sample onreply route
-onreply_route[REPLY_ONE] {
+# route to voicemail server
+route[TOVOICEMAIL] {
+#!ifdef WITH_VOICEMAIL
+	if(!is_method("INVITE"))
+		return;
+
+	# check if VoiceMail server IP is defined
+	if (strempty($sel(cfg_get.voicemail.srv_ip))) {
+		xlog("SCRIPT: VoiceMail rotuing enabled but IP not defined\n");
+		return;
+	}
+	if($avp(oexten)==$null)
+		return;
+
+	$ru = "sip:" + $avp(oexten) + "@" + $sel(cfg_get.voicemail.srv_ip)
+				+ ":" + $sel(cfg_get.voicemail.srv_port);
+	route(RELAY);
+	exit;
+#!endif
+
+	return;
+}
+
+# manage outgoing branches
+branch_route[MANAGE_BRANCH] {
+	xdbg("new branch [$T_branch_idx] to $ru\n");
+	route(NATMANAGE);
+}
+
+# manage incoming replies
+onreply_route[MANAGE_REPLY] {
 	xdbg("incoming reply\n");
-#!ifdef WITH_NAT
-	if ((isflagset(FLT_NATS) || isbflagset(FLB_NATB))
-			&& status=~"(183)|(2[0-9][0-9])") {
-		force_rtp_proxy();
-	}
-	if (isbflagset("6")) {
-		fix_nated_contact();
-	}
-#!endif
+	if(status=~"[12][0-9][0-9]")
+		route(NATMANAGE);
 }
 
-# Sample failure route
-failure_route[FAIL_ONE] {
-#!ifdef WITH_NAT
-	if (is_method("INVITE")
-			&& (isbflagset(FLB_NATB) || isflagset(FLT_NATS))) {
-		unforce_rtp_proxy();
-	}
-#!endif
+# manage failure routing cases
+failure_route[MANAGE_FAILURE] {
+	route(NATMANAGE);
 
 	if (t_is_canceled()) {
 		exit;
 	}
 
-	# uncomment the following lines if you want to block client 
-	# redirect based on 3xx replies.
-	##if (t_check_status("3[0-9][0-9]")) {
-	##t_reply("404","Not found");
-	##	exit;
-	##}
+#!ifdef WITH_BLOCK3XX
+	# block call redirect based on 3xx replies.
+	if (t_check_status("3[0-9][0-9]")) {
+		t_reply("404","Not found");
+		exit;
+	}
+#!endif
 
-	# uncomment the following lines if you want to redirect the failed 
-	# calls to a different new destination
-	##if (t_check_status("486|408")) {
-	##	sethostport("192.168.2.100:5060");
-	##	append_branch();
-	##	# do not set the missed call flag again
-	##	t_relay();
-	##}
+#!ifdef WITH_VOICEMAIL
+	# serial forking
+	# - route to voicemail on busy or no answer (timeout)
+	if (t_check_status("486|408")) {
+		route(TOVOICEMAIL);
+		exit;
+	}
+#!endif
 }
