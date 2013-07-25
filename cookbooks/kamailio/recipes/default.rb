@@ -25,6 +25,8 @@ package "kamailio-tls-modules" #essential
 package "kamailio-utils-modules" # some non-SIP related utility functions
 package "kamailio-presence-modules" # might as well support SIP presence
 package "kamailio-xmpp-modules" # support an XMPP gateway
+# database package is in another recipe...for now require postgres because it's
+# rad.
 package "rtpproxy" # default configuration is fine
 
 # there are two configuration files required for kam
