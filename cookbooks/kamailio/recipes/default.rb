@@ -8,6 +8,17 @@
 #
 
 # Add Kamailio package source to the system's database
+
+execute "apt-key-add" do
+  command "apt-key add /tmp/kamkey.gpg"
+  action :nothing
+end
+
+cookbook_file "/tmp/kamkey.gpg" do
+  source "kamailiodebkey.gpg"
+  notifies :run, "execute[apt-key-add]", :immediately
+end
+
 execute "apt-get-update" do
   command "apt-get update"
   action :nothing
