@@ -7,6 +7,8 @@
 # GPLv3
 #
 #
+# let's create our database before we install the Kam driver
+# The test is if the package's DDL files exist locally
 # assume postgres is already installed
 package "kamailio-postgres-modules"
 
@@ -14,8 +16,10 @@ package "kamailio-postgres-modules"
 
 execute "create-database" do
   command "createdb #{node[:kamailio][:dbname]}"
-  creates "file on disk"
   user "postgres"
+  not_if "test -d #{node[:kamailio][:postgresql_schema_dir]}"
 end
 
+# install the kamailio driver
+package "kamailio-postgres-modules"
 
