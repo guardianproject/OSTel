@@ -11,14 +11,14 @@
                 sweet new Ostel account info:</p>
               <table class="info">
                 <tr><th>User Name:</th><td><%= current_user.sip_username %></td></tr>
-                <tr><th>Password:</th><td><em>****from sign up**** </em> <%= link_to "(change password)", edit_user_registration_path %></td></tr>
+                <tr><th>Password:</th><td><em>****from sign up**** </em> </td></tr>
                 <tr><th>Server:</th><td><%= current_user.domain %></td></tr>
                 <%- if current_user.email %>
                   <tr><th>Email:</th><td><%= current_user.email %></td></tr>
                 <%- end %>
               </table>
 
-              <p><em><%= link_to "Sign out", destroy_user_session_path %> of your account.</em></p>
+              <p><em><%= link_to "Sign out", destroy_user_session_path %> of your account. <%= link_to "Change", edit_user_registration_path %> account settings.</em></p>
               <p><a href="https://guardianproject.info/" target="_blank">Guardian Project</a> welcomes you to the open secure telephony future.</p>
             </div>
           <% end %>
@@ -60,7 +60,7 @@ Under advanced settings set proxy to ostel.co, transport protocol to tls (sip), 
           <h2>Mac</h2>
           <%= image_tag "icon_laptop.png", :width => '67', :align => 'left', :class =>'icon', :alt => "Laptop Icon" %>                        
           <p>The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> is an open source client that works for Ostel. It can also be used as a chat client for Facebook, Gchat, XMPP and others. To set up, go to accounts and choose a new SIP network. 
-Add the SIP id included above (ex: magic@ostel.co) and your password. </p>
+Add the SIP id included above (ex: magic@ostel.co) and your password. Then in advanced account settings, under connection, proxy options should be set to proxy: ostel.co / port: 5061 / preferred transport: TLS</p>
         </section>
         <hr/>
         <!-- INSERT FEATURE TEXT  -->                   
@@ -69,14 +69,15 @@ Add the SIP id included above (ex: magic@ostel.co) and your password. </p>
           <%= image_tag "icon_computer.png", :width => '58', :align => 'left', :class =>'icon', :alt => "Computer Icon" %>                                                                
           <p>The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> is an open source client that works for Ostel. IIt can also be used
 as a chat client for Facebook, Gchat, XMPP and others. To set up, go to accounts and choose a new SIP network. 
-Add the SIP id included above (ex: magic@ostel.co) and your password.</p>
+Add the SIP id included above (ex: magic@ostel.co) and your password. Make sure to set your Proxy Options to preferred transport as TLS. Then make sure proxy is ostel.co & port is 5061.</p>
         </section>
         <!-- INSERT FEATURE TEXT  -->
         <section>
           <h2>Linux</h2>
           <%= image_tag "icon_free.png", :width => '64', :align => 'left', :class =>'icon', :alt => "Free Icon" %>                                                                        
           <p>The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> is a GPL app that works well with Ostel. To set up, go to accounts and choose a new SIP network. 
-Add the SIP id included above (ex: magic@ostel.co) and your password. The <a href="http://sflphone.org/" target="_blank">sflphone app</a> works too!</p>
+Add the SIP id included above (ex: magic@ostel.co) and your password. Make sure to set your Proxy Options to preferred transport as TLS. Then make sure proxy is ostel.co & port is 5061.
+The <a href="http://sflphone.org/" target="_blank">sflphone app</a> works too!</p>
         </section>
         
         <!-- INSERT FEATURE TEXT  -->
