@@ -4,7 +4,7 @@ class CreateKamailioDomains < ActiveRecord::Migration
       t.string :domain, {:limit => 64, :default => '', :null => false}
       t.timestamp :last_modified, {:default => '1900-01-01 00:00:01', :null => false}
     end
-    execute "INSERT INTO version (table_name, table_version) values ('domains','1')"
+    execute "INSERT INTO version (table_name, table_version) values ('domains','2')"
 
     add_index :domains, "domain", :unique => true
   end
