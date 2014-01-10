@@ -95,7 +95,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid #d3e1e6; padd
    ========================================================================== */ 
 .flexslider2{
 	color: #41454b; /* Change Quote Color*/
-	padding-top: 1.5em; padding-bottom: 2em; font: 28px/140% "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif; font-weight: 300; clear: both;
+	padding-bottom: 2em; font: "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif; font-weight: 300; clear: both;
 }
 .flexslider2 span{
 	color: #0ca2d9; /* Change Quote By Color*/
@@ -201,7 +201,7 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid #d3e1e6; padd
 .main-container.internal section{ float: none; width: 100%;padding-top: 1em; padding-bottom: 1em; border: none; }
 .main-container.internal aside{ float: none; width: 100%; border-top: 2px solid #d8dddf; padding-top: 1em; padding-bottom: 2em; margin-top: 40px; text-align: center; }
 em{ color: #a7afb6; font-style: italic; font-weight: 300; }
-.internal ol li{ margin-left: 0px; padding-top: 1em;	 }
+.internal ol li{ margin-left: 0px; }
 
 
 
@@ -255,9 +255,8 @@ em{ color: #a7afb6; font-style: italic; font-weight: 300; }
 
 .slides-pagination { position: absolute; z-index: 3; bottom: 25px; text-align: center; width: 100%; background: none; display: block; }
 
-.main article section { float: left; width: 28%; margin-right: 8%; margin-bottom:2em; border-bottom: none; padding: 0; }
+.main article section { float: left; width: 28%; margin-right: 8%; margin-bottom:0em; border-bottom: none; padding: 0; }
 .main article section.last{ margin-right: 0;}
-.main { padding: 60px 0 30px; }
 .main-container.internal aside{ float: right; width: 35%; }
 .main-container.internal section{ float: left; width: 50%; }
 .main article section .icon{ margin-top: 15px; }
