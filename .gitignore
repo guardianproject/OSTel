@@ -1,5 +1,7 @@
+*.swp
+log/*
+config/database.yml
+db/*.sqlite3
+/*.pid
 .DS_Store
-<<<<<<< HEAD
-=======
-webapp/public/images/privacy2.html
->>>>>>> homepage_upgrade
+tmp/*
