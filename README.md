@@ -1,38 +1,5 @@
-# Devise Example for Rails 3
+This is the web application for <a href="https://ostel.co">ostel.co</a>, a FOSS
+secure voice and video calling service. It's also a front end to
+<a href="https://dev.guardianproject.info/projects/ostel/wiki/Kamailio">Kamailio</a>, a modular SIP server. It provides user registration for a shared database.
 
-Example App using devise. http://github.com/plataformatec/devise
-
-## Installation
-
-Install bundler if you haven't yet:
-
-```
-gem install bundler
-```
-
-Install the gems:
-
-```
-bundle install
-```
-
-This will install Rails 3, sqlite3-ruby gem and Devise 1.4.7.
-
-Rake devise setup task:
-
-```
-rake devise:setup
-```
-
-This will:
-
-* drop any existing database
-* create a new database
-* migrate the database
-* create a default user and admin
-
-Run the server and use the credentials provided by the rake task to sign in and test the application.
-
-## License
-
-MIT License. Copyright 2010 Plataforma Tecnologia. http://blog.plataformatec.com.br
+Documentation is hosted on the <a href="https://dev.guardianproject.info/projects/ostel/wiki/Ruby_on_Rails">project Wiki</a>
