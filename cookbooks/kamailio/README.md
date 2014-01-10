@@ -1,68 +1,24 @@
 kamailio Cookbook
 =================
 Set up a secure SIP server acording to OSTN standards. Inspired by the Asipto
-document titled "Run your own Skype-like service in less than one hour"
+document titled [Run your own Skype-like service in less than one hour](http://kb.asipto.com/kamailio:skype-like-service-in-less-than-one-hour)
 
-http://kb.asipto.com/kamailio:skype-like-service-in-less-than-one-hour
+To handle the SIPS socket, this cookbook will make the system where it is run an
+SSL Certificate Authority. It is the operator's responsibility to distribute the
+root certificate to all client applications. If you wish to have a commercially signed CA Certificate, you need to tak extra steps with your SSL vendor.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-e.g.
-#### packages
-- `toaster` - kamailio needs toaster to brown your bagel.
+The only dependency is a Fully Qualified Domain Name (FQDN[http://en.wikipedia.org/wiki/FQDN]). THIS IS CRUCIAL! The
+cookbook sets many parameters passed to scripts to this value, including the SIP registrar.
+If you do not set a FQDN everything will break.
 
-Attributes
-----------
-TODO: List you cookbook attributes here.
+Unfortunately, the process to do this is varied, poorly documented and
+mysterious. Basically, if you create a DNS A record for example.com pointing to
+your IP address, you must configure the server so that the output of `hostname
+-f` is <i>exactly</i> the same name.
 
-e.g.
-#### kamailio::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['kamailio']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
-
-Usage
------
-#### kamailio::default
-TODO: Write usage instructions for each cookbook.
-
-e.g.
-Just include `kamailio` in your node's `run_list`:
-
-```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[kamailio]"
-  ]
-}
-```
-
-Contributing
-------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write you change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
-
-License and Authors
--------------------
-Authors: TODO: List authors
+On my testbed system, I did this by setting /etc/hostname to the FQDN and adding
+a line in /etc/hosts to the IP address/hostname pair. Reboot. Type `hostname
+-f`. If you get the output of the FQDN. You may run this cookbook.
