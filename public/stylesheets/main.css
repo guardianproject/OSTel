@@ -13,8 +13,8 @@ body { font: 16px/26px Helvetica, Helvetica Neue, Arial;  -webkit-font-smoothing
 
 
 
-h2, h3, h4, h5, h6{ color: #141414; line-height: 140%;	 }
-h2{ font-size: 1.2em;	 }
+h2, h3, h4, h5, h6{ color: #141414; line-height: auto;	 }
+h2{ font-size: .8em;}
 hr { display: block; height: 1px; border: 0; border-top: 1px solid #d3e1e6; padding: 0;	clear: both; margin-top: 1em; margin-right: 0; margin-bottom: 2em; margin-left: 0;  }
 .wrapper { width: 90%; margin: 0 5%; }
 
@@ -186,7 +186,17 @@ hr { display: block; height: 1px; border: 0; border-top: 1px solid #d3e1e6; padd
 	color: #119ada; /* Change colour of footer links on hover */
 }
 
+.footer-container img {
+	height: 60px;
+}
 
+.footer-container .link {
+	display: inline;
+	float: left;
+	padding-right: 3em;
+	margin-top: 150px;
+	height: 80px;
+}
 
 
 /* ==========================================================================
