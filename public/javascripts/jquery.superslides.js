@@ -241,7 +241,7 @@
                 });
                 if (size > 1) {
                     $control.css({
-                        width: width * multiplier,
+                        // width: width * multiplier,
                         height: height,
                         left: -width
                     });
