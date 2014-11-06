@@ -8,6 +8,8 @@ This is a [Rails web application](https://dev.guardianproject.info/projects/oste
 
 One of the core features of ostel is [secure federation](https://dev.guardianproject.info/projects/ostel/wiki/Inter-domain_calling) between SIP domains. This means that user@example1.com can place calls to user@example2.com without the need to create accounts on both systems. You can compare this type of network to Jabber/XMPP, Diaspora and of course the venerable messaging system we all know and love, email.
 
+All software in this repository is licensed under the following
+
                    GNU GENERAL PUBLIC LICENSE
                        Version 3, 29 June 2007
 
