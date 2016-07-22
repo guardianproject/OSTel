@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> 
+<html class="no-js"> 
+<!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Ostel: Encrypted Phone Calls</title>
+    <meta name="description" content="">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link href="https://ostel.co/stylesheets/normalize.min.css?1365887311" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://ostel.co/stylesheets/main.css?1367952522" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://ostel.co/stylesheets/superslides.css?1367952537" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://ostel.co/stylesheets/flexslider.css?1367353623" media="screen" rel="stylesheet" type="text/css" />
+    <link href="https://ostel.co/stylesheets/application.css?1367353623" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <article id="content">
+      <div class="main-container internal">
+        <div class="main wrapper clearfix section">
+          <article>
+            <section>
+              <div>
+                <h1>Welcome to OSTel </h1>
+                <p>Are you ready to start making secure phone calls? Great! First you'll need the
+                right app for your phone or computer. Then you'll need to open it and sign in with your
+                sweet new Ostel account info.</p>
+                <table class="info">
+                  <tr><th>User Name:</th><td><%= @user.sip_username %></td></tr>
+                  <tr><th>Password:</th><td>***********</td><em> <a href="https://ostel.co/users/password/new" target="_blank">[reset password]</a></em></tr>
+                  <tr><th>Server:</th><td><%= @user.domain %></td></tr>
+                </table>
+              </div>
+              <h1>Setting up OSTel </h1>
+              <div>
+              	<img src="https://ostel.co/images/icon_phone.png" width='65' align='left' class='icon' alt="Phone Icon" />
+                <p>After you install the app on your mobile device with your account information, you can test
+                that everything is working by calling the user code named
+                <i>9196</i>. In this echo test, you should hear your own
+                voice when you speak into the phone. You should also see "ZRTP -
+                OK" in the yellow bar near the top of the screen, letting you
+                know that the encryption is working. Now you can place free and
+                secure calls to your friends who also have Ostel set up. To
+                ensure maximum security, confirm that the same 4-digit encryption code
+                appears on both phones. 
+              </div>
+            </section>
+          </article>
+          <!-- END MAIN -->	
+        </div> 
+      </div> 
+      <div class="main-container">
+        <div class="main wrapper clearfix">
+          <article class="section">
+            <h1>Download the App</h1>
+            <p>If you have a device in your pocket or on your desk, then you can
+            get OSTel working on it! Download any of these supporting apps:</p>
+            <!-- INSERT FEATURE TEXT  -->
+            <section>
+              <h2>Android</h2>
+              <a href="https://play.google.com/store/apps/details?id=com.csipsimple" target="_blank" class="icon">
+              <img src="https://ostel.co/images/icon_mobile1.png" width='65' align='left' alt="Mobile1 Icon" class='icon' /></a>
+              <p>We fully support and integrate with the <a href="https://play.google.com/store/apps/details?id=com.csipsimple" target="_blank">CSipSimple app</a> on Android. Open the app and click the key icon to add an account. 
+Then choose the OSTN wizard to easily set up Ostel. There's a direct Ostel setup wizard coming soon to
+make life even better. You can also <a href=" https://guardianproject.info/howto/callsecurely" target="_blank">follow our tutorial</a>.</p>
+            </section>
+            <!-- INSERT FEATURE TEXT  -->
+            <section>
+              <h2>iPhone & iPad</h2>
+              <img src="https://ostel.co/images/icon_tablet.png" width='67' align='left' class='icon' alt="Tablet Icon" />
+            <p>Ostel works great on the <a href="https://itunes.apple.com/app/acrobits-softphone-sip-phone/id314192799" target="_blank">Acrobits Softphone app</a>. It's a paid app and for $6.99 you'll be able to receive encrypted calls. There's an additional $24.99 in-app purchase for the ZRTP extension to also place a secure call. To set up, just add a generic SIP account and enter the account details we added above. 
+Under advanced settings set proxy to ostel.co, transport protocol to tls (sip), expires: 1800, and secure calls to ZRTP: enabled for incoming & outgoing calls.</p>
+            </section>
+            <!-- INSERT FEATURE TEXT  -->
+            <section class="last">
+              <h2>Mac</h2>
+              <img src="https://ostel.co/images/icon_laptop.png" width='67' align='left' class='icon' alt="Tablet Icon" />
+              <p>The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> is an open source client that works for Ostel. It can also be used as a chat client for Facebook, Gchat, XMPP and others. 
+              To set up, go to accounts and choose a new SIP network. Add the SIP id included above (ex: magic@ostel.co) and your password. Then in advanced account settings, under connection, proxy options should be set to proxy: ostel.co / port: 5061 / preferred transport: TLS</p>
+            </section>
+            <hr/>
+            <!-- INSERT FEATURE TEXT  -->                   
+            <section>
+              <h2>Windows</h2>
+              <img src="https://ostel.co/images/icon_computer.png" width='67' align='left' class='icon' alt="Tablet Icon" />
+              <p>The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> is an open source client that works for Ostel. IIt can also be used
+as a chat client for Facebook, Gchat, XMPP and others. To set up, go to accounts and choose a new SIP network. 
+Add the SIP id included above (ex: magic@ostel.co) and your password. Make sure to set your Proxy Options to preferred transport as TLS. Then make sure proxy is ostel.co & port is 5061.</p>
+            </section>
+            <!-- INSERT FEATURE TEXT  -->
+            <section>
+              <h2>Linux</h2>
+              <img src="https://ostel.co/images/icon_free.png" width='67' align='left' class='icon' alt="Tablet Icon" />
+              <p>The <a href="https://jitsi.org/Main/Download" target="_blank">Jitsi app</a> is a GPL app that works well with Ostel. To set up, go to accounts and choose a new SIP network. 
+Add the SIP id included above (ex: magic@ostel.co) and your password. Make sure to set your Proxy Options to preferred transport as TLS. Then make sure proxy is ostel.co & port is 5061.
+The <a href="http://sflphone.org/" target="_blank">sflphone app</a> works too!</p>
+            </section>
+            <!-- INSERT FEATURE TEXT  -->
+            <section class="last">
+              <h2>Blackberry</h2>
+              <img src="https://ostel.co/images/icon_mobile.png" width='67' align='left' class='icon' alt="Tablet Icon" />
+              <p>Not to be forgotten, the <a href="http://www.privatewave.com/products-services/private-gsm/product.html" target="_blank">PrivateGSM app</a> works on Blackberry and even on Nokia. As an
+enterprise solution, it requires payment to function fully. To set up, bring up the mentu and click settings. 
+Under advanced settings,click SIP settings. Add SIP server: ostel.co and SIP server port: 5061. Then enter in 
+your username and password credentials from above. Check Use Proxy to be listed as true and set SIP proxy server to ostel.co
+along with SIP proxy port as 5061. Lastly, Uncheck Use obfuscation to list it as false and under menu click Go Online.</p>
+            </section>
+            <hr/>
+          </article>
+        </div> <!-- #main -->
+      </div> <!-- #main-container -->
+    </article>
+    
+        <article id="content">
+      <div class="main-container internal">
+        <div class="main wrapper clearfix section">
+          <article>
+            <section>
+              <div>
+                <h1>Manage your Ostel Account</h1>
+                <p>Need to change something with your account? No problem! 
+                <table class="info">
+                  <tr><a href="https://ostel.co/users/sign_in" target="_blank">Sign In</a></tr>
+                  <tr><a href="https://ostel.co/users/password/new" target="_blank">Reset Password</a></tr>
+                  <tr><a href="https://ostel.co/users/sign_in" target="_blank">Delete Your Account</a></tr>
+                  <tr><a href="https://ostel.co/users/sign_up" target="_blank">Get A New Account</a></tr>
+                </table>
+              </div>
+            </section>
+          </article>
+          <!-- END MAIN -->	
+    <!-- START FOOTER  -->
+    <div class="footer-container">
+      <footer class="wrapper clearfix">
+        <!-- LOGO Replace  -->
+        <h1><a href="https://guardianproject.info" target="_blank"><img src="https://ostel.co/images/footlogo@2x.png" /></a></h1>
+        <!-- INSERT Footer Links // Insert Desired menu items  -->
+        <ul>
+          <li><a href="https://guardianproject.info" target="_blank">Guardian Project</a> welcomes you to the open secure telephony future.
+          <li><a href="https://ostel.co">Ostel.co</a> <a href="https://twitter.com/guardianproject" target="_blank">Twitter</a> <a href="https://dev.guardianproject.info/projects/ostel" target="_blank">Help</a></li> <a href="https://github.com/guardianproject/ostel" target="_blank">Github</a></li> <a href="https://ostel.co/privacy">Privacy Policy</a></li>
+        </ul>
+        <!-- END FOOTER -->    
+      </footer>
+    </div>
+  </body>
+</html>

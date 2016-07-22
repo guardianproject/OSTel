@@ -1,0 +1,39 @@
+id:
+  errors:
+    messages:
+      not_found: "tidak ditemukan"
+      already_confirmed: "sudah di konfirmasi"
+      not_locked: "tidak dikunci"
+
+  devise:
+    failure:
+      unauthenticated: 'Anda harus mendaftar atau sign in sebelum melanjutkan .'
+      unconfirmed: 'Anda harus melakukan konfirmasi sebalum melanjutkan.'
+      locked: 'Akun anda terkunci.'
+      invalid: 'email atau password yang anda masukkan salah.'
+      invalid_token: 'Kesalahan pada authentication token.'
+      timeout: 'Sesi anda telah kadaluarsa, silahkan sign in untuk melanjutkan.'
+      inactive: 'Akun anda belum diaktifkan.'
+    sessions:
+      signed_in: 'Proses sign in berhasil.'
+      signed_out: 'Proses sign out berhasil.'
+    passwords:
+      send_instructions: 'Anda akan menerima e-mail berisi instruksi untuk melakukan reset password beberapa menit lagi.'
+      updated: 'Password anda telah berhasil diubah. Anda telah sign in.'
+    confirmations:
+      send_instructions: 'Anda akan menerima e-mail berisi instruksi untuk melakukan konfirmasi akun dalam beberapa menit lagi.'
+      confirmed: 'Akun anda telah berhasil dikonfirmasi. Anda telah sign in.'
+    registrations:
+      signed_up: 'Proses pendaftaran berhasil. Apabila diaktifkan, konfirmasi telah dikirimkan ke e-mail anda.'
+      updated: 'Akun anda telah berhasil diperbaharui.'
+      destroyed: 'Selamat Tinggal,  Akun anda telah di hapus'
+    unlocks:
+      send_instructions: 'Anda akan menerima e-mail berisi instruksi untuk membuka kembali akun anda dalam beberapa menit lagi.'
+      unlocked: 'Akun anda telah berhasil dibuka kembali. Anda telah sign in.'
+    mailer:
+      confirmation_instructions:
+        subject: 'Instruksi untuk melakukan konfirmasi'
+      reset_password_instructions:
+        subject: 'Instruksi untuk melakukan Reset password'
+      unlock_instructions:
+        subject: 'Instruksi untuk membuka kembali akun anda'

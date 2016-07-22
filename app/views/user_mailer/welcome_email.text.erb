@@ -1,0 +1,85 @@
+Welcome to OSTel
+
+Are you ready to start making secure phone calls? Great! First you'll need the
+right app for your phone or computer. Then you'll need to sign in with your
+sweet new account info. Copy and paste the following URL and enter the account
+info.
+
+<%= @url %>
+
+User Name: <%= @user.sip_username %>
+Password: ****from sign up****
+Server: <%= @user.domain %>
+
+Guardian Project welcomes you to the open secure telephony future.
+
+***Setting up OSTel***
+
+After you install the app on your mobile device with your account information, you can test that
+everything is working by calling the user code named 9196. In
+this echo test, you should hear your own voice when you speak into the
+phone. You should also see "ZRTP - OK" in the yellow bar near the top
+of the screen, letting you know that the encryption is working. Now
+you can place free and secure calls to your friends who also have
+Ostel set up. To ensure maximum security, confirm that the same
+4-digit encryption code appears on both phones. 
+
+Tell your friends to give you a free call on your own personal Batphone, <%= @user.sip_username %>>	  		
+
+
+***Download the App***
+If you have a device in your pocket or on your desk, then you can get OSTel
+working on it! Download any of these supporting apps and enter your OSTel account information:
+
+*Android
+We fully support and integrate with the CSipSimple app on Android. Open the app and click the key icon to add an account. 
+Then choose the OSTN wizard to easily set up Ostel. There's a direct Ostel setup wizard coming soon to
+make life even better.
+https://play.google.com/store/apps/details?id=com.csipsimple
+You can also follow our tutorial
+https://guardianproject.info/howto/callsecurely
+
+*iPhone & iPad
+Ostel works great on the Acrobits Softphone app. It's a paid app and for $6.99 you'll be able to receive encrypted calls. 
+There's an additional $24.99 in-app purchase for the ZRTP extension to also place a secure call.
+To set up, just add a generic SIP account and enter the account details we added above. 
+Under advanced settings set proxy to ostel.co, transport protocol to tls (sip), expires: 1800, and secure calls to ZRTP: enabled for incoming & outgoing calls.
+https://itunes.apple.com/app/acrobits-softphone-sip-phone/id314192799
+
+*Mac
+The Jitsi app is an open source client that works for Ostel. It can also be used as a
+chat client for Facebook, Gchat, XMPP and others. To set up, go to accounts and choose a new SIP network. 
+Add the SIP id included above (ex: magic@ostel.co) and your password. 
+Then in advanced account settings, under connection, proxy options should be set to proxy: ostel.co / port: 5061 / preferred transport: TLS
+https://jitsi.org/Main/DownloadJitsi
+
+*Windows
+The Jitsi app is an open source client that works for Ostel. It can also be used
+as a chat client for Facebook, Gchat, XMPP and others. To set up, go to accounts and choose a new SIP network. 
+Add the SIP id included above (ex: magic@ostel.co) and your password. 
+Then in advanced account settings, under connection, proxy options should be set to proxy: ostel.co / port: 5061 / preferred transport: TLS
+https://jitsi.org/Main/Download 
+
+*Linux
+The Jitsi app is a GPL app that works well with Ostel. To set up, go to accounts and choose a new SIP network. 
+Add the SIP id included above (ex: magic@ostel.co) and your password. 
+Then in advanced account settings, under connection, proxy options should be set to proxy: ostel.co / port: 5061 / preferred transport: TLS
+https://jitsi.org/Main/Download
+The sflphone app works too!
+http://sflphone.org/
+
+*Blackberry
+Not to be forgotten, the PrivateGSM app works on Blackberry and even on Nokia. As an
+enterprise solution, it requires payment to function fully. To set up, bring up the mentu and click settings. 
+Under advanced settings,click SIP settings. Add SIP server: ostel.co and SIP server port: 5061. Then enter in 
+your username and password credentials from above. Check Use Proxy to be listed as true and set SIP proxy server to ostel.co
+along with SIP proxy port as 5061. Lastly, Uncheck Use obfuscation to list it as false and under menu click Go Online. 
+http://www.privatewave.com/products-services/private-gsm/product.html
+
+ 
+ ***Manage your Ostel Account***
+ Need to change something with your account? No problem! 
+Sign In - https://ostel.co/users/sign_in
+Reset Password - https://ostel.co/users/password/new
+Delete Your Account - https://ostel.co/users/sign_in
+Get A New Account - https://ostel.co/users/sign_up

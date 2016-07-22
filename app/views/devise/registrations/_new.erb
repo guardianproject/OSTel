@@ -1,0 +1,16 @@
+<h2>Call Your Friends For Free</h2>
+<p>Sign Up In 3 Easy Steps:</p>
+<ol>                     
+  <li>Pick a name.</li>
+  <li>Get the app.</li>
+  <li>Start calling your Ostel friends.</li>  
+</ol>        
+
+
+<%= form_for(resource, :as => resource_name, :url => users_suggest_path) do |f| %>
+	
+  <div><%= f.label :email, "Enter your email:" %></div><br />
+  <%= f.email_field :email %></div>
+  <div><%= f.submit "Sign up" %></div>
+
+<% end %>

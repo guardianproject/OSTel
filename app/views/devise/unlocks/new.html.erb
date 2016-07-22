@@ -1,0 +1,13 @@
+<h2>Resend unlock instructions</h2>
+<p> Hmm. Something fishy was going on. You should have gotten email from us with all of the instructions on how to unlock your Ostel account. If it was really you who was trying to unlock the account. Well fear not! Just input your email below and we'll make sure to send you another message with all the details. Thanks again for your interest in Ostel!</p>
+
+<%= form_for(resource, :as => resource_name, :url => unlock_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.submit "Resend unlock instructions" %></div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>

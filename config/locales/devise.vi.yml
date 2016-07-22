@@ -1,0 +1,58 @@
+# encoding: UTF-8
+# vi translations for Devise 2.0
+
+vi:
+  errors:
+    messages:
+      expired: "đã hết hạn, vui lòng tạo yêu cầu mới"
+      not_found: "không tìm thấy"
+      already_confirmed: "đã được chứng thực rồi, mời bạn đăng nhập"
+      not_locked: "đã bị khóa"
+      not_saved:
+        one: "1 lỗi làm %{resource} này không lưu lại được:"
+        other: "%{count} lỗi làm %{resource} này không lưu lại được:"
+
+  devise:
+    failure:
+      already_authenticated: 'Bạn đã đăng nhập rồi.'
+      unauthenticated: 'Bạn cần đăng nhập hoặc đăng ký để có thẻ tiếp tục.'
+      unconfirmed: 'Bạn cần chứng thực tài khoản này mới có thể sử dụng được.'
+      locked: 'Tài khoản của bạn đã bị khóa.'
+      invalid: 'Sai email hoặc mật khẩu.'
+      invalid_token: 'Sai mã xác nhận.'
+      timeout: 'Phiên làm việc của bạn đã kết thúc, bạn cần đăng nhập lại để có thể tiếp tục.'
+      inactive: 'Tài khoản của bạn chưa được kích hoạt.'
+    sessions:
+      signed_in: 'Đăng nhập thành công.'
+      signed_out: 'Thoát tài khoản thành công.'
+    passwords:
+      send_instructions: 'Bạn sẽ nhận được email hướng dẫn đặt lại mật khẩu trong một vài phút nữa.'
+      updated: 'Đổi mật khẩu thành công! Bạn đã được tự động đăng nhập.'
+      updated_not_active: 'Mật khẩu đã được đổi thành công.'
+      send_paranoid_instructions: "Nếu email của bạn có trong hệ thống, bạn sẽ nhận được đường dẫn để khôi phục mật khẩu qua email"
+    confirmations:
+      send_instructions: 'Bạn sẽ nhận được email hướng dẫn xác thực tài khoản trong một vài phút nữa.'
+      send_paranoid_instructions: 'Nếu email của bạn có trong hệ thống, bạn sẽ nhận được email hướng dẫn xác thực tài khoản trong một vài phút nữa.'
+      confirmed: 'Xác thưc tài khoản thành công! Bạn đã được tự động đăng nhập.'
+    registrations:
+      signed_up: 'Xin chào mừng! Bạn đã đăng ký thành công.'
+      signed_up_but_unconfirmed: 'Một email chứa đường dẫn để xác thực tài khoản đã được gửi cho bạn. Bạn vui lòng kiểm tra email.'
+      signed_up_but_inactive: 'Bạn đã đăng ký thành công. Tuy nhiên tài khoản của bạn chưa được kích hoạt nên chưa thể đăng nhập được.'
+      signed_up_but_locked: 'Bạn đã đăng ký thành công. Tuy nhiên tài khoản của bạn đã bị khóa nên không thể đăng nhập được.'
+      updated: 'Bạn đã cập nhật thông tin tài khoản thành công.'
+      update_needs_confirmation: "Thông tin tài khoản đã được cập nhật thành công, nhưng bạn cần xác thực địa chỉ email mới. Bạn vui lòng kiểm tra email và nhấn vào đường dẫn xác thực tài khoản để hoàn tất việc thay đổi địa chỉ email."
+      destroyed: 'Xin chào tạm biệt! Tài khoản của bạn đã được xóa, rất mong được gặp lại bạn sớm!'
+    unlocks:
+      send_instructions: 'Bạn sẽ nhận được email hướng dẫn bỏ khóa tài khoản trong một vài phút nữa.'
+      unlocked: 'Tài khoản của bạn đã được bỏ khóa thành công. Mời bạn đăng nhập'
+      send_paranoid_instructions: 'Nếu tài khoản của bạn tồn tại, bạn sẽ nhận được email hướng dẫn bỏ khóa tài khoản trong một vài phút nữa.'
+    omniauth_callbacks:
+      success: 'Đăng nhập thành công bằng tài khỏan %{kind}.'
+      failure: 'Không thể đăng nhập qua tài khoản %{kind} vì "%{reason}".'
+    mailer:
+      confirmation_instructions:
+        subject: 'Hướng dẫn xác thực'
+      reset_password_instructions:
+        subject: 'Hướng dẫn đặt lại mật khẩu'
+      unlock_instructions:
+        subject: 'Hướng dẫn bỏ khóa tài khoản'

@@ -1,0 +1,40 @@
+</div>
+<div class="main-container internal">
+  <div class="main wrapper clearfix section">
+    <article>
+      <section>
+        <div>
+          <h1>Pick a fun code name.</h1>
+          <p>Phone numbers are so old fashioned! At OSTel we know it's more fun to have a code name for receiving messages. Just pick a name and tell your friends to give you a call to it. To phone us for a test, try calling </i>magic</i>.</p>
+          <%= image_tag "icon_atomic.png", :class => "icon", :width => "265", :align => "left" %>
+          <%= form_for resource, :as => resource_name, :url => registration_path(resource_name) do |f| %>
+            <% if @suggestions.size == 1 %>
+              <p>Your suggested OSTel code name is <i><%= @suggestions.first %></i></p>
+              <p><%= f.label :sip_username, "Pick your username" %></p>
+                <%= f.text_field :sip_username, :value => @suggestions.first %>
+            <% else %>
+              <p>This username <i><%= @user.email.split("@").first %></i> is
+              already taken! Here are some other suggestions:</p>
+              <%- @suggestions.each do |suggestion| -%>
+                <%= f.radio_button :sip_username, suggestion %>
+                <%= f.label "sip_username_#{suggestion}".to_sym, suggestion %><br/>
+              <% end %>
+            <% end %>
+              <div><%= f.label :email, "email" %></div>
+              <%= f.email_field :email, :value => params[:user][:email] %>
+              <div><%= f.label :password, "Create an account password" %><br />
+              <%= f.password_field :password %></div>
+              <div><%= f.label :password_confirmation, "Confirm your account password" %><br />
+              <%= f.password_field :password_confirmation %></div>
+              <%= f.submit "Create my account" %>
+          <% end %>
+        </div>
+      </section>
+      
+      <aside>
+                    	<%= image_tag "icon_magichat.png", :alt => "mockup" %>
+                    	<p><em>Like magic, we'll pull a new account out of our hat.</em></p>
+        </aside>
+    </article>
+  </div>
+</div>

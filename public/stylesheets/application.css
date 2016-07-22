@@ -1,0 +1,117 @@
+a img {
+  border: none;
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+div#logo {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+div.info {
+  margin-bottom: 1em;
+}
+
+table {
+  margin-bottom: 1em;
+}
+
+table.info th {
+  text-align: right;
+  padding-right: 10px;
+}
+
+#flash_notice, #flash_alert {
+  padding: 5px 8px;
+  margin: 10px 0;
+}
+
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+
+#flash_alert {
+  background-color: #FCC;
+  border: solid 1px #C66;
+}
+
+.fieldWithErrors {
+  display: inline;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid #CF0000;
+  padding: 0px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: 0;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 8px;
+}
+
+#errorExplanation ul {
+  margin: 2px 24px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: disc;
+}
+
+#overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+}
+
+#modal {
+	position: absolute;
+	z-index: 99;
+	background: rgba(0,0,0,0.2);
+	border-radius: 14px;
+	padding: 8px;
+}
+
+#content {
+	position: relative;
+	border-radius: 0px;
+	background: #fff;
+	padding: 0px;
+}
+
+#close {
+	position: absolute;
+	width: 24px;
+	height: 27px;
+	display: block;
+	text-indent: -9999px;
+	top: -7px;
+	right: -7px;
+}

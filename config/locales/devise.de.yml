@@ -1,0 +1,39 @@
+de:
+  errors:
+    messages:
+      not_found: "Nicht gefunden"
+      already_confirmed: "ist bereits bestätigt"
+      not_locked: "war nicht gesperrt"
+
+  devise:
+    failure:
+      unauthenticated: 'Du musst dich zuerst anmelden.'
+      unconfirmed: 'Du musst deinen Acoount zuerst bestätigen.'
+      locked: 'Dein Account ist gesperrt.'
+      invalid: 'Falscher Benutzername oder falsches Passwort.'
+      invalid_token: 'Ungültiger Schlüssel.'
+      timeout: 'Die Sitzung ist abgelaufen, bitte melde dich erneut an.'
+      inactive: 'Dein Account ist noch nicht aktiviert.'
+    sessions:
+      signed_in: 'Erfolgreich Angemeldet.'
+      signed_out: 'Erfolgreich Abgemeldet.'
+    passwords:
+      send_instructions: 'Du wirst in Kürze eine E-Mail erhalten, in der dir erklärt wird, wie du dein Passwort zurücksetzt.'
+      updated: 'Dein Passwort wurde erfolreich geändert. Du bist nun angemeldet.'
+    confirmations:
+      send_instructions: 'Du wirst in Kürze eine E-Mail erhalten mit deren Hilfe du deinen Account bestätigen kannst.'
+      confirmed: 'Dein Acoount wurde erfolgreich bestätigt. Du bist nun angemeldet.'
+    registrations:
+      signed_up: 'Der Benutzer wurde erfolreich angelegt. Falls das Bestätigungsmodul eingeschaltet ist, wird nun eine Bestätigungsmail versand.'
+      updated: 'You updated your account successfully.'
+      destroyed: 'Der Benutzer wurde erfolgreich gelöscht.'
+    unlocks:
+      send_instructions: 'Du wirst in Kürze eine E-Mail mit den Anweisungen zum Entsperren des Accounts erhalten.'
+      unlocked: 'Dein Acoount wurde erfolgreich entsperrt. Du bist nun angemeldet'
+    mailer:
+      confirmation_instructions:
+        subject: 'Anweisungen zur Bestätigung'
+      reset_password_instructions:
+        subject: 'Anweisungen zur Passwortwiederherstellung'
+      unlock_instructions:
+        subject: 'Anweisungen zum entsperren'
