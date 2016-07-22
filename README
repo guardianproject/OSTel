@@ -1,0 +1,57 @@
+This is a part of the Open Secure Telephony Network project: https://guardianproject.info/wiki/OSTN
+
+All of the necessary technologies and communications standards exist today for
+voice communications that is as secure as OpenPGP email. Many proprietary and
+open source solutions exist for desktop and mobile devices that already
+implement the necessary bits to provide a solution many times more secure than
+Skype, without dependence upon one global service provider. Yet people who are
+security conscious enough to use Skype to secure their computer based
+conversations will still hold sensitive discussion on mobile phones. The
+problem is simplicity, usability and reliability.
+
+This project will provide an application for Android phones that will be only
+marginally more complex to use than dialing an existing phone number, while
+still being based entirely on open standards. The app itself is based on
+existing open source client code provided by the CSipSimple, pjsip and ZORG
+projects. We will coordinate with a network of audited, open service providers
+around the world who already provide free and commercial service to users, to
+ensure our users have an automated provisioning process to get connected.
+
+I'm looking for help automating this webapp installation with a Chef cookbook.
+
+Webapp Install:
+
+  # install binary deps
+	apt-get install ruby1.9.1-dev rubygems1.9 libsqlite3-dev
+  # install bundler via rubygems
+  gem install bundler
+  git clone git://github.com/guardianproject/OSTel.git
+  cp -r OSTel/webapp /usr/local/freeswitch
+  chown -R freeswitch:freeswitch /usr/local/freeswitch/webapp
+  cd OSTel/webapp/
+  bundle install
+  # set production environment variable
+  export RAILS_ENV=production
+  # build database schema
+  rake db:migrate
+  # start server
+  rails server -e production
+  # check your site in a browser!
+  # it should probably not look that good because Rails 3 doesn't serve static
+  # files
+  # run unicorn (add the -D option to run in the background)
+  unicorn -o 127.0.0.1 -p 3000 --env production
+  # install nginx to proxy requests
+  apt-get install nginx
+  # configure SSL
+  http://www.openssl.org/docs/HOWTO/certificates.txt
+  # configure nginx
+  http://gist.github.com/
+  # configure rails
+  vim config/environments/production.rb
+    config.freeswitch_dir = ""
+    config.domain = ""
+    config.action_mailer.default_url_options = { :host => '' }
+  vim config/initializers/devise.rb
+    config.mailer_sender = "signup@example.com"
+  vim config/initializers/smtp_settings.rb
