@@ -1,0 +1,95 @@
+# generate XML configuration for 10 FreeSwitch users.
+# Optionally specify number of users as an argument.
+# Depends on the pwgen system utility.
+
+# TODO: write restore function to use values from concise_list to rebuild XML
+# from a backup.
+#
+require 'rubygems'
+require 'xmlsimple'
+
+domain = "<%= node[:fqdn] %>"
+first = 1000
+last = first + 10
+
+if (ARGV[0])
+  first = ARGV[0].to_i
+else
+  puts "Usage: ruby ./gen_users.rb <offset> <number of users>"
+  exit 1
+end
+
+if (ARGV[1])
+  last = first + ARGV[1].to_i
+else
+  puts "Usage: ruby ./gen_users.rb <offset> <number of users>"
+  exit 1
+end
+
+pwgen = `which pwgen`.chop!
+openssl = `which openssl`.chop!
+
+if (pwgen.nil?) 
+  puts "This program depends on the pwgen utility. Please install it."
+  exit 1
+elsif ( openssl.nil? )
+  puts "This program depends on the openssl utility. Please install it."
+  exit 1
+end
+user_list = ""
+
+# generate a bunch of XML files
+# WARNING! THIS SCRIPT IS NOT NICE. IT WILL OVERWRITE FILES!
+#
+(first...last).each do |i|
+  pw = `#{pwgen} -nc`.chop!
+  hash = `echo -n #{i.to_s}:#{domain}:#{pw} | #{openssl} dgst -md5 | cut -d " " -f 2`.chop!
+  config = {
+    "user"=> {
+      i.to_s => {
+      "mailbox" => i.to_s,
+      "variables" => [{
+        "variable" => [{
+        "name" => "accountcode",
+        "value"=> i.to_s
+      },
+      {
+        "name" => "user_context",
+        "value" => "default"
+      },
+      {
+        "name" => "effective_caller_id_name",
+        "value" => "Extension #{i.to_s}"
+      },
+      {
+        "name" => "effective_caller_id_number",
+        "value" => i.to_s
+      }]}],
+      "params" => [{
+        "param" => [{
+          "name" => "a1-hash",
+          "value" => hash 
+        },
+        {
+          "name" => "vm-password",
+          "value" => hash
+        }]}]
+      }
+    }
+  }
+  xml_config = XmlSimple.xml_out(config, { 'KeyAttr' => 'id', 'RootName' => "include" })
+  fh = File.new( "#{i.to_s}.xml", "w")
+  fh.write(xml_config)
+  fh.close
+  concise_string = i.to_s + ":" + pw
+  user_list << concise_string + "\n"
+  puts concise_string
+end
+puts "Finished creating XML #{ last - first } users"
+#
+# Write full list of usernames and passwords in a more concise format, perhaps
+# for an admin to encrypt and carry around
+fh = File.new( "user_list.txt", "w")
+fh.write(user_list)
+puts "Wrote #{ last - first } usernames and passwords to #{fh.path}"
+fh.close

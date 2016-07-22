@@ -1,0 +1,13 @@
+default[:apt][:kamailio_repo] = "kamailio40"
+default[:apt][:distro] = "squeeze"
+default[:kamailio][:sip_domain] = node[:fqdn].to_s
+default[:kamailio][:db_engine] = "POSTGRES"
+default[:kamailio][:postgresql_schema_dir] = "/usr/share/kamailio/postgres"
+default[:kamailio][:listen] = "eth0"
+default[:kamailio][:user_column] = "subscriber"
+default[:kamailio][:domain_table] = "domains"
+default[:kamailio][:shm_memory] = "256"
+default[:kamailio][:pkg_memory] = "16"
+default[:kamailio][:private_key] = "/etc/kamailio/kamailio-selfsigned.key"
+default[:kamailio][:certificate] = "/etc/kamailio/kamailio-selfsigned.pem"
+default[:kamailio][:dbname] = "kamailio"

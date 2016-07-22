@@ -1,0 +1,7 @@
+log_level                :info
+log_location             STDOUT
+node_name                'chef_admin'
+validation_client_name   'chef-validator'
+chef_server_url          'http://chef.example.com:4000'
+cache_type               'BasicFile'
+cookbook_path [ './cookbooks', './site-cookbooks' ]

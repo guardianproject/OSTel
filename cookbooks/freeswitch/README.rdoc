@@ -1,0 +1,13 @@
+= DESCRIPTION:
+
+This cookbook will compile, install and configure Freeswitch to provide IVR services for OSTN[https://dev.guardianproject.info/projects/ostn/wiki/Wiki]
+features include an echo test and a one-way test of ZRTP[http://en.wikipedia.org/wiki/ZRTP].
+
+<b>Supported Platforms</b>
+
+The cookbook was written on Debian GNU/Linux 6 "squeeze". Support is also confirmed on Ubuntu 12.04 LTS "Precise".
+
+= ATTRIBUTES: 
+
+ default[:freeswitch][:domain] = node[:fqdn]  
+ default[:freeswitch][:git_uri] = "git://git.freeswitch.org/freeswitch.git"

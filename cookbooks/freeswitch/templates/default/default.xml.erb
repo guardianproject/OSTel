@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    NOTICE:
+    
+    This context is usually accessed via authenticated callers on the sip profile on port 5060 
+    or transfered callers from the public context which arrived via the sip profile on port 5080.
+    
+    Authenticated users will use the user_context variable on the user to determine what context
+    they can access.  You can also add a user in the directory with the cidr= attribute acl.conf.xml
+    will build the domains ACL using this value.
+-->
+<!-- http://wiki.freeswitch.org/wiki/Dialplan_XML -->
+<include>
+  <context name="default">
+
+    <extension name="unloop">
+      <condition field="${unroll_loops}" expression="^true$"/>
+      <condition field="${sip_looped_call}" expression="^true$">
+        <action application="deflect" data="${destination_number}"/>
+      </condition>
+    </extension>
+
+    <extension name="global" continue="true">
+      <condition field="${call_debug}" expression="^true$" break="never">
+	<action application="info"/>
+      </condition>
+      <condition field="${sip_has_crypto}" expression="^(AES_CM_128_HMAC_SHA1_32|AES_CM_128_HMAC_SHA1_80)$" break="never">
+	<action application="set" data="sip_secure_media=true"/>
+	<!-- Offer SRTP on outbound legs if we have it on inbound. -->
+	<!-- <action application="export" data="sip_secure_media=true"/> -->
+      </condition>
+
+      <condition>
+	<action application="hash" data="insert/${domain_name}-spymap/${caller_id_number}/${uuid}"/>
+	<action application="hash" data="insert/${domain_name}-last_dial/${caller_id_number}/${destination_number}"/>
+	<action application="hash" data="insert/${domain_name}-last_dial/global/${uuid}"/>
+	<action application="export" data="RFC2822_DATE=${strftime(%a, %d %b %Y %T %z)}"/>
+      </condition>
+    </extension>
+
+    <!-- If sip_req_host is not a local domain then this has to be an external sip uri -->
+    <extension name="external_sip_uri" continue="true">
+      <condition field="source" expression="mod_sofia"/>
+      <condition field="${outside_call}" expression="^$"/>
+      <condition field="${domain_exists(${sip_req_host})}" expression="true">
+        <anti-action application="bridge" data="sofia/${use_profile}/${sip_to_uri}"/>
+      </condition>
+    </extension>
+
+    <!-- define extension for echo test. there is a 1/9999 chance it will overlap with an existing user -->
+    <extension name="echo">
+      <condition field="destination_number" expression="^9196$">
+        <action application="answer"/>
+        <action application="echo"/>
+      </condition>
+    </extension>
+
+
+    <!-- 
+	 dial the extension (1000-1999) for 30 seconds and speak an error if the 
+	 call fails (continue_on_fail=true), otherwise hang up after a successful
+	 bridge (hangup_after_bridge=true) 
+    -->
+    <extension name="Local_Extension">
+      <condition field="destination_number" expression="^([0-9][0-9][0-9][0-9])$">
+        <action application="export" data="dialed_extension=$1"/>
+        <!-- bind_meta_app can have these args <key> [a|b|ab] [a|b|o|s] <app> -->
+        <action application="bind_meta_app" data="1 b s execute_extension::dx XML features"/>
+        <action application="bind_meta_app" data="2 b s record_session::$${recordings_dir}/${caller_id_number}.${strftime(%Y-%m-%d-%H-%M-%S)}.wav"/>
+        <action application="bind_meta_app" data="3 b s execute_extension::cf XML features"/>
+        <action application="bind_meta_app" data="4 b s execute_extension::att_xfer XML features"/>
+        <action application="set" data="ringback=${us-ring}"/>
+        <action application="set" data="transfer_ringback=$${hold_music}"/>
+        <action application="set" data="call_timeout=30"/>
+        <!-- <action application="set" data="sip_exclude_contact=${network_addr}"/> -->
+        <action application="set" data="hangup_after_bridge=true"/>
+        <!--<action application="set" data="continue_on_fail=NORMAL_TEMPORARY_FAILURE,USER_BUSY,NO_ANSWER,TIMEOUT,NO_ROUTE_DESTINATION"/> -->
+        <action application="set" data="continue_on_fail=true"/>
+        <action application="hash" data="insert/${domain_name}-call_return/${dialed_extension}/${caller_id_number}"/>
+        <action application="hash" data="insert/${domain_name}-last_dial_ext/${dialed_extension}/${uuid}"/>
+        <action application="set" data="called_party_callgroup=${user_data(${dialed_extension}@${domain_name} var callgroup)}"/>
+        <action application="hash" data="insert/${domain_name}-last_dial_ext/${called_party_callgroup}/${uuid}"/>
+        <action application="hash" data="insert/${domain_name}-last_dial_ext/global/${uuid}"/>
+        <!--<action application="export" data="nolocal:sip_secure_media=${user_data(${dialed_extension}@${domain_name} var sip_secure_media)}"/>-->
+        <action application="hash" data="insert/${domain_name}-last_dial/${called_party_callgroup}/${uuid}"/>
+        <action application="bridge" data="user/${dialed_extension}@${domain_name}"/>
+        <action application="answer"/>
+        <action application="sleep" data="1000"/>
+	<!-- <action application="bridge" data="loopback/app=voicemail:default ${domain_name} ${dialed_extension}"/> -->
+      </condition>
+    </extension>
+    <!-- 
+	 This extension is used by mod_portaudio so you can pa call sip:someone@example.com
+	 mod_portaudio will pass the entire string to the dialplan for routing.
+    -->
+    <extension name="sip_uri">
+      <condition field="destination_number" expression="^sip:(.*)$">
+        <action application="bridge" data="sofia/${use_profile}/$1"/>
+      </condition>
+    </extension>
+
+    <extension name="milliwatt">
+      <condition field="destination_number" expression="^9197$">
+        <action application="answer"/>
+        <action application="playback" data="tone_stream://%(251,0,1004);loops=-1"/>
+      </condition>
+    </extension>
+
+    <extension name="tone_stream">
+      <condition field="destination_number" expression="^9198$">
+        <action application="answer"/>
+        <action application="playback" data="tone_stream://path=${base_dir}/conf/tetris.ttml;loops=10"/>
+      </condition>
+    </extension>
+
+    <!--
+	You will no longer hear the bong tone.  The wav file is playing stating the call is secure.
+	The file will not play unless you have both TLS and SRTP active.
+    -->
+    <!-- No hold music by default. Add custom hold music in the default/ directory.
+    <extension name="hold_music">
+      <condition field="destination_number" expression="^9664$"/>
+      <condition field="${sip_has_crypto}" expression="^(AES_CM_128_HMAC_SHA1_32|AES_CM_128_HMAC_SHA1_80)$">
+        <action application="answer"/>
+        <action application="execute_extension" data="is_secure XML features"/>
+        <action application="playback" data="$${hold_music}"/>
+        <anti-action application="set" data="zrtp_secure_media=true"/>
+        <anti-action application="answer"/>
+        <anti-action application="playback" data="silence_stream://2000"/>
+        <anti-action application="execute_extension" data="is_zrtp_secure XML features"/>
+        <anti-action application="playback" data="$${hold_music}"/>
+      </condition>
+    </extension>
+    -->
+
+    <!--
+	You can place files in the default directory to get included.
+    -->
+    <X-PRE-PROCESS cmd="include" data="default/*.xml"/>
+    <extension name="cross_domain">
+      <condition field="destination_number" expression="^(.*)$">
+        <action application="log" data="INFO set dial string to sofia/internal/${sip_contact_uri}"/>
+	<action application="info"/>
+	<action application="answer"/>
+	<action application="playback" data="tone_stream://path=${base_dir}/conf/tetris.ttml;loops=10"/>
+        <!-- <action application="bridge" data="sofia/internal/${sip_from_uri}"/> -->
+      </condition>
+    </extension>
+
+    <!--
+    <extension name="refer">
+      <condition field="${sip_refer_to}">
+	<expression><![CDATA[<sip:${destination_number}@${domain_name}>]]></expression>
+      </condition>
+      <condition field="${sip_refer_to}">
+	<expression><![CDATA[<sip:(.*)@(.*)>]]></expression>
+	<action application="set" data="refer_user=$1"/>
+	<action application="set" data="refer_domain=$2"/>
+	<action application="info"/>
+	<action application="bridge" data="sofia/${use_profile}/${refer_user}@${refer_domain}"/>
+      </condition>
+    </extension>
+    -->
+    <!--
+	This is an example of how to override the RURI on an outgoing invite to a registered contact.
+    -->
+    <!--
+    <extension name="ruri">
+      <condition field="destination_number" expression="^ruri$">
+	<action application="bridge" data="sofia/${ruri_profile}/${ruri_user}${regex(${sofia_contact(${ruri_contact})}|^[^\@]+(.*)|%1)}"/>
+      </condition>
+    </extension>
+    
+    <extension name="7004">
+      <condition field="destination_number" expression="^7004$">
+	<action application="set" data="ruri_profile=default"/>
+	<action application="set" data="ruri_user=2000"/>
+	<action application="set" data="ruri_contact=1001@${domain_name}"/>
+	<action application="execute_extension" data="ruri"/>
+      </condition>
+    </extension>
+    -->
+    <!--
+    <extension name="enum">
+      <condition field="${module_exists(mod_enum)}" expression="true"/>
+      <condition field="destination_number" expression="^(.*)$">
+	<action application="transfer" data="$1 enum"/>
+      </condition>
+    </extension>
+    -->
+
+  </context>
+</include>
