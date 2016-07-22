@@ -5,3 +5,4 @@ db/*.sqlite3
 /*.pid
 .DS_Store
 tmp/*
+vagrant/.vagrant/*
